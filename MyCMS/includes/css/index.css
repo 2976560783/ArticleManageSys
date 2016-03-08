@@ -1,0 +1,575 @@
+body,h1,h2,h3,p,form,li,ul,dl,dt,dd{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 960px;
+    margin: 0 auto;
+    background: #fff;
+    font-size: 12px;
+    color: #666
+}
+#top{
+    height: 26px;
+    background: url(../../images/top_bg.png);
+    text-align: right;
+}
+#top a{
+    display: inline-block;
+    padding: 5px 0 0 10px;
+}
+#header{
+    height: 80px;
+    margin: 0 0 10px 0;
+}
+#header h1{
+    height: 80px;
+    width: 250px;
+    font-size: 12px;
+    background: url(../../images/logo.png);
+    text-indent: -10000px;
+    float: left;
+}
+#header h1 a{
+    height: 80px;
+    display: block;
+}
+#header div.adver{
+    height: 80px;
+    width: 690px;
+    float: right;
+    border: 1px solid #ccc;
+}
+#header div img{
+    display: block;
+}
+#nav{
+    height: 35px;
+    border: 1px solid #ccc;
+    background: url(../../images/nav_bg.png);
+    border-bottom: none;
+}
+#nav ul{
+    height: 35px;
+    line-height: 35px;
+    font-size: 15px;
+    font-family: all;
+    padding: 0 0 0 15px;
+}
+#nav ul li{
+    display: inline;
+    padding: 0 20px;
+}
+#nav ul li a{
+    text-decoration: none;
+    color: #369;
+}
+#nav ul li a:hover{
+    color: #f60;
+}
+ul{
+    list-style-type: none;
+}
+#search{
+    height: 30px;
+    border: 1px solid #ccc;
+    margin: 0 0 10px 0;
+    border-top: none;
+}
+#search form{
+    float: left;
+    padding: 5px 0 0 5px;
+}
+#search form input.text{
+    width: 200px;
+    height: 18px;
+}
+#search form input.submit{
+    height: 23px;
+    width: 40px;
+}
+#search strong{
+    float: left;
+    padding: 8px 0 0 15px;
+}
+#search ul{
+    float: left;
+    padding: 7px 0 0 5px;
+}
+#search ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding-left: 5px;
+    font-size: 13px;
+}
+#search ul li a{
+    text-decoration: none;
+    color: green;
+}
+#search ul li a:hover{
+    color:#FEAE1B;
+}
+#user{
+    float: right;
+    height: 400px;
+    width: 270px;
+    border: 1px solid #ccc;
+    margin: 0 0 10px 0;
+}
+#user h2{
+    text-align: center;
+    font-size: 12px;
+    height: 26px;
+    color: #360;
+    line-height: 26px;
+    text-indent: 10px;
+    letter-spacing: 3px;
+    background: url(../../images/lbg.png);
+}
+#user h3{
+    padding-top: 12px;
+    font-size: 13px;
+}
+#user dl{
+    float: left;
+    width: 72px;
+    padding: 5px 9px 0 9px;
+}
+#user dl dt img{
+    display: block;
+}
+#user dl dd{
+    text-align: center;
+    padding:5px;
+}
+#user form{
+    position: relative;
+}
+#user form table input{
+    display: block;
+    width: 180px;
+    height: 25px;
+    border: 1px solid #666;
+    background: #eee;
+}
+#user form table input.code{
+    width: 98px;
+}
+#user form table{
+    padding-left: 10px;
+    line-height: 35px;
+}
+#user form img{
+    position: absolute;
+    top: 83px;
+    left: 170px;
+}
+#user form a.a1{
+    text-decoration: none;
+    padding-right: 10px;
+    font-size: 13px;
+}
+#user form a.a2{
+    text-decoration: none;
+    padding-left: 10px;
+    font-size: 13px;
+}
+#user form input.submit{
+    width: 60px;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+#user form a:hover{
+    color: red;
+    text-decoration:underline;
+}
+#user form p{
+text-align: center;
+}
+#user form table td{
+    font-size: 16px;
+    font-family: cursive;
+}
+#news{
+    float: right;
+    height: 400px;
+    width: 380px;
+    border: 1px solid #ccc;
+    margin: 0 7px 10px 0;
+    padding: 0 10px 0 10px;
+}
+#news h2{
+    color: #333;
+    text-align: center;
+    padding: 10px;
+}
+#news h2 a{
+    color: #333;
+    text-decoration: none;
+}
+#news h2 a:hover{
+    text-decoration: underline;
+}
+#news p a{
+    color: #333;
+    text-decoration: none;
+    color: #0895ED;
+}
+#news p a:hover{
+    text-decoration: underline;
+}
+#news p.link{
+text-align: center;
+}
+#news p.link a{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 12.5px;
+
+}
+#news p.link a:hover{
+    text-decoration: underline;
+}
+#news ul{
+    padding: 2px 10px 0 10px;
+}
+#news ul li{
+    height: 23px;
+    line-height: 23px;
+}
+#news ul li a{
+    color: #666;
+    text-decoration: none;
+    background: url(../../images/pointer.png) no-repeat left center;
+    padding-left: 10px;
+    font-family: 微软雅黑;
+    font-size: 14px;
+}
+#news ul li a:hover{
+    text-decoration: underline;
+    color: #FD6164;
+}
+#news ul li em{
+    float: right;
+    padding-right: 5px;
+    font-style: normal;
+    font-family: Tahoma;
+}
+#pic{
+    float: left;
+    height: 195px;
+    width: 270px;
+    margin: 0 0 10px 0;
+}
+#pic img{
+    display: block;
+    border: 1px solid #ccc;
+}
+#rec{
+    float: left;
+    height: 195px;
+    width: 270px;
+    border: 1px solid #ccc;
+    margin: 0 0 10px 0;
+}
+#rec h3{
+    text-align: center;
+    font-size: 12px;
+    height: 26px;
+    color: #360;
+    line-height: 26px;
+    text-indent: 10px;
+    letter-spacing: 3px;
+    background: url(../../images/lbg.png);
+}
+#rec ul{
+    padding: 2px 10px 0 10px;
+}
+#rec ul li{
+    height: 23px;
+    line-height: 23px;
+}
+#rec ul li a{
+    color: #666;
+    text-decoration: none;
+    background: url(../../images/pointer.png) no-repeat left center;
+    padding-left: 10px;
+    font-family: 微软雅黑;
+}
+#rec ul li a:hover{
+    text-decoration: underline;
+    color: #FD6164;
+}
+#rec ul li em{
+    float: right;
+    padding-right: 5px;
+    font-style: normal;
+    font-family: Tahoma;
+}
+#sidebar-right{
+    width: 270px;
+    height: 838px;
+    float: right;
+    margin: 0 0 2px 0;
+}
+#sidebar-right div.adver img{
+    display: block;
+    margin: 0 0 10px 0;
+}
+#sidebar-right div h2{
+    background: url(../../images/lbg.png);
+    text-align: center;
+    font-family: 华文中宋;
+}
+#sidebar-right div.hot,#sidebar-right div.conn,#sidebar-right div.vote{
+    border: 1px solid #ccc;
+    height: 193px;
+    padding: 0 0 10px 0;
+}
+#sidebar-right div.vote{
+    margin: 0;
+}
+#sidebar-right div.vote h3{
+    text-align: center;
+    padding: 10px;
+    font-family: 华文中宋;
+    color: #369;
+    border-bottom: 1px dashed;
+    width: 80%;
+    margin: auto;
+    font-size: 16px;
+}
+#sidebar-right div.vote form label{
+    display: block;
+    padding: 4px 0 4px 60px;
+    font-size: 15px;
+    font-family: 微软雅黑;
+}
+#sidebar-right div.vote form p{
+    text-align: center;
+    padding: 5px;
+}
+#sidebar-right div.vote form p input{
+    cursor: pointer;
+    font-size: 13px;`1
+}
+#sidebar-right ul{
+    padding: 2px 10px 0 10px;
+}
+#sidebar-right ul li{
+    height: 23px;
+    line-height: 23px;
+}
+#sidebar-right ul li a{
+    color: #666;
+    text-decoration: none;
+    background: url(../../images/pointer.png) no-repeat left center;
+    padding-left: 10px;
+    font-family: 微软雅黑;
+}
+#sidebar-right ul li a:hover{
+    text-decoration: underline;
+    color: #FD6164;
+}
+#sidebar-right ul li em{
+    float: right;
+    padding-right: 5px;
+    font-style: normal;
+    font-family: Tahoma;
+}
+#picnews{
+    width: 680px;
+    height: 200px;
+    float: left;
+    border: 1px solid #ccc;
+    margin: 0 0 10px 0;
+}
+#picnews h2{
+    text-align: center;
+    background: url(../../images/lbg.png);
+}
+#picnews dl{
+    display: inline-block;
+    padding: 20px 0 0 8px;
+}
+#picnews dl dt{
+    border: 1px solid #ccc;
+    padding: 3px;
+}
+#picnews dl img{
+    border: none;
+}
+#picnews dl dd{
+    width: 154px;
+    text-align: center;
+    font-family: 华文中宋;
+    font-size: 15px;
+}
+#picnews dl dd a{
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: black;
+}#picnews dl dd a:hover{
+    text-decoration: underline;
+}
+#newslist{
+    width: 680px;
+    height: 625px;
+    float: left;
+    margin: 0 0 2px 0;
+}
+#newslist div.list{
+    width: 49%;
+    height: 300px;
+    border: 1px solid #ccc;
+    float: left;
+}
+#newslist div.list-right{
+    width: 49%;
+    height: 300px;
+    border: 1px solid #ccc;
+    float: right;
+}
+#newslist div.bottom{
+    margin-bottom: 10px;
+}
+#newslist div.bottom h2{
+    text-align: center;
+    background: url(../../images/lbg.png);
+}
+#newslist div.list-right{
+    margin-bottom: 10px;
+}
+#newslist div.list-right h2{
+    text-align: center;
+    background: url(../../images/lbg.png);
+}
+#newslist div.list h2{
+    text-align: center;
+    background: url(../../images/lbg.png);
+}
+#newslist div.bottom h2 a{
+    float: right;
+    font-size: 12px;
+    color: green;
+    font-family: 新宋体;
+    text-decoration: none;
+    padding: 5px 10px 0 0;
+}
+#newslist div.list h2 a{
+    float: right;
+    font-size: 12px;
+    color: green;
+    font-family: 新宋体;
+    text-decoration: none;
+    padding: 5px 10px 0 0;
+}
+#newslist div.list h2 a:hover{
+    color: red;
+    text-decoration: underline;
+}
+#newslist div.list-right h2 a{
+    float: right;
+    font-size: 12px;
+    color: green;
+    font-family: 新宋体;
+    text-decoration: none;
+    padding: 5px 10px 0 0;
+}
+#newslist div.list-right h2 a:hover{
+    color: red;
+    text-decoration: underline;
+}
+#newslist div.bottom h2 a:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+#newslist ul{
+    padding: 2px 10px 0 10px;
+}
+#newslist ul li{
+    height: 23px;
+    line-height: 23px;
+}
+#newslist ul li a{
+    color: #666;
+    text-decoration: none;
+    background: url(../../images/arrow.png) no-repeat left center;
+    padding-left: 10px;
+    font-family: 微软雅黑;
+    font-size: 14px;
+}
+#newslist ul li a:hover{
+    text-decoration: underline;
+    color: #FD6164;
+}
+#newslist ul li em{
+    float: right;
+    padding-right: 5px;
+    font-style: normal;
+    font-family: Tahoma;
+}
+
+
+#link{
+    width: 960px;
+    height: 110px;
+    float: left;
+    border: 1px solid #ccc;
+    margin: 0 0 5px 0;
+}
+#link h3{
+    text-align: center;
+    background: url(../../images/lbg.png);
+}
+#link h3 span{
+    float: right;
+    font-size: 12px;
+    padding-right: 5px;
+}
+#link h3 span a{
+    color: #89A5EE;
+}
+#link ul{
+    padding: 5px 0 5px 0 ;
+    text-decoration: none;
+    border-bottom: 1px dashed;
+}
+#link ul li{
+    display: inline;
+    padding: 4px 0 0 5px;
+}
+#link ul li a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #35393C;
+    font-family: 微软雅黑;
+}
+#link ul li a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+#link dl{
+    display: inline-block;
+    padding: 5px 0 0 11px;
+}
+#link dl dt a img{
+    border: 1px solid #ccc;
+}
+#footer{
+    width: 960px;
+    height: 40px;
+    float: left;
+    margin: 0 0 10px 0;
+}
+#footer p{
+    text-align: center;
+    font-family: Tahoma;
+    line-height: 20px;
+}
+#footer p span{
+    color: #0066FF;
+}
