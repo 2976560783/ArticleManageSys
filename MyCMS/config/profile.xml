@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <taglib>
+        <name>webname</name>
+        <value>我的小站</value>
+    </taglib>
+    <taglib>
+        <name>pagsize</name>
+        <value>10</value>
+    </taglib>
+</root>
