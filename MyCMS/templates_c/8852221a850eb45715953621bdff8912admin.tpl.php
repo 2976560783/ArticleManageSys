@@ -11,8 +11,8 @@
 <frameset rows="80px,*" border=0>
     <frame src="top.php" noresize="true" scrolling="no" />
         <frameset cols="150px,*">
-            <frame src="sidebar.php" noresize="true" scrolling="no"/>
-            <frame src="main.php" />
+            <frame src="sidebar.php" name="sidebar" noresize="true" scrolling="no"/>
+            <frame src="main.php" name="main" />
     </frameset>
 
 </frameset>

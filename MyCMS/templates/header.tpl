@@ -22,7 +22,7 @@
         </ul>
     </div>
     <div id="search">
-        <form action="" method="post" accept-charset="utf-8">
+        <form action="#" method="post" accept-charset="utf-8">
             <select name="search">
                 <option  selected="selected">按标题</option>
                 <option >按分类</option>

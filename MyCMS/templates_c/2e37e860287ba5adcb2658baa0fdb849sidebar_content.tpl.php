@@ -9,8 +9,8 @@
 <body id="sidebar">
     <dl>
         <dt>内容管理</dt>
-        <dd><a href="#">添加内容</a></dd>
-        <dd><a href="#">删除内容</a></dd>
+        <dd><a href="#">后台首页</a></dd>
+        <dd><a href="#">管理员首页</a></dd>
     </dl>
 </body>
 </html>
