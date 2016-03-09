@@ -1,21 +1,80 @@
-body{
-    font-size: 20px;
-    padding: 0;
+body,h1,h2,h3,p,form,li,ul,dl,dt,dd{
     margin: 0;
+    padding: 0;
 }
 #top{
     background: #3066A0;
 }
 #top h1{
-    background: url(../../images/top-logo.png);
-    width: 120px;
+    width: 150px;
     height: 80px;
     font-size: 10px;
     float: left;
     text-indent: -8888px;
-    margin: 0;
+    background: url(../../images/top-logo.png);
+}
+#top ul{
+    padding: 47px 0 0 10px;
+    float: left;
+}
+#top p{
+    float: right;
+    padding: 35px 10px 0 0;
+    color: white;
+}
+#top p a{
+    text-decoration: none;
+    color: #DDC3AC;
+}
+#top p a:hover{
+    text-decoration: underline;
+}
+#top ul li{
+    display:block;
+    float: left;
+    padding-left: 10px;
+}
+#top ul li a{
+    text-align: center;
+    line-height: 30px;
+    background: #3E7DBA;
+    width: 58px;
+    height: 33px;
+    display: block;
+    font-size: 14px;
+    font-family: 微软雅黑;
+    text-decoration: none;
+    color: white;
+}
+#top ul li a.selected{
+    background: white;
+    color: black;
 }
 #sidebar{
     color: #3e6ba5;
     background: #f7fbfc url(../../images/pointer.png) repeat-y right;
+}
+#sidebar dl{
+    padding: 20px;
+}
+#sidebar dl dt{
+    border-bottom: 1px solid #ccc;
+    font-size: 15px;
+    color: #3b6ea5;
+    line-height: 22px;
+    padding: 5px 0;
+    font-family: 微软雅黑;
+}
+#sidebar dl dd{
+    text-indent: 5px;
+    margin-top: 5px;
+    font-size: 13px;
+    font-family: 微软雅黑;
+}
+#sidebar dl dd a{
+    text-decoration: none;
+    color: #333;
+}
+#sidebar dl dd a:hover{
+    text-decoration: underline;
 }
