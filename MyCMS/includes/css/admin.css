@@ -1,0 +1,21 @@
+body{
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
+#top{
+    background: #3066A0;
+}
+#top h1{
+    background: url(../../images/top-logo.png);
+    width: 120px;
+    height: 80px;
+    font-size: 10px;
+    float: left;
+    text-indent: -8888px;
+    margin: 0;
+}
+#sidebar{
+    color: #3e6ba5;
+    background: #f7fbfc url(../../images/pointer.png) repeat-y right;
+}
