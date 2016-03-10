@@ -13,43 +13,27 @@
     <table cellspacing="0">
         <thead>
             <tr>
-                <th>header</th>
-                <th>header</th>
-                <th>header</th>
-                <th>header</th>
+                <th>编号</th>
+                <th>用户名</th>
+                <th>等级</th>
+                <th>最近登录IP</th>
+                <th>登录次数</th>
+                <th>上次登录</th>
+                <th>注册时间</th>
             </tr>
         </thead>
         <tbody>
+        <?php foreach($this->var['AllManagers'] as $key=>$value){?>
             <tr>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
+                <td><?php echo $value->id;?></td>
+                <td><?php echo $value->admin_user;?></td>
+                <td><?php echo $value->admin_level;?></td>
+                <td><?php echo $value->last_login_ip;?></td>
+                <td><?php echo $value->login_count;?></td>
+                <td><?php echo $value->last_login_time;?></td>
+                <td><?php echo $value->reg_time;?></td>
             </tr>
-            <tr>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-            </tr>
-            <tr>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-            </tr>
-            <tr>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-            </tr>
-            <tr>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-            </tr>
+        <?php };?>
         </tbody>
     </table>
 </body>

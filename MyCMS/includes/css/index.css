@@ -24,7 +24,7 @@ body{
 }
 #header h1{
     height: 80px;
-    width: 250px;
+    width: 268px;
     font-size: 12px;
     background: url(../../images/logo.png);
     text-indent: -10000px;
@@ -522,6 +522,7 @@ text-align: center;
     margin: 0 0 5px 0;
 }
 #link h3{
+    padding-top: 3px;
     text-align: center;
     background: url(../../images/lbg.png);
 }

@@ -53,12 +53,12 @@ class Parser
     private function parForeach(){
         $patter_foreach_start='/\{foreach\s+\$([\w]+)\(\$([\w]+),\$([\w]+)\)\}/';
         $patter_foreach_end='/\{\/foreach\}/';
-        $patter_foreach_kv='/\{@([\w]+)\}/';
+        $patter_foreach_kv='/\{@([\w]+)([\w\-\>]*)\}/';
         if (preg_match($patter_foreach_start,$this->content)) {
             if (preg_match($patter_foreach_end,$this->content)) {
                 $this->content=preg_replace($patter_foreach_start,"<?php foreach(\$this->var['$1'] as \$$2=>\$$3){?>",$this->content);
-                if (preg_match('/\{@([\w]+)\}/', $this->content)) {
-                    $this->content=preg_replace($patter_foreach_kv,"<?php echo \$$1;?>",$this->content);
+                if (preg_match($patter_foreach_kv, $this->content)) {
+                    $this->content=preg_replace($patter_foreach_kv,"<?php echo \$$1$2;?>",$this->content);
                 }
                $this->content=preg_replace($patter_foreach_end,"<?php };?>",$this->content);
             }else{

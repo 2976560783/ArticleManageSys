@@ -13,43 +13,27 @@
     <table cellspacing="0">
         <thead>
             <tr>
-                <th>header</th>
-                <th>header</th>
-                <th>header</th>
-                <th>header</th>
+                <th>编号</th>
+                <th>用户名</th>
+                <th>等级</th>
+                <th>最近登录IP</th>
+                <th>登录次数</th>
+                <th>上次登录</th>
+                <th>注册时间</th>
             </tr>
         </thead>
         <tbody>
+        {foreach $AllManagers($key,$value)}
             <tr>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
+                <td>{@value->id}</td>
+                <td>{@value->admin_user}</td>
+                <td>{@value->admin_level}</td>
+                <td>{@value->last_login_ip}</td>
+                <td>{@value->login_count}</td>
+                <td>{@value->last_login_time}</td>
+                <td>{@value->reg_time}</td>
             </tr>
-            <tr>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-            </tr>
-            <tr>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-            </tr>
-            <tr>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-            </tr>
-            <tr>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-                <td>hello</td>
-            </tr>
+        {/foreach}
         </tbody>
     </table>
 </body>

@@ -57,6 +57,8 @@ class Templates
             include $cache_file;
         }
     }
+
+    //用于模块文件的编译，不生成缓存
     public function create($file){
         $tpl_file=TPL_DIR."$file";
         if (!file_exists($tpl_file)) {
