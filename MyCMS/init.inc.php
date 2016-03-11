@@ -5,4 +5,5 @@ require 'cache.inc.php';
 require ROOT_PATH.'\includes\Templates.class.php';
 require ROOT_PATH.'\config\profile.inc.php';
 require ROOT_PATH.'\includes\Db.class.php';
+require ROOT_PATH.'\includes\Tools.class.php';
 $tpl=new Templates();

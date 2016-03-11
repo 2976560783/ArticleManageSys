@@ -27,4 +27,7 @@ class DB
             $mysqli=null;
         }
      }
+     // public static function query(&$db,$tableName,$values){
+     //    $db->query('SELECT ')
+     // }
 }

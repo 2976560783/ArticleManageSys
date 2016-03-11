@@ -85,6 +85,9 @@ body,h1,h2,h3,p,form,li,ul,dl,dt,dd{
     padding: 10px;
     color: #333;
 }
+#main div.map strong{
+    color: #3EB860;
+}
 #main table{
     width: 95%;
     margin: 0 auto;
@@ -106,6 +109,40 @@ body,h1,h2,h3,p,form,li,ul,dl,dt,dd{
     border-bottom: 1px solid #d5dfe8;
     font-weight: normal;
 }
-#main table td{
-    border-bottom: 1px solid #d5dfe8;
+
+#main form table.addManager{
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 40px;
+    text-align: left;
 }
+ #main form input.text{
+    width: 220px;
+    height: 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+ }
+#main form table.addManager th{
+        border-bottom: none;
+}
+#main form select{
+    width: 100px;
+    height: 20px;
+}
+ #main form input.submit{
+    cursor: pointer;
+    margin-left: 60px;
+    height: 25px;
+ }
+#main a{
+    text-decoration: none;
+    color: #3e6ba5;
+}
+#main a:hover{
+    text-decoration: underline;
+}
+#main p.adm {
+    text-align: center;
+    padding: 10px;
+}
+
