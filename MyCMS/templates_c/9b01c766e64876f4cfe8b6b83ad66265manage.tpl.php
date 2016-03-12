@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>main</title>
     <link rel="stylesheet" href="../includes/css/admin.css">
+    <script src="../includes/js/admin_main_check.js" type="text/javascript"></script>
 </head>
 <body id="main">
     <div class="map">
@@ -28,13 +29,13 @@
         <?php foreach($this->var['AllManagers'] as $key=>$value){?>
             <tr>
                 <td><?php echo $value->id;?></td>
-                <td><?php echo $value->admin_user;?></td>
+                <td><?php echo $value->admin_name;?></td>
                 <td><?php echo $value->level_name;?></td>
                 <td><?php echo $value->last_login_ip;?></td>
                 <td><?php echo $value->login_count;?></td>
                 <td><?php echo $value->last_login_time;?></td>
                 <td><?php echo $value->reg_time;?></td>
-                <td><a href="manage.php?action=update">修改</a>|<a href="manage.php?action=delete">删除</a></td>
+                <td><a href="manage.php?action=update&id=<?php echo $value->id;?>">修改</a>|<a href="manage.php?action=delete&id=<?php echo $value->id;?>" onclick="admin_main_check()">删除</a></td>
             </tr>
         <?php };?>
         </tbody>
@@ -44,21 +45,23 @@
 <?php };?>
 
 <?php if($this->var['update']){ ?>
-<form action="#" method="post" accept-charset="utf-8">
-    <table class="addManager">
+<form action="manage.php?action=update" method="post" accept-charset="utf-8">
+    <input type="text" name="id" id="id" hidden="hidden" value="<?php echo $this->var['id']; ?>" placeholder="">
+    <input type="text" name="level" id="level" hidden="hidden" value="<?php echo $this->var['level']; ?>" placeholder="">
+    <table class="add_update">
         <caption>修改管理员信息</caption>
         <tbody>
             <tr>
                 <th>用户名:</th>
-                <td><input type="text" name="admin_name" class="text" value="" placeholder="管理员名称" ></td>
+                <td><input type="text" name="admin_name" class="text" value="<?php echo $this->var['admin_name']; ?>" readonly="readonly" placeholder="管理员名称" ></td>
             </tr>
             <tr>  
                  <th>密  码:</th>
-                 <td><input type="password" name="admin_pass" class="text" value="" placeholder="设置密码" ></td>
+                 <td><input type="password" name="admin_pass" class="text" value="" required="true" placeholder="设置密码" ></td>
             </tr>
             <tr>
                  <th>等  级:</th>
-                 <td><select name="level">
+                 <td><select name="admin_level">
                      <option value="1">游客</option>
                      <option value="2">会员</option>
                      <option value="3">发帖专员</option>
@@ -68,7 +71,7 @@
                  </select></td>
             </tr>
             <tr>     
-                <td colspan="2"><input type="submit" class="submit" name="addManager" value="添加管理员">&nbsp;&nbsp;[<a href="manage.php?action=list">返回列表</a>]</td>
+                <td colspan="2"><input type="submit" class="submit" name="updateManager" value="确认修改">&nbsp;&nbsp;[<a href="manage.php?action=list">返回列表</a>]</td>
             </tr>
         </tbody>
     </table>
@@ -78,8 +81,8 @@
 
 
 <?php if($this->var['add']){ ?>
-<form action="manage.handle.php?action=addManager" method="post" accept-charset="utf-8">
-    <table class="addManager">
+<form action="manage.php?action=add" method="post" accept-charset="utf-8">
+    <table class="add_update">
         <caption>新增管理员信息</caption>
         <tbody>
             <tr>
@@ -92,7 +95,7 @@
             </tr>
             <tr>
                  <th>等  级:</th>
-                 <td><select name="level">
+                 <td><select name="admin_level">
                      <option value="1">游客</option>
                      <option value="2">会员</option>
                      <option value="3">发帖专员</option>
@@ -106,7 +109,6 @@
             </tr>
         </tbody>
     </table>
-
 </form>
 <?php };?>
 
