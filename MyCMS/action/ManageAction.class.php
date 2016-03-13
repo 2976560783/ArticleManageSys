@@ -1,6 +1,6 @@
 <?php 
 /**
-* \
+* 管理操作控制器
 */
 class ManageAction extends Action
 {
@@ -56,7 +56,7 @@ class ManageAction extends Action
 
     //删除管理员
     public function delete(){
-        if (isset($_GET['id'])) {
+        if (isset($_GET['id']) && preg_match('/^\d+$/',$_GET['id'])) {
             $this->manage->id=$_GET['id'];
             if (1 == $this->manage->deleteManage()) {
                 Tools::alertLocation('删除操作成功！','manage.php?action=list');

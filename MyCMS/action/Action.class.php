@@ -1,6 +1,6 @@
 <?php 
 /**
-* 
+* 操作控制器
 */
 class Action
 {
