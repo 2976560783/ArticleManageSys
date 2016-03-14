@@ -31,6 +31,8 @@ class Templates
 
     //渲染模板并调用编译方法生成缓存文件
     public function display($file){
+        //给include进来的tpl传递一个操作对象
+        $tpl=$this;
         $tpl_file=TPL_DIR."$file";
         if (!file_exists($tpl_file)) {
             echo "模板文件不存在";

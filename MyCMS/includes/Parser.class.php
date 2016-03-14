@@ -70,11 +70,12 @@ class Parser
     //解析include标签
     private function parInc(){
         $patter_inc='/\{include file=[\"\']([\w\.\/]+)[\"\']\}/';
-        if (preg_match($patter_inc,$this->content,$file)) {
-           if (file_exists($file[1]) || !empty($file[1])) {
-                $this->content=preg_replace($patter_inc,"<?php include '$1';?>",$this->content);
-           }else{
-            exit("未找到包含的文件或者包含的文件为空");
+        if (preg_match_all($patter_inc,$this->content,$file)) {
+            foreach ($file[1] as $value) {
+                if (!file_exists('templates\\'.$value)) {
+                    exit("包含文件出错");
+                }
+                $this->content=preg_replace($patter_inc,"<?php \$tpl->create('$1');?>",$this->content);
             }
         }
     }

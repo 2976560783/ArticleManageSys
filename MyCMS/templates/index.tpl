@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="includes/css/index.css">
 </head>
 <body>
-{include file='header.inc.php'}
+{include file='header.tpl'}
     <div id="user">
         <h2>会员登录</h2>
         <form action="#" method="get" accept-charset="utf-8">
@@ -224,6 +224,6 @@
                 </ul>
         </div>
     </div>
-{include file='footer.inc.php'}
+{include file='footer.tpl'}
 </body>
 </html>

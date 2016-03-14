@@ -1,4 +1,4 @@
-body,h1,h2,h3,p,form,li,ul,dl,dt,dd{
+body,h1,h2,h3,p,form,li,ol,ul,dl,dt,dd{
     margin: 0;
     padding: 0;
 }
@@ -144,5 +144,21 @@ body,h1,h2,h3,p,form,li,ul,dl,dt,dd{
 #main p.adm {
     text-align: center;
     padding: 10px;
+}
+#main ol{
+    padding: 0 0 5px 26px;
+}
+#main ol li{
+    float:  left;
+    padding: 2px 0 10px 5px;
+    list-style-type: none;
+    display: inline-block;
+}
+#main ol li a{
+    padding: 5px;
+}
+#main ol li a.selected{
+    background: #3b6ea5;
+    color: white;
 }
 

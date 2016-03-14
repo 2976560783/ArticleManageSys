@@ -5,13 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>main</title>
     <link rel="stylesheet" href="../includes/css/admin.css">
-    <script src="../includes/js/admin_main_check.js" type="text/javascript"></script>
+    <script src="../includes/js/admin_manage.js" type="text/javascript"></script>
 </head>
 <body id="main">
     <div class="map">
-        首页管理&gt;&gt;管理员首页&gt;&gt;<strong><?php echo $this->var['title']; ?></strong>
+        首页管理&gt;&gt;管理员首页&gt;&gt;<strong id="title"><?php echo $this->var['title']; ?></strong>
     </div>
-<?php if($this->var['list']){ ?>
+    <ol>
+        <li><a href="manage.php?action=show" class="selected" title="">管理员列表</a></li>
+        <li><a href="manage.php?action=add" title="">添加管理员</a></li>
+    <?php if($this->var['update']){ ?>
+        <li><a href="manage.php?action=update" title="">修改管理员</a></li>
+    <?php };?>
+    </ol><br><hr>
+<?php if($this->var['show']){ ?>
     <table cellspacing="0" class="listManager">
         <thead>
             <tr>
@@ -62,16 +69,13 @@
             <tr>
                  <th>等  级:</th>
                  <td><select name="admin_level">
-                     <option value="1">游客</option>
-                     <option value="2">会员</option>
-                     <option value="3">发帖专员</option>
-                     <option value="4">评论专员</option>
-                     <option value="5">普通管理员</option>
-                     <option value="6">超级管理员</option>
+                    <?php foreach($this->var['allLevel'] as $key=>$value){?>
+                        <option value="<?php echo $value->id;?>"><?php echo $value->level_name;?></option>}
+                    <?php };?>
                  </select></td>
             </tr>
             <tr>     
-                <td colspan="2"><input type="submit" class="submit" name="updateManager" value="确认修改">&nbsp;&nbsp;[<a href="manage.php?action=list">返回列表</a>]</td>
+                <td colspan="2"><input type="submit" class="submit" name="updateManager" value="确认修改">&nbsp;&nbsp;[<a href="manage.php?action=show">返回列表</a>]</td>
             </tr>
         </tbody>
     </table>
@@ -96,16 +100,13 @@
             <tr>
                  <th>等  级:</th>
                  <td><select name="admin_level">
-                     <option value="1">游客</option>
-                     <option value="2">会员</option>
-                     <option value="3">发帖专员</option>
-                     <option value="4">评论专员</option>
-                     <option value="5">普通管理员</option>
-                     <option value="6">超级管理员</option>
+                    <?php foreach($this->var['allLevel'] as $key=>$value){?>
+                        <option value="<?php echo $value->id;?>"><?php echo $value->level_name;?></option>}
+                    <?php };?>
                  </select></td>
             </tr>
             <tr>     
-                <td colspan="2"><input type="submit" class="submit" name="addManager" value="添加管理员">&nbsp;&nbsp;[<a href="manage.php?action=list">返回列表</a>]</td>
+                <td colspan="2"><input type="submit" class="submit" name="addManager" value="添加管理员">&nbsp;&nbsp;[<a href="manage.php?action=show">返回列表</a>]</td>
             </tr>
         </tbody>
     </table>
