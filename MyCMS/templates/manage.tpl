@@ -59,15 +59,19 @@
         <caption>修改管理员信息</caption>
         <tbody>
             <tr>
-                <th>用户名:</th>
-                <td><input type="text" name="admin_name" class="text" value="{$admin_name}" readonly="readonly" placeholder="管理员名称" ></td>
+                <th>用 &nbsp;户 &nbsp;名:</th>
+                <td><input type="text" name="admin_name" maxlength="10" class="text" value="{$admin_name}" readonly="readonly" placeholder="*设置2至10位用户名*" ></td>
             </tr>
             <tr>  
-                 <th>密  码:</th>
-                 <td><input type="password" name="admin_pass" class="text" value="" required="true" placeholder="设置密码" ></td>
+                 <th>新 密&nbsp;&nbsp;码:</th>
+                 <td><input type="password" name="admin_pass" class="text" value="" placeholder="*至少6位，最多15位*" ></td>
+            </tr>
+            <tr>  
+                 <th>确认密码:</th>
+                 <td><input type="password" name="admin_pass_check" class="text" value="" placeholder="*确认已填写的密码*" ></td>
             </tr>
             <tr>
-                 <th>等  级:</th>
+                 <th>等 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 级:</th>
                  <td><select name="admin_level">
                     {foreach $allLevel($key,$value)}
                         <option value="{@value->id}">{@value->level_name}</option>}
@@ -75,7 +79,7 @@
                  </select></td>
             </tr>
             <tr>     
-                <td colspan="2"><input type="submit" class="submit" name="updateManager" value="确认修改">&nbsp;&nbsp;[<a href="manage.php?action=show">返回列表</a>]</td>
+                <td colspan="2"><input type="submit" class="submit" name="updateManager" onclick="pass_check()" value="确认修改">&nbsp;&nbsp;[<a href="manage.php?action=show">返回列表</a>]</td>
             </tr>
         </tbody>
     </table>
@@ -91,11 +95,15 @@
         <tbody>
             <tr>
                 <th>用户名:</th>
-                <td><input type="text" name="admin_name" class="text" value="" placeholder="管理员名称" required=""></td>
+                <td><input type="text" name="admin_name" maxlength="10" class="text" value="" placeholder="*设置2至10位用户名*" required=""></td>
             </tr>
             <tr>  
                  <th>密  码:</th>
-                 <td><input type="password" name="admin_pass" class="text" value="" placeholder="设置密码" required=""></td>
+                 <td><input type="password" name="admin_pass" class="text" value="" placeholder="*至少6位，最多15位*" required=""></td>
+            </tr>
+            <tr>  
+                 <th>确认密码:</th>
+                 <td><input type="password" name="admin_pass_check" class="text" value="" required="true" placeholder="*确认已填写的密码*" ></td>
             </tr>
             <tr>
                  <th>等  级:</th>
@@ -106,7 +114,7 @@
                  </select></td>
             </tr>
             <tr>     
-                <td colspan="2"><input type="submit" class="submit" name="addManager" value="添加管理员">&nbsp;&nbsp;[<a href="manage.php?action=show">返回列表</a>]</td>
+                <td colspan="2"><input type="submit" class="submit" name="addManager"  onclick="pass_check()" value="添加管理员">&nbsp;&nbsp;[<a href="manage.php?action=show">返回列表</a>]</td>
             </tr>
         </tbody>
     </table>

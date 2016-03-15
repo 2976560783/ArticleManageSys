@@ -39,14 +39,28 @@ class ManageAction extends Action
     //添加管理员
     public function add(){
         if (isset($_POST['addManager'])) {
-                $this->manage->admin_name=$_POST['admin_name'];
-                $this->manage->admin_level=$_POST['admin_level'];
-                $this->manage->admin_pass=md5($_POST['admin_pass']);
-          if (1 == $this->manage->addManage()) {
-              Tools::alertLocation('添加管理员成功！', 'manage.php?action=show');
-          }else{
-              Tools::alertBack('很遗憾，添加管理员失败，请重试!');
-          }
+            if (Validate::checkNull($_POST['admin_name'])) {
+                Tools::alertBack("警告:用户名不能为空!");
+            }
+            if (Validate::checkLength($_POST['admin_name'], 2, 'lt') ||
+                 Validate::checkLength($_POST['admin_name'], 10, 'gt')) {
+                Tools::alertBack("警告:用户名长度不合法!");
+            }
+            if (Validate::checkNull($_POST['admin_pass']) ||
+                Validate::checkLength($_POST['admin_pass'],6,'lt')) {
+                Tools::alertBack("警告:密码长度最少6位非空字符!");
+            }
+            if (!Validate::checkConsistency($_POST['admin_pass'], $_POST['admin_pass_check'])) {
+                Tools::alertBack("警告:两次填写密码不一致!");
+            }
+            $this->manage->admin_name=$_POST['admin_name'];
+            $this->manage->admin_level=$_POST['admin_level'];
+            $this->manage->admin_pass=md5($_POST['admin_pass']);
+              if (1 == $this->manage->addManage()) {
+                  Tools::alertLocation('添加管理员成功！', 'manage.php?action=show');
+              }else{
+                  Tools::alertBack('很遗憾，添加管理员失败，请重试!');
+              }
         }
         $this->tpl->assign('add',true);
         $this->tpl->assign('show',false);
@@ -66,11 +80,6 @@ class ManageAction extends Action
                 Tools::alertBack('删除失败，请稍后重试!');
             }
         }
-        $this->tpl->assign('show',false);
-        $this->tpl->assign('delete',true);
-        $this->tpl->assign('update',false);
-        $this->tpl->assign('add',false);
-        $this->tpl->assign('title','删除管理员');
     }
 
     //展示全部管理员
@@ -87,6 +96,18 @@ class ManageAction extends Action
     //更新管理员
     public function update(){
         if (isset($_POST['updateManager'])) {
+            if (!empty($_POST['admin_pass']) || !empty($_POST['admin_pass_check'])) {
+                if (Validate::checkNull($_POST['admin_pass']) ||
+                    Validate::checkLength($_POST['admin_pass'],6,'lt')) {
+                    Tools::alertBack("警告:密码长度最少6位非空字符!");
+                }
+                if (!Validate::checkConsistency($_POST['admin_pass'], $_POST['admin_pass_check'])) {
+                    Tools::alertBack("警告:两次填写密码不一致!");
+                }
+                $this->manage->pass_flag=true;
+            }else{
+                $this->manage->pass_flag=false;
+            }
             $this->manage->id=$_POST['id'];
             $this->manage->admin_pass=$_POST['admin_pass'];
             $this->manage->admin_level=$_POST['admin_level'];
@@ -104,11 +125,11 @@ class ManageAction extends Action
             $this->tpl->assign('id',$this->manage->id);
             $this->tpl->assign('allLevel',$this->manage->getAllLevel());
             $this->tpl->assign('level',$this->manage->getSingleManage()->admin_level);
+            $this->tpl->assign('show',false);
+            $this->tpl->assign('update',true);
+            $this->tpl->assign('delete',false);
+            $this->tpl->assign('add',false);
+            $this->tpl->assign('title','修改管理员');
         }
-        $this->tpl->assign('show',false);
-        $this->tpl->assign('update',true);
-        $this->tpl->assign('delete',false);
-        $this->tpl->assign('add',false);
-        $this->tpl->assign('title','修改管理员');
     }
 }

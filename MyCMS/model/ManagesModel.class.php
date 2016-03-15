@@ -8,6 +8,7 @@ class ManagesModel extends Model
     private $admin_level;
     private $admin_pass;
     private $id;
+    private $pass_flag;
 
     public function __set($key,$value){
         $this->$key=$value;
@@ -80,7 +81,7 @@ class ManagesModel extends Model
 
     //更新管理员
     public function updateManage(){
-        $sql="UPDATE
+        $sql_pass="UPDATE
                     admin_manage 
                 SET 
                     admin_pass='$this->admin_pass',
@@ -88,7 +89,14 @@ class ManagesModel extends Model
                 WHERE 
                     id = '$this->id'
                     ";
-        return parent::aud($sql);
+        $sql_nopass="UPDATE
+                    admin_manage 
+                SET 
+                    admin_level='$this->admin_level'
+                WHERE 
+                    id = '$this->id'
+                    ";
+        return $this->pass_flag ? parent::aud($sql_pass):parent::aud($sql_nopass);;
     }
 
     //删除管理员

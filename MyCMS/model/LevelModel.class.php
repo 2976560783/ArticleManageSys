@@ -4,9 +4,8 @@
 */
 class LevelModel extends Model
 {
-    private $admin_name;
-    private $admin_level;
-    private $admin_pass;
+    private $level_name;
+    private $level_info;
     private $id;
 
     public function __set($key,$value){
@@ -21,70 +20,47 @@ class LevelModel extends Model
     public function getAllLevel(){
         $sql='select
                     id,
-                    level_name
+                    level_name,
+                    level_info
                 from
                      admin_level
                  ';
         return parent::getAll($sql);
     }
     //查询单个管理员
-    public function getSingleManage(){
+    public function getSingleLevel(){
         $sql="select
-                    id,
-                    admin_name,
-                    admin_level
+                    level_name,
+                    level_info
                 from
-                     admin_manage
+                     admin_level
                 where 
                    id='$this->id'
                  ";
         return parent::getOne($sql);
     }
 
-    //查询所有管理员
-    public function getAllManage(){
-        $sql='select
-                    m.id,
-                    m.admin_name,
-                    l.level_name,
-                    m.last_login_ip,
-                    m.login_count,
-                    m.last_login_time,
-                    m.reg_time 
-                from
-                     admin_manage m,
-                     admin_level l
-                where 
-                    m.admin_level = l.id
-                order by 
-                      id 
-                     limit 0,20'
-                 ;
-        return parent::getAll($sql);
-    }
 
     //增加管理员
-    public function addManage(){
-        $sql="INSERT INTO admin_manage(
-                                        admin_name,
-                                        admin_level,
-                                        admin_pass
+    public function addLevel(){
+        $sql="INSERT INTO admin_level(
+                                        level_name,
+                                        level_info
                                         )
                                  VALUES (
-                                         '$this->admin_name', 
-                                         '$this->admin_level',
-                                         '$this->admin_pass'
+                                         '$this->level_name', 
+                                         '$this->level_info'
                                          )";
         return parent::aud($sql);
     }
 
     //更新管理员
-    public function updateManage(){
+    public function updateLevel(){
         $sql="UPDATE
-                    admin_manage 
+                    admin_level
                 SET 
-                    admin_pass='$this->admin_pass',
-                    admin_level='$this->admin_level'
+                    level_name='$this->level_name',
+                    level_info='$this->level_info'
                 WHERE 
                     id = '$this->id'
                     ";
@@ -92,9 +68,9 @@ class LevelModel extends Model
     }
 
     //删除管理员
-    public function deleteManage(){
+    public function deleteLevel(){
         $sql="DELETE FROM
-                         admin_manage
+                         admin_level
                      WHERE
                          id = '$this->id'
                          ";

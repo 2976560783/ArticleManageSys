@@ -111,27 +111,31 @@ body,h1,h2,h3,p,form,li,ol,ul,dl,dt,dd{
 }
 
 #main form table.add_update{
-    width: 300px;
+    width: 310px;
     margin: 0 auto;
     padding-top: 40px;
     text-align: left;
 }
  #main form input.text{
-    width: 220px;
+    width: 230px;
     height: 20px;
     background: #fff;
     border: 1px solid #ccc;
  }
+ #main form textarea{
+    margin-top: 9px;
+ }
 #main form table.add_update th{
         border-bottom: none;
+        padding: 0;
 }
 #main form select{
     width: 100px;
     height: 20px;
 }
- #main form input.submit{
+#main form input.submit{
     cursor: pointer;
-    margin-left: 60px;
+    margin-left: 71px;
     height: 25px;
  }
 #main a{

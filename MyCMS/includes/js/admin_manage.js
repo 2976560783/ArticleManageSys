@@ -20,6 +20,27 @@ window.onload=function admin_main_level(){
         a[i].className=null;
         if (a[i].innerHTML == title) {
             a[i].className='selected';
+            a[i].href='#';
         }
     };
+}
+function pass_check(){
+    var admin_name_tag=document.getElementsByName('admin_name');
+    var name=admin_name_tag[0].value;
+    if (name.length<2 || name.length >10) {
+        alert("用户名长度不符合要求!");
+        window.event.returnValue = false;
+    }else{
+    var pass1_tag= document.getElementsByName('admin_pass');
+    if (pass1_tag[0].value) {
+        var pass1 = pass1_tag[0].value;
+        var pass2_tag=document.getElementsByName('admin_pass_check');
+        var pass2 = pass2_tag[0].value;
+        if (pass1 != pass2) {
+            alert("两次输入密码不一致！");
+            window.event.returnValue = false;
+            }
+        }
+    }
+
 }

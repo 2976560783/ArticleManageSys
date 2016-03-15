@@ -1,9 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>fjskldf</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>main</title>
+    <link rel="stylesheet" href="../includes/css/admin.css">
+    <script src="../includes/js/admin_manage.js" type="text/javascript"></script>
 </head>
-<body>
-等级操作
+<body id="main">
+    <div class="map">
+        首页管理&gt;&gt;等级管理&gt;&gt;<strong id="title">{$title}</strong>
+    </div>
+    <ol>
+        <li><a href="level.php?action=show" class="selected" title="">等级列表</a></li>
+        <li><a href="level.php?action=add" title="">新增等级</a></li>
+    {if $update}
+        <li><a href="level.php?action=update" title="">修改等级</a></li>
+    {/if}
+    </ol><br><hr>
+{if $show}
+    <table cellspacing="0" class="listLevel">
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>等级名</th>
+                <th>描述</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        {foreach $AllLevels($key,$value)}
+            <tr>
+                <td>{@value->id}</td>
+                <td>{@value->level_name}</td>
+                <td>{@value->level_info}</td>
+                <td><a href="level.php?action=update&id={@value->id}">修改</a>|<a href="level.php?action=delete&id={@value->id}" onclick="admin_main_check()">删除</a></td>
+            </tr>
+        {/foreach}
+        </tbody>
+    </table>
+    <p class="adm"><a href="level.php?action=add">[新增管理员]</a></p>
+
+{/if}
+
+{if $update}
+<form action="level.php?action=update" method="post" accept-charset="utf-8">
+    <input type="text" name="id" id="id" hidden="hidden" value="{$id}" placeholder="">
+    <table class="add_update">
+        <caption>修改等级信息</caption>
+        <tbody>
+            <tr>
+                <th>等 &nbsp;级 &nbsp;名:</th>
+                <td><input type="text" name="level_name" class="text" value="{$level_name}" placeholder="等级名称" required="true" ></td>
+            </tr>
+            <tr>  
+                 <th>等级描述:</th>
+                 <td><textarea name="level_info" rows="5" cols="26" placeholder="等级描述信息" style="resize: none;" required="true">{$level_info}</textarea></td>
+            </tr>
+            <tr>     
+                <td colspan="2"><input type="submit" class="submit" name="updateLevel" value="确认修改">&nbsp;&nbsp;[<a href="level.php?action=show">返回列表</a>]</td>
+            </tr>
+        </tbody>
+    </table>
+
+</form>
+{/if}
+
+
+{if $add}
+<form action="level.php?action=add" method="post" accept-charset="utf-8">
+    <table class="add_update">
+        <caption>新增管理员信息</caption>
+        <tbody>
+            <tr>
+                <th>等级名称:</th>
+                <td><input type="text" name="level_name" class="text" value="" placeholder="等级名称" required=""></td>
+            </tr>
+            <tr>  
+                 <th>描述信息:</th>
+                 <td><textarea name="level_info" rows="5" cols="26" placeholder="等级描述信息" style="resize: none;" required="true"></textarea></td>
+            </tr>
+            <tr>     
+                <td colspan="2"><input type="submit" class="submit" name="addLevel" value="添加管理员">&nbsp;&nbsp;[<a href="level.php?action=show">返回列表</a>]</td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+{/if}
+
+
+{if $delete}
+删除管理员
+{/if}
 </body>
 </html>
