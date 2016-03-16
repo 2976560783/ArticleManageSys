@@ -37,4 +37,12 @@ class Model
         @DB::unDb($result = null,$mysqli);
         return $affected_rows;
     }
+    //查询所有记录总数
+    protected function getCount($sql){
+        $mysqli=DB::getDb();
+        $result=$mysqli->query($sql);
+        $fetch_rows=$result->fetch_row();
+        @DB::unDb($result = null,$mysqli);
+        return $fetch_rows;
+    }
 }

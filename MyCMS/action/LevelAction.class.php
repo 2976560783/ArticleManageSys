@@ -39,8 +39,26 @@ class LevelAction extends Action
     //添加等级
     public function add(){
         if (isset($_POST['addLevel'])) {
-                $this->level->level_name=$_POST['level_name'];
-                $this->level->level_info=$_POST['level_info'];
+            if (Validate::checkNull($_POST['level_name'])) {
+                Tools::alertBack("警告:等级名不能为空!");
+            }
+            if (Validate::checkLength($_POST['level_name'], 2, 'lt') ||
+                 Validate::checkLength($_POST['level_name'], 10, 'gt')) {
+                Tools::alertBack("警告:等级名长度不合法!");
+            }
+            $this->level->level_name=$_POST['level_name'];
+            if (Validate::checkNameExists($this->level)) {
+                Tools::alertBack("等级名已存在!");
+            }
+            if (isset($_POST['level_info'])) {
+                if ($_POST['level_info'] == '') {
+                   $this->level->level_info_flag=false;
+                        }else if (Validate::checkNull($_POST['level_info'])) {
+                            Tools::alertBack("警告:等级描述不能为空字符串!");
+                        }else{
+                            $this->level->level_info=$_POST['level_info'];
+                        } 
+            }
           if (1 == $this->level->addLevel()) {
               Tools::alertLocation('新增等级成功！', 'level.php?action=show');
           }else{
@@ -58,6 +76,11 @@ class LevelAction extends Action
     public function delete(){
         if (isset($_GET['id']) && preg_match('/^\d+$/',$_GET['id'])) {
             $this->level->id=$_GET['id'];
+            $manage=new ManagesModel();
+            $manage->admin_level=$this->level->id;
+            if (is_object($manage->getSingleManage()) && !empty($manage->getSingleManage())) {
+                Tools::alertBack("此等级正在被管理员使用,暂时无法删除!");
+            }
             if (1 == $this->level->deleteLevel()) {
                 Tools::alertLocation('删除等级成功！','level.php?action=show');
             }else{
@@ -73,6 +96,8 @@ class LevelAction extends Action
 
     //展示全部等级
     public function show(){
+        $page=new Page($this->level->getLevelCount(),PAGE_SIZE);
+        $this->level->limit=$page->limit;
         $this->tpl->assign('show',true);
         $this->tpl->assign('update',false);
         $this->tpl->assign('delete',false);
@@ -85,13 +110,34 @@ class LevelAction extends Action
     //更新等级
     public function update(){
         if (isset($_POST['updateLevel'])) {
-            $this->level->id=$_POST['id'];
+            if (Validate::checkNull($_POST['level_name'])) {
+                Tools::alertBack("警告:等级名不能为空!");
+            }
+            if (Validate::checkLength($_POST['level_name'], 2, 'lt') ||
+                 Validate::checkLength($_POST['level_name'], 10, 'gt')) {
+                Tools::alertBack("警告:等级名长度不合法!");
+            }
+            if (isset($_POST['level_info'])) {
+                if ($_POST['level_info'] == '') {
+                   $this->level->level_info_flag=false;
+                        }else if (Validate::checkNull($_POST['level_info'])) {
+                            Tools::alertBack("警告:等级描述不能为空字符串!");
+                        }else{
+                            $this->level->level_info=$_POST['level_info'];
+                        } 
+            }
             $this->level->level_name=$_POST['level_name'];
-            $this->level->level_info=$_POST['level_info'];
-            // echo $this->level->id;
-            // echo $this->level->admin_name;
-            // echo $this->level->admin_level;
-            if (1 == $this->level->updateLevel()) {
+            $this->level->id=$_POST['id'];
+            $object=$this->level->getSingleLevel();
+            if ($object->level_name == $_POST['level_name'] &&
+                $object->level_info == $_POST['level_info']) {
+                Tools::alertBack("你的信息未修改!");
+            }
+            if ($object->level_name != $_POST['level_name'] &&
+                    Validate::checkNameExists($this->level)) {
+                    Tools::alertBack("用户名已经存在");
+            }
+            if (1 == $this->level->updateLevel() || 0 == $this->level->updateLevel()) {
                 Tools::alertLocation('修改等级成功！','level.php?action=show');
             }else{
                 Tools::alertBack('修改操作失败,请重试!');

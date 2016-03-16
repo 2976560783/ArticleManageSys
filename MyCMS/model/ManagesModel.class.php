@@ -9,6 +9,7 @@ class ManagesModel extends Model
     private $admin_pass;
     private $id;
     private $pass_flag;
+    private $limit;
 
     public function __set($key,$value){
         $this->$key=$value;
@@ -17,18 +18,18 @@ class ManagesModel extends Model
     public function __get($key){
         return $this->$key;
     }
-
-    //查询所有等级
-    public function getAllLevel(){
-        $sql='select
-                    id,
-                    level_name
-                from
-                     admin_level
-                 ';
-        return parent::getAll($sql);
+    //查询所有记录数
+    public function getManageCount(){
+      $sql="
+            SELECT 
+                  count(*) as total
+            from 
+                  admin_manage
+            ";
+        return parent::getCount($sql)[0];
     }
-    //查询单个管理员
+
+    //id查询单个管理员
     public function getSingleManage(){
         $sql="select
                     id,
@@ -38,13 +39,25 @@ class ManagesModel extends Model
                      admin_manage
                 where 
                    id='$this->id'
+                or 
+                   admin_level='$this->admin_level'
                  ";
         return parent::getOne($sql);
     }
-
+    //用户名查询单个管理员
+    public function getSingleManage_Name(){
+        $sql="select
+                    id
+                from
+                     admin_manage
+                where 
+                   admin_name='$this->admin_name'
+                 ";
+        return parent::getOne($sql);
+    }
     //查询所有管理员
     public function getAllManage(){
-        $sql='select
+        $sql="select
                     m.id,
                     m.admin_name,
                     l.level_name,
@@ -59,8 +72,8 @@ class ManagesModel extends Model
                     m.admin_level = l.id
                 order by 
                       id 
-                     limit 0,20'
-                 ;
+                     $this->limit
+                     ";
         return parent::getAll($sql);
     }
 

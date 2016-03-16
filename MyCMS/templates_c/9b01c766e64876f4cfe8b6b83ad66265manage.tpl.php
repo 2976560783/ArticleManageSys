@@ -47,7 +47,9 @@
         <?php };?>
         </tbody>
     </table>
-    <p class="adm"><a href="manage.php?action=add">[新增管理员]</a></p>
+    <div id="page">
+        <?php echo $this->var['pageInfo']; ?>
+    </div>
 
 <?php };?>
 

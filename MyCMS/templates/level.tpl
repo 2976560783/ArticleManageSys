@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>main</title>
     <link rel="stylesheet" href="../includes/css/admin.css">
-    <script src="../includes/js/admin_manage.js" type="text/javascript"></script>
+    <script src="../includes/js/admin_level.js" type="text/javascript"></script>
 </head>
 <body id="main">
     <div class="map">
@@ -34,12 +34,12 @@
                 <td>{@value->id}</td>
                 <td>{@value->level_name}</td>
                 <td>{@value->level_info}</td>
-                <td><a href="level.php?action=update&id={@value->id}">修改</a>|<a href="level.php?action=delete&id={@value->id}" onclick="admin_main_check()">删除</a></td>
+                <td><a href="level.php?action=update&id={@value->id}">修改</a>|<a href="level.php?action=delete&id={@value->id}" onclick="return confirm('确认要删除?')">删除</a></td>
             </tr>
         {/foreach}
         </tbody>
     </table>
-    <p class="adm"><a href="level.php?action=add">[新增管理员]</a></p>
+    <p class="adm"><a href="level.php?action=add">[新增等级]</a></p>
 
 {/if}
 
@@ -55,7 +55,7 @@
             </tr>
             <tr>  
                  <th>等级描述:</th>
-                 <td><textarea name="level_info" rows="5" cols="26" placeholder="等级描述信息" style="resize: none;" required="true">{$level_info}</textarea></td>
+                 <td><textarea name="level_info" rows="5" cols="26" maxlength="200" placeholder="等级描述信息" style="resize: none;">{$level_info}</textarea></td>
             </tr>
             <tr>     
                 <td colspan="2"><input type="submit" class="submit" name="updateLevel" value="确认修改">&nbsp;&nbsp;[<a href="level.php?action=show">返回列表</a>]</td>
@@ -74,23 +74,19 @@
         <tbody>
             <tr>
                 <th>等级名称:</th>
-                <td><input type="text" name="level_name" class="text" value="" placeholder="等级名称" required=""></td>
+                <td><input type="text" name="level_name" class="text" value="" placeholder="*2至10位非空字符串*" required=""></td>
             </tr>
             <tr>  
                  <th>描述信息:</th>
-                 <td><textarea name="level_info" rows="5" cols="26" placeholder="等级描述信息" style="resize: none;" required="true"></textarea></td>
+                 <td><textarea name="level_info" rows="5" cols="26" maxlength="200" placeholder="等级描述信息(200字以内,可不填)" style="resize: none;"></textarea></td>
             </tr>
             <tr>     
-                <td colspan="2"><input type="submit" class="submit" name="addLevel" value="添加管理员">&nbsp;&nbsp;[<a href="level.php?action=show">返回列表</a>]</td>
+                <td colspan="2"><input type="submit" class="submit" onclick="level_name_check()" name="addLevel" value="添加等级">&nbsp;&nbsp;[<a href="level.php?action=show">返回列表</a>]</td>
             </tr>
         </tbody>
     </table>
 </form>
 {/if}
 
-
-{if $delete}
-删除管理员
-{/if}
 </body>
 </html>

@@ -32,4 +32,9 @@ class Validate
     static public function checkConsistency($data1,$data2){
         return ($data1 === $data2)?true:false;
     }
+
+    //验证用户名是否存在
+    static public function checkNameExists($manage){
+        return ($manage->getSingleManage_Name())?true:false;
+    }
 }

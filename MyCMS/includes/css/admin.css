@@ -165,4 +165,8 @@ body,h1,h2,h3,p,form,li,ol,ul,dl,dt,dd{
     background: #3b6ea5;
     color: white;
 }
+#page{
+    margin: 0 auto;
+    text-align: center;
+}
 

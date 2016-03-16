@@ -32,11 +32,14 @@ function pass_check(){
         window.event.returnValue = false;
     }else{
     var pass1_tag= document.getElementsByName('admin_pass');
-    if (pass1_tag[0].value) {
+    var pass2_tag= document.getElementsByName('admin_pass_check');
+    if (pass1_tag[0].value || pass2_tag[0].value) {
         var pass1 = pass1_tag[0].value;
-        var pass2_tag=document.getElementsByName('admin_pass_check');
         var pass2 = pass2_tag[0].value;
-        if (pass1 != pass2) {
+        if (pass1.length < 6) {
+            alert("密码长度最少六位！");
+            window.event.returnValue = false;
+        }else if (pass1 != pass2) {
             alert("两次输入密码不一致！");
             window.event.returnValue = false;
             }
@@ -44,3 +47,4 @@ function pass_check(){
     }
 
 }
+
