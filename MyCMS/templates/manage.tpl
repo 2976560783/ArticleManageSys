@@ -47,6 +47,7 @@
         {/foreach}
         </tbody>
     </table>
+    <br><hr>
     <div id="page">
         {$pageInfo}
     </div>

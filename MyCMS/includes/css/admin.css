@@ -169,4 +169,18 @@ body,h1,h2,h3,p,form,li,ol,ul,dl,dt,dd{
     margin: 0 auto;
     text-align: center;
 }
+#page a,span{
+    padding: 2px 6px;
+    border: 1px solid black;
+    margin: 2px 2px;
+}
+#page span{
+    background: #eee;
+}
+#page a:hover{
+    background: black;
+    color: white;
+    border: 1px solid white;
+    text-decoration: none;
+}
 

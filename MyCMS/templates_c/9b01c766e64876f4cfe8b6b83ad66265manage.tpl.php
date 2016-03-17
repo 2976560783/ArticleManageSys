@@ -47,6 +47,7 @@
         <?php };?>
         </tbody>
     </table>
+    <br><hr>
     <div id="page">
         <?php echo $this->var['pageInfo']; ?>
     </div>

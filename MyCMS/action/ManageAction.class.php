@@ -13,28 +13,31 @@ class ManageAction extends Action
     }
 
     private function action(){
-        switch ($_GET['action']) {
-            case 'add':
-                $this->add();
-                break;
-
-            case 'delete':
-                $this->delete();
-                break;
-
-            case 'show':
-                $this->show();
-                break;
-
-            case 'update':
-                $this->update();
-                break;
-
-            default:
-                Tools::alertBack('非法操作');
-                break;
-         }
+    if (!isset($_GET['action'])) {
+        Tools::alertBack("非法操作");
     }
+    switch ($_GET['action']) {
+        case 'add':
+            $this->add();
+            break;
+
+        case 'delete':
+            $this->delete();
+            break;
+
+        case 'show':
+            $this->show();
+            break;
+
+        case 'update':
+            $this->update();
+            break;
+
+        default:
+            Tools::alertBack('非法操作');
+            break;
+     }
+}
 
     //添加管理员
     public function add(){
