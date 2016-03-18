@@ -147,7 +147,6 @@ body,h1,h2,h3,p,form,li,ol,ul,dl,dt,dd{
 }
 #main p.adm {
     text-align: center;
-    padding: 10px;
 }
 #main ol{
     padding: 0 0 5px 26px;
@@ -173,14 +172,20 @@ body,h1,h2,h3,p,form,li,ol,ul,dl,dt,dd{
     padding: 2px 6px;
     border: 1px solid black;
     margin: 2px 2px;
+    border: 1px solid #DEEFF6;
 }
 #page span{
-    background: #eee;
+    color: #EBEBEB;
+    border-color: #EBEBEB;
 }
-#page a:hover{
+#page a:hover,#page span.current{
     background: black;
     color: white;
     border: 1px solid white;
     text-decoration: none;
+}
+#page span.current{
+    background: #00A1D6;
+    color: white;
 }
 

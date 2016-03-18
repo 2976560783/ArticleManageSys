@@ -11,6 +11,7 @@ class Page
     private $pageNum;
     private $page_str;
     private $url;
+    private $bothPage;
     function __construct($total,$pageSize)
     {
         $this->total=$total;
@@ -18,6 +19,7 @@ class Page
         $this->pageNum=ceil($this->total / $this->pageSize);
         $this->page=$this->setPage();
         $this->limit="limit ".($this->page-1)*$this->pageSize.",".$this->pageSize;
+        $this->bothPage=3;
     }
     public function __get($key){
         return $this->$key;
@@ -34,8 +36,20 @@ class Page
     }
     //设置数字分页目录
     private function pageList(){
-        for ($i=1; $i <= $this->pageNum; $i++) { 
-            $this->page_str.='<a href="'.$this->url.'&page='.$i.'">'.$i.'</a>&nbsp;&nbsp;';
+        for ($i=$this->bothPage-1; $i > 0; $i--) { 
+            $_page=$this->page-$i;
+            if ($_page < 1) {
+                continue;
+            }
+            $this->page_str.='<a href="'.$this->url.'&page='.($this->page-$i).'">'.($this->page-$i).'</a>&nbsp;&nbsp;';
+        }
+        $this->page_str.='  <span class="current">'.$this->page.'</span>  &nbsp;&nbsp;';
+        for ($i=1; $i <= $this->bothPage; $i++) { 
+            $_page=$this->page+$i;
+            if ($_page > $this->pageNum) {
+                break;
+            }
+            $this->page_str.='<a href="'.$this->url.'&page='.($this->page+$i).'">'.($this->page+$i).'</a>&nbsp;&nbsp;';
         }
         return $this->page_str;
     }
@@ -79,8 +93,6 @@ class Page
         $this->page_str.=$this->first();
         $this->page_str.=$this->prev();
         $this->pageList();
-        
-        
         $this->page_str.=$this->next();
         $this->page_str.=$this->last();
         return $this->page_str;

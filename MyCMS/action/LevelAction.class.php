@@ -103,7 +103,8 @@ class LevelAction extends Action
         $this->tpl->assign('delete',false);
         $this->tpl->assign('add',false);
         $this->tpl->assign('title','等级列表');
-        $this->tpl->assign('AllLevels',$this->manage->getAllLevel());
+        $this->tpl->assign('AllLevels',$this->level->getAllLevel());
+        $this->tpl->assign('pageInfo',$page->pageShow());
     }
 
 

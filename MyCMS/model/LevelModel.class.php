@@ -18,6 +18,7 @@ class LevelModel extends Model
         return $this->$key;
     }
 
+    //查询所有记录数
     public function getLevelCount(){
       $sql="
             SELECT 
@@ -35,6 +36,7 @@ class LevelModel extends Model
                     level_info
                 from
                      admin_level
+                     '.$this->limit.'
                  ';
         return parent::getAll($sql);
     }

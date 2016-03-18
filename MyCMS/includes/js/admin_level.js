@@ -6,3 +6,15 @@ function level_name_check(){
         window.event.returnValue = false;
     }
 }
+window.onload=function admin_main_level(){
+    var title=document.getElementById('title').innerHTML;
+    var ol=document.getElementsByTagName('ol');
+    var a=ol[0].getElementsByTagName('a');
+    for (var i = 0; i < a.length; i++) {
+        a[i].className=null;
+        if (a[i].innerHTML == title) {
+            a[i].className='selected';
+            a[i].href='#';
+        }
+    };
+}

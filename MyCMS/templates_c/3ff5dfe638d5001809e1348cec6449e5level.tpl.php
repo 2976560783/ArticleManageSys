@@ -39,7 +39,10 @@
         <?php };?>
         </tbody>
     </table>
-    <p class="adm"><a href="level.php?action=add">[新增等级]</a></p>
+
+    <div id="page">
+        <?php echo $this->var['pageInfo']; ?>
+    </div>
 
 <?php };?>
 

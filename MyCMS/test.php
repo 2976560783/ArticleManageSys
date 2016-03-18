@@ -1,5 +1,5 @@
 <?php 
 // phpinfo();
-$a=1;
-$b=2;
-echo '<a href="'.$a.'&page='.$b.'">fdf</a>';
+require dirname(__FILE__).'\init.inc.php';
+$vc=new ValidateCode(4);
+$vc->doImg();
