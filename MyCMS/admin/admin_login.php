@@ -1,8 +1,7 @@
 <?php 
+//后台登陆页面
 require substr(dirname(__FILE__),0,-6).'\init.inc.php';
-//后台索引入口文件
 if (isset($_SESSION['admin'])) {
     Tools::alertLocation(null,'admin.php');
-}else{
-    Tools::alertLocation(null,'admin_login.php');
 }
+$tpl->display('admin_login.html');

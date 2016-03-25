@@ -11,4 +11,5 @@ define('DB_PASS','fulisiwo');   //密码
 define('DB_NAME','mycms');   //数据库名
 
 //系统配置信息
-define('PAGE_SIZE', 2);
+define('PAGE_SIZE', 1);
+define('PREV_URL', isset($_SERVER['HTTP_REFERER'])?$_SERVER['HTTP_REFERER']:'');

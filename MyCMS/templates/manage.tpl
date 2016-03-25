@@ -35,7 +35,7 @@
         <tbody>
         {foreach $AllManagers($key,$value)}
             <tr>
-                <td>{@value->id}</td>
+                <td><script type="text/javascript">document.write({@key+1}+{$num})</script></td>
                 <td>{@value->admin_name}</td>
                 <td>{@value->level_name}</td>
                 <td>{@value->last_login_ip}</td>
@@ -58,6 +58,7 @@
 <form action="manage.php?action=update" method="post" accept-charset="utf-8">
     <input type="text" name="id" id="id" hidden="hidden" value="{$id}" placeholder="">
     <input type="text" name="level" id="level" hidden="hidden" value="{$level}" placeholder="">
+    <input type="hidden" name="prev_url" value={$prev_url}>
     <table class="add_update">
         <caption>修改管理员信息</caption>
         <tbody>
@@ -82,7 +83,7 @@
                  </select></td>
             </tr>
             <tr>     
-                <td colspan="2"><input type="submit" class="submit" name="updateManager" onclick="pass_check()" value="确认修改">&nbsp;&nbsp;[<a href="manage.php?action=show">返回列表</a>]</td>
+                <td colspan="2"><input type="submit" class="submit" name="updateManager" onclick="pass_check()" value="确认修改">&nbsp;&nbsp;[<a href={$prev_url}>返回列表</a>]</td>
             </tr>
         </tbody>
     </table>
@@ -100,6 +101,7 @@
                 <th>用户名:</th>
                 <td><input type="text" name="admin_name" maxlength="10" class="text" value="" placeholder="*设置2至10位用户名*" required=""></td>
             </tr>
+                <input type="text" name="check_name" hidden="true" value="" placeholder="">
             <tr>  
                  <th>密  码:</th>
                  <td><input type="password" name="admin_pass" class="text" value="" placeholder="*至少6位，最多15位*" required=""></td>

@@ -10,9 +10,12 @@ class ManagesModel extends Model
     private $id;
     private $pass_flag;
     private $limit;
+    private $lastIp;
 
     public function __set($key,$value){
-        $this->$key=$value;
+        $mysqli=DB::getDb();
+        $this->$key=mysqli_real_escape_string($mysqli,$value);
+        @DB::unDb($reult = null,$mysqli);
     }
 
     public function __get($key){
@@ -82,12 +85,20 @@ class ManagesModel extends Model
         $sql="INSERT INTO admin_manage(
                                         admin_name,
                                         admin_level,
-                                        admin_pass
+                                        admin_pass,
+                                        reg_time,
+                                        login_count,
+                                        last_login_ip,
+                                        last_login_time
                                         )
                                  VALUES (
                                          '$this->admin_name', 
                                          '$this->admin_level',
-                                         '$this->admin_pass'
+                                         '$this->admin_pass',
+                                         now(),
+                                         login_count+1,
+                                         '$this->lastIp',
+                                          now()
                                          )";
         return parent::aud($sql);
     }
@@ -120,5 +131,35 @@ class ManagesModel extends Model
                          id = '$this->id'
                          ";
         return parent::aud($sql);
+    }
+    //查询用户登录信息
+    public function getLogin(){
+      $sql="SELECT
+                  m.admin_name,
+                  l.level_name
+            FROM
+                 admin_manage m,
+                 admin_level l
+            WHERE
+                 m.admin_level = l.id 
+            AND
+                  m.admin_name='$this->admin_name'
+            AND
+                  m.admin_pass='$this->admin_pass'
+                  ";
+        return parent::getOne($sql);
+    }
+    //设置登录信息
+    public function setLoginInfo(){
+      $sql="UPDATE
+                  admin_manage
+            SET
+                  login_count = login_count+1,
+                  last_login_ip = '$this->lastIp',
+                  last_login_time = now()
+            WHERE 
+                  admin_name = '$this->admin_name'
+            ";
+      return parent::aud($sql);
     }
 }

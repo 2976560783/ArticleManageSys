@@ -31,7 +31,7 @@
         <tbody>
         {foreach $AllLevels($key,$value)}
             <tr>
-                <td>{@value->id}</td>
+                <td><script type="text/javascript">document.write({@key+1}+{$num})</script></td>
                 <td>{@value->level_name}</td>
                 <td>{@value->level_info}</td>
                 <td><a href="level.php?action=update&id={@value->id}">修改</a>|<a href="level.php?action=delete&id={@value->id}" onclick="return confirm('确认要删除?')">删除</a></td>
@@ -49,6 +49,7 @@
 {if $update}
 <form action="level.php?action=update" method="post" accept-charset="utf-8">
     <input type="text" name="id" id="id" hidden="hidden" value="{$id}" placeholder="">
+    <input type="hidden" name="prev_url" value={$prev_url}>
     <table class="add_update">
         <caption>修改等级信息</caption>
         <tbody>
@@ -61,7 +62,7 @@
                  <td><textarea name="level_info" rows="5" cols="26" maxlength="200" placeholder="等级描述信息" style="resize: none;">{$level_info}</textarea></td>
             </tr>
             <tr>     
-                <td colspan="2"><input type="submit" class="submit" name="updateLevel" value="确认修改">&nbsp;&nbsp;[<a href="level.php?action=show">返回列表</a>]</td>
+                <td colspan="2"><input type="submit" class="submit" name="updateLevel" value="确认修改">&nbsp;&nbsp;[<a href={$prev_url}>返回列表</a>]</td>
             </tr>
         </tbody>
     </table>

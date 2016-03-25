@@ -188,4 +188,38 @@ body,h1,h2,h3,p,form,li,ol,ul,dl,dt,dd{
     background: #00A1D6;
     color: white;
 }
+#login{
+    width: 350px;
+    margin: 100px auto;
+}
+#login label{
+    display: block;
+}
 
+#login fieldset legend{
+    padding: 10px;
+    font-size: 20px;
+    font-family: 微软雅黑;
+    font-weight: bold;
+}
+#login table input{
+    width: 220px;
+    height: 22px;
+    border: 1px solid #34A5F0;
+}
+#login table td.tip{
+    text-indent: 56px;
+    font-size: 14px;
+    color: #660;
+}
+#login table input.login{
+    letter-spacing: 3px;
+   width: 100px;
+   height: 30px;
+   font-size: 16px;
+   font-family: 微软雅黑;
+    cursor: pointer;
+}
+#login table td img{
+    margin: 0 0 0 56px;
+}

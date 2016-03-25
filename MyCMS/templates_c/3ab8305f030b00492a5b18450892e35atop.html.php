@@ -15,6 +15,6 @@
         <li><a href="##" id="nav3" target="sidebar" onclick="admin_top_nav(3)">会员</a></li>
         <li><a href="##" id="nav4" target="sidebar" onclick="admin_top_nav(4)">系统</a></li>
     </ul>
-    <p>你好,<strong>{$admin_name}</strong> [{$level_name}] <a href="../" target="_blank">[去首页]</a><a href="manage.php?action=logout" target="_parent">[退出登陆]</a></p>
+    <p>你好,<strong><?php echo $this->var['admin_name']; ?></strong> [<?php echo $this->var['level_name']; ?>] <a href="../" target="_blank">[去首页]</a><a href="manage.php?action=logout" target="_parent">[退出登陆]</a></p>
 </body>
 </html>

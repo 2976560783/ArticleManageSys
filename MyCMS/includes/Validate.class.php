@@ -24,7 +24,7 @@ class Validate
                 return ($data_length < $length)?true:false;
                 break;
             case 'eq':
-                return ($data_length = $length)?true:false;
+                return ($data_length == $length)?true:false;
                 break;
         }
     }
@@ -36,5 +36,11 @@ class Validate
     //验证用户名是否存在
     static public function checkNameExists($manage){
         return ($manage->getSingleManage_Name())?true:false;
+    }
+    //session验证
+    static public function sessionCheck(){
+        if (!isset($_SESSION['admin'])) {
+            Tools::alertLocation('非法登陆!','admin_login.php');
+        }
     }
 }

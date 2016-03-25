@@ -16,9 +16,9 @@ class ValidateCode
     function __construct($length)
     {
         $this->length=$length;
-        $this->charset='qwertyupasdfghjkzxcvbnmQWERTYUIPLKJHGFDSAZXCVBNM23456789';
+        $this->charset='qweryupasdfghkzxcvbnmQWERTYUIPLKJHGFDSAZXCVBNM23456789';
         $this->width=150;
-        $this->height=100;
+        $this->height=50;
         $this->lineNum=8;
         $this->font=ROOT_PATH.'/fonts/comic.ttf';
     }
@@ -34,11 +34,11 @@ class ValidateCode
          imagefilledrectangle($this->img,0,$this->height,$this->width,0,$white);
     }
     private function createText(){
-        $this->fontSize=30;
+        $this->fontSize=25;
         $x=$this->width/$this->length;
         for ($i=0; $i < $this->length; $i++) { 
             $fontcolor=imagecolorallocate($this->img, mt_rand(0,154),mt_rand(0,154),mt_rand(0,154));
-            imagettftext($this->img,$this->fontSize,0,$x*$i+mt_rand(1,5),mt_rand(30,70),$fontcolor,$this->font,$this->code[$i]);
+            imagettftext($this->img,$this->fontSize,mt_rand(0,30),$x*$i+mt_rand(4,8),mt_rand(26,45),$fontcolor,$this->font,$this->code[$i]);
         }
         
     }
@@ -47,9 +47,10 @@ class ValidateCode
             $linecolor=imagecolorallocate($this->img, mt_rand(0,154),mt_rand(0,154),mt_rand(0,154));
             imageline($this->img,mt_rand(0,$this->width),mt_rand(0,$this->height),mt_rand(0,$this->width),mt_rand(0,$this->height),$linecolor);
         }
-        for ($i=0; $i < 100; $i++) { 
-            $linecolor=imagecolorallocate($this->img, mt_rand(200,250),mt_rand(200,250),mt_rand(200,250));
-            imagestring($this->img,mt_rand(1,5),mt_rand(0,$this->width),mt_rand(0,$this->height),'',$linecolor);
+        for ($i=0; $i < 500; $i++) { 
+            $piexcolor=imagecolorallocate($this->img, mt_rand(200,250),mt_rand(200,250),mt_rand(200,250));
+            // imagestring($this->img,mt_rand(1,5),mt_rand(0,$this->width),mt_rand(0,$this->height),'',$linecolor);
+            imagesetpixel($this->img, mt_rand(0,$this->width), mt_rand(0,$this->height), $piexcolor);
         }
 
     }
@@ -64,5 +65,8 @@ class ValidateCode
         $this->createText();
         $this->createLine();
         $this->outPutImg();
+    }
+    public function getCode(){
+        return strtolower($this->code);
     }
 }

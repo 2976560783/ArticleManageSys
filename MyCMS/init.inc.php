@@ -1,4 +1,5 @@
 <?php 
+session_start();
 header('Content-Type:text/html;charset=utf-8');
 define('ROOT_PATH', dirname(__FILE__));
 require 'cache.inc.php';

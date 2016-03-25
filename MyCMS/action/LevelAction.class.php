@@ -13,20 +13,24 @@ class LevelAction extends Action
     }
 
     private function action(){
-        switch ($_GET['action']) {
+        if (isset($_GET['action'])) {
+                    switch ($_GET['action']) {
             case 'add':
                 $this->add();
                 break;
 
             case 'delete':
+            Validate::sessionCheck();
                 $this->delete();
                 break;
 
             case 'show':
+            Validate::sessionCheck();
                 $this->show();
                 break;
 
             case 'update':
+            Validate::sessionCheck();
                 $this->update();
                 break;
 
@@ -34,6 +38,9 @@ class LevelAction extends Action
                 Tools::alertBack('非法操作');
                 break;
          }
+        }else{
+            Tools::alertBack('非法操作');
+        }
     }
 
     //添加等级
@@ -96,15 +103,13 @@ class LevelAction extends Action
 
     //展示全部等级
     public function show(){
-        $page=new Page($this->level->getLevelCount(),PAGE_SIZE);
-        $this->level->limit=$page->limit;
+        parent::page($this->level->getLevelCount());
         $this->tpl->assign('show',true);
         $this->tpl->assign('update',false);
         $this->tpl->assign('delete',false);
         $this->tpl->assign('add',false);
         $this->tpl->assign('title','等级列表');
         $this->tpl->assign('AllLevels',$this->level->getAllLevel());
-        $this->tpl->assign('pageInfo',$page->pageShow());
     }
 
 
@@ -139,7 +144,7 @@ class LevelAction extends Action
                     Tools::alertBack("用户名已经存在");
             }
             if (1 == $this->level->updateLevel() || 0 == $this->level->updateLevel()) {
-                Tools::alertLocation('修改等级成功！','level.php?action=show');
+                Tools::alertLocation('修改等级成功！',$_POST['prev_url']);
             }else{
                 Tools::alertBack('修改操作失败,请重试!');
                     }

@@ -9,7 +9,7 @@
 </head>
 
 <frameset rows="80px,*" border=0>
-    <frame src="../templates/top.html" noresize="true" scrolling="no" />
+    <frame src="../admin/top.php" noresize="true" scrolling="no" />
         <frameset cols="150px,*">
             <frame src="../templates/sidebar.html" name="sidebar" noresize="true" scrolling="no"/>
             <frame src="../templates/main.html" name="main" />
