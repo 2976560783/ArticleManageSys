@@ -1,0 +1,90 @@
+body{
+    background-image: url(../images/regbg2.jpg);
+    background-repeat: no-repeat;
+    background-size: 1366px 800px;
+    padding: 5px;
+    height: auto;
+}
+#container{
+    background-color: rgba(245,250,255,0.5);
+    height: 340px;
+    width: 500px;
+    margin: 100px auto;
+    border-radius: 5px;
+    border-color: rgba(200,250,200,0.2);
+    border-style: solid;
+    box-shadow: 10px 10px 5px rgba(193,186,194,0.1);
+}
+#container h1{
+    text-align: center;
+    font-family: 华文行楷;
+    font-size: 45px;
+    color: rgba(40, 82, 92,0.7);
+    letter-spacing: 5px;
+    margin: 25px;
+    padding: 0;
+}
+#container .regtab{
+    margin: 0 auto;
+}
+#container .regtab tr{
+    line-height: 30px;
+}
+#container .regtab tr th{
+    font-family: 幼圆;
+    font-size: 20px;
+    color: rgba(74, 85, 88,0.7);
+}
+#container .regtab input{
+    line-height: 25px;
+    border-radius: 5px;
+    width: 200px;
+    background-color: rgba(190, 226, 243,0.3);
+    font-size: 17px;
+}
+#container .regtab input.submit{
+    float: right;
+    background-color: rgba(144, 177, 100,0.8);
+    letter-spacing: 10px;
+    font-family: 微软雅黑;
+    font-size: 20px;
+    color: black;
+}
+#container .regtab input.submit:hover{
+    cursor: pointer;
+}
+#container .regtab .back{
+    text-indent: 100px;
+
+}
+#container .regtab a{
+    text-decoration: none;
+    color: #666;
+}
+#container .regtab a:hover{
+    text-decoration: underline;
+    color: green;
+}
+
+ #userName{
+    background-image: url(../images/regu.png);
+    background-repeat: no-repeat;
+    background-position: right;
+ }
+  #password{
+    background-image: url(../images/regp.png);
+    background-repeat: no-repeat;
+    background-position: right;
+ }
+   #rpassword{
+    background-image: url(../images/regp.png);
+    background-repeat: no-repeat;
+    background-position: right;
+ }
+  #email{
+    background-image: url(../images/regm.png);
+    background-repeat: no-repeat;
+    background-position: right;
+ }
+
+

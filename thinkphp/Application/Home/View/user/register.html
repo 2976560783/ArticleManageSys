@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/register.css">
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-2.1.1.min.js"></script>
+    <script src="__PUBLIC__/js/regcheck.js" type="text/javascript" charset="utf-8" ></script>
+</head>
+<body style="height: auto;">
+    <div id="container">
+        <h1>注册信息</h1>
+        <hr>
+        <form action="register" method="post" accept-charset="utf-8">
+        <table class="regtab">
+            <tbody>
+                <tr>
+                    <th>用户昵称:</th>
+                    <td><input type="text" id="userName" name="userName" value="" placeholder="" autofocus="" maxlength="20" required=""></td>
+                </tr>
+                <tr>
+                    <th>账号密码:</th>
+                    <td><input type="password" id="password" name="password" value="" placeholder="" minlength="6" maxlength="20" required=""></td>
+                </tr>
+                <tr>
+                    <th>确认密码:</th>
+                    <td><input type="password" id="rpassword" name="rpassword" value="" placeholder="" minlength="6" maxlength="20" required=""></td>
+                </tr>
+                <tr>
+                    <th>邮箱地址:</th>
+                    <td><input type="email" name="email" id="email" value="" placeholder="" required=""></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" class="submit" name="sendRegInfo" value="提交"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="back"><a  href="login.html" title="">已有账号？返回登录</a></td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+    </div>
+</body>
+</html>

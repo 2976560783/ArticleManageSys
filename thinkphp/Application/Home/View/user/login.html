@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>登陆</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/login.css">
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-2.1.1.min.js"></script>
+    <script src="__PUBLIC__/js/logcheck.js" type="text/javascript" charset="utf-8" ></script>
+</head>
+<body style="height: auto;">
+    <div id="container">
+        <h1>登陆信息</h1>
+        <hr>
+        <div id="logInfo">
+            <form action="login" method="post" accept-charset="utf-8">
+                 <input type="text" class="userName" id="userName" name="userName" autofocus="" value="" placeholder="输入用户名" required="">
+                <input type="password" class="password" id="password" name="password" value="" placeholder="输入用户密码" required="">
+                <input type="text" name="code" id="code" value="" placeholder="输入下方验证码" required="">
+                <img class="code" src="captche" alt="验证码">&nbsp;<span>看不清?点一下,换一张!</span>
+                <input type="submit" class="submit" name="logInfo" value="登陆">
+                <a href="#" class="forgpwd" title="忘记密码">忘记密码</a>
+                <a href="register.html" class="gologin" title="">没有账号？前往注册</a>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+
