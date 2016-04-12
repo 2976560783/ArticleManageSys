@@ -17,7 +17,7 @@
                  <input type="text" class="userName" id="userName" name="userName" autofocus="" value="" placeholder="管理员" required="">
                 <input type="password" class="password" id="password" name="password" value="" placeholder="密码" required="">
                 <input type="submit" class="submit" name="logInfo" value="登陆">
-                <p>后台暂时唯一账户,通过数据库操作添加新账号!</p>
+                <p>暂时可以使用前台账号登陆后台管理!</p>
             </form>
         </div>
     </div>

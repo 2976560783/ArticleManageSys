@@ -70,7 +70,7 @@ abstract class Controller
      * @param string $prefix 模板缓存前缀
      * @return mixed
      */
-    protected function show($content, $charset = '', $contentType = '', $prefix = '')
+    protected function show($content = '', $charset = '', $contentType = '', $prefix = '')
     {
         $this->view->display('', $charset, $contentType, $content, $prefix);
     }

@@ -1,0 +1,6 @@
+[ 2016-04-11T08:30:48+08:00 ] 127.0.0.1 /dashboard/thinkphp/index.php/home/user/login
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-04-11T08:33:12+08:00 ] 127.0.0.1 /dashboard/thinkphp/index.php/home/user/login
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+

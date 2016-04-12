@@ -19,26 +19,32 @@
     <div class="main">
             <div class="main">
         <div class="btn-group-vertical" role="group" aria-label="...">
+
             <div class="btn-group" role="group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   类别管理
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a href="#">查看内容分类</a></li>
-                  <li><a href="#">查看剧情分类</a></li>
+                  <li><a href="/thinkphp/index.php/class/showClass">查看分类</a></li>
+                  <li><a href="/thinkphp/index.php/class/addClass">新增分类</a></li>
+                  <li><a href="/thinkphp/index.php/tag/showTag">查看标签</a></li>
+                  <li><a href="/thinkphp/index.php/tag/addTag">新增标签</a></li>
                 </ul>
              </div>
+
+
             <div class="btn-group" role="group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   视频管理
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a href="#">查看全部</a></li>
-                  <li><a href="/thinkphp/admin/video/addVideo">新增视频</a></li>
+                  <li><a href="/thinkphp/index.php/video/showVideo">查看全部视频</a></li>
+                  <li><a href="/thinkphp/index.php/video/addVideo">新增视频</a></li>
                 </ul>
              </div>
+
             <div class="btn-group" role="group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   音频管理
@@ -49,7 +55,8 @@
                   <li><a href="#">新增音频</a></li>
                 </ul>
              </div>
-             <button type="button" class="logout"><a href="/thinkphp/admin/user/logout" title="">退出登录</a></button>
+
+             <button type="button" class="logout"><a href="/thinkphp/index.php/user/logout" title="">退出登录</a></button>
         </div>
     </div>  
 

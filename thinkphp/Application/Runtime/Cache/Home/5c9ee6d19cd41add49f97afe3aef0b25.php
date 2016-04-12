@@ -63,7 +63,7 @@
                     <li><a href="#">我的等级</a></li>
                     <li><a href="#">个人设置</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href='/thinkphp/home/user/logout'>登出</a></li>
+                    <li><a href='/thinkphp/index.php/Home/user/logout'>登出</a></li>
                   </ul>
                 </li>
                 <?php else: ?>

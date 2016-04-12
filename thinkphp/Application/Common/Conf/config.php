@@ -1,6 +1,9 @@
 <?php
 return array(
 	//'配置项'=>'配置值'
+    'SHOW_PAGE_TRACE' =>true, 
+    'DB_SQL_BUILD_CACHE' => true,
+    'DB_SQL_BUILD_LENGTH' => 20, // SQL缓存的队列长度
     /* 数据库设置 */
     'DB_TYPE'                => 'mysql', // 数据库类型
     'DB_HOST'                => '127.0.0.1', // 服务器地址

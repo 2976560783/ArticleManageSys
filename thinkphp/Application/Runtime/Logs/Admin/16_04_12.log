@@ -1,0 +1,896 @@
+[ 2016-04-12T09:15:26+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001146s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '武侠' LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001010s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001077s ]
+
+[ 2016-04-12T09:15:26+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001274s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '王宇' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001165s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001257s ]
+
+[ 2016-04-12T09:15:26+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001164s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '王宇轩' LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000602s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000646s ]
+
+[ 2016-04-12T09:15:36+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '热血' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000562s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000607s ]
+
+[ 2016-04-12T09:15:47+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000739s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '热血' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000630s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000699s ]
+
+[ 2016-04-12T09:15:49+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000744s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '热血fd' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000552s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000597s ]
+
+[ 2016-04-12T09:15:49+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000742s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '热血fd' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000531s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000580s ]
+
+[ 2016-04-12T15:19:47+08:00 ] 127.0.0.1 /thinkphp/index.php/admin/user/showVideo
+ERR: 非法操作:showVideo
+
+[ 2016-04-12T15:23:10+08:00 ] 127.0.0.1 /thinkphp/index.php/admin/vidoe/showVideo
+ERR: 无法加载控制器:Vidoe
+
+[ 2016-04-12T15:37:30+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001096s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0017s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = 'fds' LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000800s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000869s ]
+
+[ 2016-04-12T15:37:30+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000604s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000950s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = 'fds' LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000774s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000854s ]
+
+[ 2016-04-12T15:37:30+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000923s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001486s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = 'fds' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000875s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000943s ]
+
+[ 2016-04-12T15:41:26+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000906s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = 'fds' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000639s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000685s ]
+
+[ 2016-04-12T15:48:24+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000661s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '喜剧' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000520s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000568s ]
+
+[ 2016-04-12T16:03:51+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000766s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 0 AND `tag_name` = '短片' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '短片' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000722s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000771s ]
+
+[ 2016-04-12T16:03:57+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片 ' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000525s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000567s ]
+
+[ 2016-04-12T16:03:57+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001550s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片 ' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000488s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000525s ]
+
+[ 2016-04-12T16:04:33+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001288s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片f' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '短片f' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000593s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000641s ]
+
+[ 2016-04-12T16:04:33+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000704s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001259s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000842s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000912s ]
+
+[ 2016-04-12T16:04:37+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001140s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001074s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001158s ]
+
+[ 2016-04-12T16:04:39+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片fd' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '短片fd' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000513s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000555s ]
+
+[ 2016-04-12T16:04:39+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001136s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片fd' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '短片fd' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000853s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000940s ]
+
+[ 2016-04-12T16:04:43+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001402s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片f' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '短片f' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000540s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000585s ]
+
+[ 2016-04-12T16:04:43+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001068s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000463s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2016-04-12T16:04:47+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001152s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001997s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片f' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '短片f' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000540s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000582s ]
+
+[ 2016-04-12T16:04:47+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000716s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片fs' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '短片fs' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000517s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000555s ]
+
+[ 2016-04-12T16:04:50+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000660s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片f' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '短片f' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000513s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000562s ]
+
+[ 2016-04-12T16:04:50+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001227s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000881s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000945s ]
+
+[ 2016-04-12T16:04:58+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000763s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '热血' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '热血' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000583s ]
+
+[ 2016-04-12T16:05:03+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001139s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '学校' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '学校' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000917s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000995s ]
+
+[ 2016-04-12T16:05:06+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001159s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002002s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '学校 ' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '学校 ' LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001185s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001286s ]
+
+[ 2016-04-12T16:05:07+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001138s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '学校  ' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '学校  ' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000648s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000701s ]
+
+[ 2016-04-12T16:05:11+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000763s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '校园' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '校园' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000748s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000816s ]
+
+[ 2016-04-12T16:05:22+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000637s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000504s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000544s ]
+
+[ 2016-04-12T16:05:44+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001046s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000519s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000560s ]
+
+[ 2016-04-12T16:05:44+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001141s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000833s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000918s ]
+
+[ 2016-04-12T16:06:05+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001071s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000553s ]
+
+[ 2016-04-12T16:06:05+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000974s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000649s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000688s ]
+
+[ 2016-04-12T16:07:33+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片 ' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000478s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000516s ]
+
+[ 2016-04-12T16:07:33+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000637s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 6 AND `tag_name` = '短片 ' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000495s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000536s ]
+
+[ 2016-04-12T16:15:35+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001057s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 1 AND `tag_name` = '剧情' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001393s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001490s ]
+
+[ 2016-04-12T16:15:37+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000701s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 1 AND `tag_name` = '校园' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` <> '1' AND `tag_name` = '校园' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000639s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000686s ]
+
+[ 2016-04-12T16:15:44+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000646s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 1 AND `tag_name` = '剧情' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000628s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000671s ]
+
+[ 2016-04-12T16:15:54+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000700s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 1 AND `tag_name` = '剧情' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000898s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000954s ]
+
+[ 2016-04-12T16:16:04+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000849s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 1 AND `tag_name` = '剧情' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000671s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000716s ]
+
+[ 2016-04-12T16:16:04+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000621s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 1 AND `tag_name` = '剧情fd' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` <> '1' AND `tag_name` = '剧情fd' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000655s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000696s ]
+
+[ 2016-04-12T16:16:04+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 1 AND `tag_name` = '剧情fd' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` <> '1' AND `tag_name` = '剧情fd' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000759s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000809s ]
+
+[ 2016-04-12T17:19:06+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000800s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 1 AND `tag_name` = '剧情 ' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000922s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000991s ]
+
+[ 2016-04-12T17:19:06+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 1 AND `tag_name` = '剧情付' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` <> '1' AND `tag_name` = '剧情付' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000791s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000845s ]
+
+[ 2016-04-12T17:19:14+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 1 AND `tag_name` = '剧情' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000645s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000687s ]
+
+[ 2016-04-12T17:19:14+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000706s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 1 AND `tag_name` = '剧情' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000651s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000705s ]
+
+[ 2016-04-12T17:19:17+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001362s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 1 AND `tag_name` = '剧情' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000657s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000700s ]
+
+[ 2016-04-12T17:19:19+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001299s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 1 AND `tag_name` = '剧情f' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` <> '1' AND `tag_name` = '剧情f' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001066s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001145s ]
+
+[ 2016-04-12T17:20:20+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/editTag
+ERR: 1451:Cannot delete or update a parent row: a foreign key constraint fails (`think_php`.`think_video`, CONSTRAINT `tag_name` FOREIGN KEY (`tag`) REFERENCES `think_tag` (`tag_name`))
+ [ SQL语句 ] : UPDATE `think_tag` SET `tag_name`='剧情f' WHERE `id` = 1
+
+[ 2016-04-12T17:33:26+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/%7C/thinkphp/index.php/Admin/tag/editTag?id=1
+ERR: 非法操作:|
+
+[ 2016-04-12T17:34:23+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/%7Cdefault='/thinkphp/index.php/Admin/Tag/deleteTag?id=1%27
+ERR: 非法操作:|default='
+
+[ 2016-04-12T17:34:44+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/%7Cdefault='/thinkphp/index.php/Admin/Tag/deleteTag?id=1%27
+ERR: 非法操作:|default='
+
+[ 2016-04-12T18:00:06+08:00 ] 127.0.0.1 /thinkphp/index.php/Admin/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = 'test' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000510s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000551s ]
+
+[ 2016-04-12T19:20:59+08:00 ] 127.0.0.1 /thinkphp/index.php/Home/user/login.html
+ERR: 无法加载控制器:Home
+
+[ 2016-04-12T19:20:59+08:00 ] 127.0.0.1 /thinkphp/index.php/Home/user/login.html
+ERR: 无法加载控制器:Home
+
+[ 2016-04-12T19:20:59+08:00 ] 127.0.0.1 /thinkphp/index.php/Home/user/login.html
+ERR: 无法加载控制器:Home
+
+[ 2016-04-12T19:20:59+08:00 ] 127.0.0.1 /thinkphp/index.php/Home/user/login.html
+ERR: 无法加载控制器:Home
+
+[ 2016-04-12T19:21:17+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/addTage
+ERR: 非法操作:addTage
+
+[ 2016-04-12T19:21:38+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/addTage
+ERR: 非法操作:addTage
+
+[ 2016-04-12T19:22:13+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/addTage
+ERR: 非法操作:addTage
+
+[ 2016-04-12T19:23:25+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/addTage
+ERR: 非法操作:addTage
+
+[ 2016-04-12T19:23:44+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/addTage
+ERR: 非法操作:addTage
+
+[ 2016-04-12T19:24:19+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/addTage
+ERR: 非法操作:addTage
+
+[ 2016-04-12T19:24:20+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/addTage
+ERR: 非法操作:addTage
+
+[ 2016-04-12T19:24:29+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '青春' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000759s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000813s ]
+
+[ 2016-04-12T19:24:35+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000833s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '动作' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000849s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000899s ]
+
+[ 2016-04-12T19:24:36+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000380s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '动作' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000621s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000660s ]
+
+[ 2016-04-12T19:24:36+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000736s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.1262s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '动作' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000718s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000764s ]
+
+[ 2016-04-12T19:24:44+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001208s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '浪漫' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000892s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000954s ]
+
+[ 2016-04-12T19:24:44+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '浪漫' LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001043s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001138s ]
+
+[ 2016-04-12T19:24:59+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000695s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '西湖' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000620s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000661s ]
+
+[ 2016-04-12T19:25:01+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000700s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001275s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '喜剧' LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000986s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001068s ]
+
+[ 2016-04-12T19:25:01+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0942s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '喜剧' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000709s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000759s ]
+
+[ 2016-04-12T19:25:09+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000764s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '悬疑' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000645s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000684s ]
+
+[ 2016-04-12T19:25:10+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '悬疑' LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001011s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001102s ]
+
+[ 2016-04-12T19:25:25+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '校园' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000647s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000689s ]
+
+[ 2016-04-12T19:25:26+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001177s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0815s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '校园' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000670s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000716s ]
+
+[ 2016-04-12T19:25:37+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 32 AND `tag_name` = '青春 ' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000639s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000683s ]
+
+[ 2016-04-12T19:25:46+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001669s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 32 AND `tag_name` = '青春 f' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` <> '32' AND `tag_name` = '青春 f' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000632s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000679s ]
+
+[ 2016-04-12T19:25:46+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000877s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 32 AND `tag_name` = '青春 ' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000647s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000705s ]
+
+[ 2016-04-12T19:25:47+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000708s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 32 AND `tag_name` = '青春' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000636s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000678s ]
+
+[ 2016-04-12T19:25:48+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001161s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 32 AND `tag_name` = '青春f' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` <> '32' AND `tag_name` = '青春f' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000944s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001017s ]
+
+[ 2016-04-12T19:25:50+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000656s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 32 AND `tag_name` = '青春' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000700s ]
+
+[ 2016-04-12T19:25:50+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000796s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001435s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 32 AND `tag_name` = '青春 ' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000787s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000839s ]
+
+[ 2016-04-12T19:25:50+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002157s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 32 AND `tag_name` = '青春  ' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000824s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000875s ]
+
+[ 2016-04-12T19:25:51+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000702s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 32 AND `tag_name` = '青春  f' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` <> '32' AND `tag_name` = '青春  f' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000802s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000865s ]
+
+[ 2016-04-12T19:25:53+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001595s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 32 AND `tag_name` = '青春  ' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000853s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000910s ]
+
+[ 2016-04-12T19:25:53+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 32 AND `tag_name` = '青春 ' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000640s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000681s ]
+
+[ 2016-04-12T19:25:54+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001151s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002106s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 32 AND `tag_name` = '青春' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000683s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000735s ]
+
+[ 2016-04-12T19:25:59+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001347s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 32 AND `tag_name` = '青春f' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` <> '32' AND `tag_name` = '青春f' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000794s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000847s ]
+
+[ 2016-04-12T19:26:02+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/editAjaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001153s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002108s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `id` = 32 AND `tag_name` = '青春' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001494s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001597s ]
+
+[ 2016-04-12T19:37:59+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000373s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000664s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '青春' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000652s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000694s ]
+
+[ 2016-04-12T19:38:02+08:00 ] 127.0.0.1 /thinkphp/index.php/tag/ajaxTagName
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001152s ]
+SQL: SHOW COLUMNS FROM `think_tag` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_tag` WHERE `tag_name` = '爱情' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000700s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000744s ]
+
+[ 2016-04-12T19:42:49+08:00 ] 127.0.0.1 /thinkphp/index.p
+ERR: 无法加载控制器:Index.p
+
+[ 2016-04-12T23:07:14+08:00 ] 127.0.0.1 /thinkphp/index.php/admin/user/login.html
+ERR: 无法加载控制器:Admin
+
+[ 2016-04-12T23:07:20+08:00 ] 127.0.0.1 /thinkphp/index.php/admin/user/login.html
+ERR: 无法加载控制器:Admin
+
+[ 2016-04-12T23:07:35+08:00 ] 127.0.0.1 /thinkphp/index.php/admin/user/login.html
+ERR: 无法加载控制器:Admin
+

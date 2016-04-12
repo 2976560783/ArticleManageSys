@@ -8,14 +8,21 @@ use Think\Controller;
 */
 class UserController extends Controller
 {
+    public function index(){
+        if (session('?admin')) {
+            $this->success('已登录!正在进入后台页面...',U('index/index'));
+        }else{
+            $this->error('尚未登陆,非法操作!',U('user/login'));
+        }
+    }
     public function login(){
-        if (!session('?userName')) {
+        if (!session('?admin')) {
             if (IS_POST) {
             $userTable = D('user');
             $userName = I('post.userName');
             $password = sha1(I('post.password'));
             if ($userTable->isUserExists($userName,$password)) {
-                session('userName',$userName);
+                session('admin',$userName);
                 $this->success('登陆成功,正在进入后台...',U('index/index'));
             }else{
                 $this->error('用户名或密码错误,请重试!');
@@ -27,13 +34,15 @@ class UserController extends Controller
         }else{
             $this->error('您已经登陆,不能重复登陆!',U('index/index'));
         }
-
     }
+    
     public function logout(){
-        if ($_SERVER['HTTP_REFERER'] != 'http://127.0.0.1/thinkphp/index.php/Admin/index/index.html') {
-            $this->error('非法操作',U('index/index'));
+        if (session('?admin')) {
+            session('admin',null);
+            $this->success('已安全注销,前往出口!','login');
+        }else{
+            $this->error('非法操作!',U('user/login'));
         }
-        session('userName',null);
-        $this->success('已安全注销,前往出口!','login');
+
     }
 }

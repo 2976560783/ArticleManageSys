@@ -3,7 +3,7 @@ namespace Admin\Model;
 
 use Think\Model;
 /**
-* 后台管理员控制器
+* 后台管理员模型
 */
 class UserModel  extends Model
 {

@@ -42,7 +42,6 @@
                     <li><a href="#">动画</a></li>
                     <li><a href="#">电影</a></li>
                     <li><a href="#">番剧</a></li>
-                    <li role="separator" class="divider"></li>
                     <li><a href="#">音乐</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="#">没有了</a></li>
@@ -64,7 +63,7 @@
                     <li><a href="#">我的等级</a></li>
                     <li><a href="#">个人设置</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href='home/user/logout'>登出</a></li>
+                    <li><a href='/thinkphp/home/user/logout'>登出</a></li>
                   </ul>
                 </li>
                 <?php else: ?>
@@ -96,11 +95,14 @@
             <tbody>
                 <tr>
                     <th>用户昵称:</th>
-                    <td><input type="text" id="userName" name="userName" value="" placeholder="" autofocus="" maxlength="20" required=""></td>
+                    <td><input type="text" id="userName" name="userName" value="" placeholder="2至20位非空字符串" autofocus="" maxlength="20" required=""></td>
+                    <td>
+                        <span id="warname" hidden="" style="color: red;">用户名已经存在</span>
+                    </td>       
                 </tr>
                 <tr>
                     <th>账号密码:</th>
-                    <td><input type="password" id="password" name="password" value="" placeholder="" minlength="6" maxlength="20" required=""></td>
+                    <td><input type="password" id="password" name="password" value="" placeholder="最少六位" minlength="6" maxlength="20" required=""></td>
                 </tr>
                 <tr>
                     <th>确认密码:</th>

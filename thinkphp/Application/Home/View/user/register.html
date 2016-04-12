@@ -17,11 +17,14 @@
             <tbody>
                 <tr>
                     <th>用户昵称:</th>
-                    <td><input type="text" id="userName" name="userName" value="" placeholder="" autofocus="" maxlength="20" required=""></td>
+                    <td><input type="text" id="userName" name="userName" value="" placeholder="2至20位非空字符串" autofocus="" maxlength="20" required=""></td>
+                    <td>
+                        <span id="warname" hidden="" style="color: red;">用户名已经存在</span>
+                    </td>       
                 </tr>
                 <tr>
                     <th>账号密码:</th>
-                    <td><input type="password" id="password" name="password" value="" placeholder="" minlength="6" maxlength="20" required=""></td>
+                    <td><input type="password" id="password" name="password" value="" placeholder="最少六位" minlength="6" maxlength="20" required=""></td>
                 </tr>
                 <tr>
                     <th>确认密码:</th>
