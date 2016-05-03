@@ -9,8 +9,8 @@
     <meta name="author" content="">
     <title>关于</title>
     <!-- Bootstrap core CSS -->
-    <link href="/thinkphp/Public/home/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/thinkphp/Public/home/css/index.css" rel="stylesheet">
+    <link href="/thinkweb/Public/home/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/thinkweb/Public/home/css/index.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     
 </head>
@@ -25,27 +25,27 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/thinkphp">简书</a>
+          <a class="navbar-brand" href="/thinkweb">简书</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <?php if(isset($index)): ?><li class="active" id="index"><a href="/thinkphp">主页</a></li>
+            <?php if(isset($index)): ?><li class="active" id="index"><a href="/thinkweb">主页</a></li>
               <?php else: ?>
-              <li id="index"><a href="/thinkphp">主页</a></li><?php endif; ?>
-            <li id="about"><a href="/thinkphp/index.php/Home/index/about">关于</a></li>
+              <li id="index"><a href="/thinkweb">主页</a></li><?php endif; ?>
+            <li id="about"><a href="/thinkweb/index.php/Home/index/about">关于</a></li>
             <li id="contact"><a href="#contact">联系</a></li>
           </ul>
         <ul class="nav navbar-nav navbar-right">
-        <li><img src="/thinkphp/Public/home/imgs/tx.jpg" alt="头像" class="img-circle" style="width: 50px;height: 50px;"></li>
+        <li><img src="/thinkweb/Public/home/imgs/tx.jpg" alt="头像" class="img-circle" style="width: 50px;height: 50px;"></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo (session('logined')); ?><span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id='logined'><?php echo (session('logined')); ?><span class="caret"></span></a>
           <ul class="dropdown-menu">
               <li><a href="#" title="">个人中心</a></li>
               <li><a href="#" title="">发布文章</a></li>
               <li><a href="#" title="">我的文章</a></li>
               <li><a href="#" title="">帮助</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="/thinkphp/index.php/Home/user/logout" title="">注销</a></li>
+              <li><a href="/thinkweb/index.php/Home/user/logout" title="">注销</a></li>
           </ul>
         </li>
       </ul>
@@ -92,9 +92,9 @@
         <p style="text-align: center;">&copy; Company 2014 <label style="float: right;"><a href="#top" title="">回到顶部 &nbsp; <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a></label></p>
       </footer>
 
-<script src="/thinkphp/Public/home/js/jquery.min.js"></script>
-<script src="/thinkphp/Public/home/js/bootstrap.min.js"></script>
-<script src="/thinkphp/Public/home/js/offcanvas.js"></script>
+<script src="/thinkweb/Public/home/js/jquery.min.js"></script>
+<script src="/thinkweb/Public/home/js/bootstrap.min.js"></script>
+<script src="/thinkweb/Public/home/js/offcanvas.js"></script>
 
     <script type="text/javascript">
       $(document).ready(function() {

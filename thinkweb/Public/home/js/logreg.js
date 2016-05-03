@@ -5,7 +5,7 @@
        $('#reg-name-div').removeClass('has-success');
                 var userName = $(this).val();
                 if (userName.length > 1) {
-                    $.post('/thinkphp/home/user/ajaxUserName', {userName:userName}, function(data, textStatus, xhr) {
+                    $.post('/thinkweb/home/user/ajaxUserName', {userName:userName}, function(data, textStatus, xhr) {
                        if (textStatus == 'success') {
                           if (data == '1') {
                             $('#reg-name-div').addClass('has-warning');

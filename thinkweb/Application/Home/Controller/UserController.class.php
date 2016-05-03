@@ -37,8 +37,10 @@ class UserController extends Controller
                 }else{
                     $this->error($userModel->getError());
                 }
+            }else{
+                 $this->redirect('index',0);
             }
-            $this->redirect('index',0);
+           
     }
 
     public function login(){
@@ -79,7 +81,7 @@ class UserController extends Controller
                     $this->error('验证码不正确');
                 }
             }else{
-                $this->assign('ok','ok');
+                $this->assign('login','ok');
                 $this->display('index');
             }
         }else{

@@ -80,7 +80,7 @@
         <div class="well">
           <form action="addComment" method="post">
               <div class="input-group">
-                <textarea name="comment" id="user-comment" placeholder="写下你的看法" maxlength="200" rows="3" cols="109" style="resize: none;" class="comment"></textarea>
+                <textarea name="comment"  id="user-comment" placeholder="写下你的看法" maxlength="200" rows="3" style="resize: none;" class="form-control"></textarea>
                 <input type="hidden" name="aid" value="{$details.aid}" class="comment">
                 <span class="input-group-btn">
                   <button class="btn btn-info" type="submit" id="submit">提交</button>
@@ -91,34 +91,42 @@
           <div class="panel panel-default" id="comments">
             <div class="panel-heading">最近留言</div>
             <div class="panel-body">
-              <volist name='comments' id='comment'>
-              <dl>
-                <dt>
-                    <p class="text-primary"><img src="{$comment.imgpath}" style="width: 40px;height: 40px" alt="fd">&nbsp;{$comment.username} 发表留言:<span style="float: right;">{$comment.time|date='Y-m-d H:m:s',###} &nbsp;&nbsp;
+              <volist name='comments' id='comment' empty="暂时没有数据">
 
-                    <if condition="$Think.session.uid eq $details['uid'] and $comment['uid'] eq $details['uid']">
-                          <a href="deleteComment?cid={$comment.cid}" title="" onclick="return confirm('确认要删除本条留言?')"><button type="button" class="btn btn-warning btn-xs">删除</button></a>
-                          
-                    <elseif condition="$Think.session.uid eq $details['uid']"/>
-                          <button type="button" class="btn btn-success btn-xs reply">回复</button>
-                          <a href="deleteComment?cid={$comment.cid}" title="" onclick="return confirm('确认要删除本条留言?')"><button type="button" class="btn btn-warning btn-xs">删除</button></a>
+                    <dl>
+                      <dt>
 
-                    <elseif condition="$Think.session.uid eq $comment['uid']"/>
-                          <a href="deleteComment?cid={$comment.cid}" title="" onclick="return confirm('确认要删除本条留言?')"><button type="button" class="btn btn-warning btn-xs">删除</button></a>
+                        <p class="text-primary"><img src="{$comment.imgpath}" style="width: 40px;height: 40px" alt="fd">&nbsp;
+                        <if condition="$comment['pid'] eq 0">
+                           <span class="cuser cid{$comment.cid}" style="color: #6C7A89">{$comment.username}</span> 发表留言:
+                           <else/>
+                           <span class="cuser cid{$comment.cid}" style="color: #6C7A89">{$comment.username}</span> 回复 <span class="pid" value="{$comment.pid}" style="color: #6C7A89"></span> 留言:
+                        </if>
 
-                    <else/>
-                          <button type="button" class="btn btn-success btn-xs reply">回复</button>
-                    </if>
-                          <span type="hidden" class="cid" value="{$comment.cid}"></span></span>
-                    </p>
-                </dt>
-                <dd><p class="text-info">{$comment.content}</p></dd>
-              </dl>
-              <hr>
+                        <span style="float: right;">{$comment.time|date='Y-m-d H:m:s',###} &nbsp;&nbsp;
+
+                        <if condition="$Think.session.uid eq $details['uid'] and $comment['uid'] eq $details['uid']">
+                              <a href="deleteComment?cid={$comment.cid}" title="" onclick="return confirm('确认要删除本条留言?')"><button type="button" class="btn btn-warning btn-xs">删除</button></a>
+                              
+                        <elseif condition="$Think.session.uid eq $details['uid']"/>
+                              <button type="button" class="btn btn-success btn-xs reply">回复</button>
+                              <a href="deleteComment?cid={$comment.cid}" title="" onclick="return confirm('确认要删除本条留言?')"><button type="button" class="btn btn-warning btn-xs">删除</button></a>
+
+                        <elseif condition="$Think.session.uid eq $comment['uid']"/>
+                              <a href="deleteComment?cid={$comment.cid}" title="" onclick="return confirm('确认要删除本条留言?')"><button type="button" class="btn btn-warning btn-xs">删除</button></a>
+
+                        <else/>
+                              <button type="button" class="btn btn-success btn-xs reply">回复</button>
+                        </if>
+                              <span type="hidden" class="cid" value="{$comment.cid}"></span></span>
+                        </p>
+                    </dt>
+                    <dd id="{$comment.cid}"><p class="text-info">{$comment.content}</p></dd>
+                  </dl>
+                      <hr>
+
               </volist>
-              <if condition="$comments eq null">
-                  暂时没有留言
-              </if>
+
             </div>
           </div>  
         </div>
@@ -161,9 +169,25 @@
         if($(this).parents('dt').nextAll().hasClass('reform')){
           $('.reform').remove();
         }else{
-          var pid = $(this).next('span').attr('value');
-          $(this).parents('dt').next().after('<div class="reform"><form action="addComment" method="post"><div><textarea name="comment" id="comment" placeholder="回复留言" maxlength="200" rows="2" cols="112" style="resize: none;"></textarea><input type="hidden" name="aid" value="{$details.aid}" required=""><input type="hidden" name="pid" value="'+pid+'" required=""><span class="input-group-btn"><button class="btn btn-info" type="submit" id="re-submit" style="float:right">回复</button></span></div></form></div>');
+          var pid = $(this).siblings('span').attr('value');
+          $(this).parents('dt').next().after('<div class="reform"><form action="addComment" method="post"><div><textarea name="comment" id="comment" placeholder="回复留言" maxlength="200" rows="2" style="resize: none;" class="form-control"></textarea><input type="hidden" name="aid" value="{$details.aid}" required=""><input type="hidden" name="pid" value="'+pid+'" required=""><span class="input-group-btn"><button class="btn btn-info" type="submit" id="re-submit" style="float:right">回复</button></span></div></form></div>');
         }
+      });
+      var comments = {$comments_json};
+      var username = $('#logined').text();
+      $('span.cuser').each(function () {
+          if ($(this).text() == username) {
+            $(this).text('我');
+          }
+      })
+      $('span.pid').each(function () {
+          var pid = $(this).attr('value');
+          var replyname = $('span.cid'+pid).text();
+          if (username == replyname) {
+            $(this).text('我');
+          }else{
+            $(this).text('@'+replyname);
+          }
       })
     });
   </script>

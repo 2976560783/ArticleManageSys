@@ -44,7 +44,7 @@
         <ul class="nav navbar-nav navbar-right">
         <li><img src="/thinkweb/Public/home/imgs/tx.jpg" alt="头像" class="img-circle" style="width: 50px;height: 50px;"></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo (session('logined')); ?><span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id='logined'><?php echo (session('logined')); ?><span class="caret"></span></a>
           <ul class="dropdown-menu">
               <li><a href="#" title="">个人中心</a></li>
               <li><a href="#" title="">发布文章</a></li>
@@ -131,7 +131,7 @@
         <div class="well">
           <form action="addComment" method="post">
               <div class="input-group">
-                <textarea name="comment" id="user-comment" placeholder="写下你的看法" maxlength="200" rows="3" cols="109" style="resize: none;" class="comment"></textarea>
+                <textarea name="comment"  id="user-comment" placeholder="写下你的看法" maxlength="200" rows="3" style="resize: none;" class="form-control"></textarea>
                 <input type="hidden" name="aid" value="<?php echo ($details["aid"]); ?>" class="comment">
                 <span class="input-group-btn">
                   <button class="btn btn-info" type="submit" id="submit">提交</button>
@@ -142,28 +142,34 @@
           <div class="panel panel-default" id="comments">
             <div class="panel-heading">最近留言</div>
             <div class="panel-body">
-              <?php if(is_array($comments)): $i = 0; $__LIST__ = $comments;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$comment): $mod = ($i % 2 );++$i;?><dl>
-                <dt>
-                    <p class="text-primary"><img src="<?php echo ($comment["imgpath"]); ?>" style="width: 40px;height: 40px" alt="fd">&nbsp;<?php echo ($comment["username"]); ?> 发表留言:<span style="float: right;"><?php echo (date('Y-m-d H:m:s',$comment["time"])); ?> &nbsp;&nbsp;
+              <?php if(is_array($comments)): $i = 0; $__LIST__ = $comments;if( count($__LIST__)==0 ) : echo "暂时没有数据" ;else: foreach($__LIST__ as $key=>$comment): $mod = ($i % 2 );++$i;?><dl>
+                      <dt>
 
-                    <?php if($_SESSION['uid']== $details['uid'] and $comment['uid'] == $details['uid']): ?><a href="deleteComment?cid=<?php echo ($comment["cid"]); ?>" title="" onclick="return confirm('确认要删除本条留言?')"><button type="button" class="btn btn-warning btn-xs">删除</button></a>
-                          
-                    <?php elseif($_SESSION['uid']== $details['uid']): ?>
-                          <button type="button" class="btn btn-success btn-xs reply">回复</button>
-                          <a href="deleteComment?cid=<?php echo ($comment["cid"]); ?>" title="" onclick="return confirm('确认要删除本条留言?')"><button type="button" class="btn btn-warning btn-xs">删除</button></a>
+                        <p class="text-primary"><img src="<?php echo ($comment["imgpath"]); ?>" style="width: 40px;height: 40px" alt="fd">&nbsp;
+                        <?php if($comment['pid'] == 0): ?><span class="cuser cid<?php echo ($comment["cid"]); ?>" style="color: #6C7A89"><?php echo ($comment["username"]); ?></span> 发表留言:
+                           <?php else: ?>
+                           <span class="cuser cid<?php echo ($comment["cid"]); ?>" style="color: #6C7A89"><?php echo ($comment["username"]); ?></span> 回复 <span class="pid" value="<?php echo ($comment["pid"]); ?>" style="color: #6C7A89"></span> 留言:<?php endif; ?>
 
-                    <?php elseif($_SESSION['uid']== $comment['uid']): ?>
-                          <a href="deleteComment?cid=<?php echo ($comment["cid"]); ?>" title="" onclick="return confirm('确认要删除本条留言?')"><button type="button" class="btn btn-warning btn-xs">删除</button></a>
+                        <span style="float: right;"><?php echo (date('Y-m-d H:m:s',$comment["time"])); ?> &nbsp;&nbsp;
 
-                    <?php else: ?>
-                          <button type="button" class="btn btn-success btn-xs reply">回复</button><?php endif; ?>
-                          <span type="hidden" class="cid" value="<?php echo ($comment["cid"]); ?>"></span></span>
-                    </p>
-                </dt>
-                <dd><p class="text-info"><?php echo ($comment["content"]); ?></p></dd>
-              </dl>
-              <hr><?php endforeach; endif; else: echo "" ;endif; ?>
-              <?php if($comments == null): ?>暂时没有留言<?php endif; ?>
+                        <?php if($_SESSION['uid']== $details['uid'] and $comment['uid'] == $details['uid']): ?><a href="deleteComment?cid=<?php echo ($comment["cid"]); ?>" title="" onclick="return confirm('确认要删除本条留言?')"><button type="button" class="btn btn-warning btn-xs">删除</button></a>
+                              
+                        <?php elseif($_SESSION['uid']== $details['uid']): ?>
+                              <button type="button" class="btn btn-success btn-xs reply">回复</button>
+                              <a href="deleteComment?cid=<?php echo ($comment["cid"]); ?>" title="" onclick="return confirm('确认要删除本条留言?')"><button type="button" class="btn btn-warning btn-xs">删除</button></a>
+
+                        <?php elseif($_SESSION['uid']== $comment['uid']): ?>
+                              <a href="deleteComment?cid=<?php echo ($comment["cid"]); ?>" title="" onclick="return confirm('确认要删除本条留言?')"><button type="button" class="btn btn-warning btn-xs">删除</button></a>
+
+                        <?php else: ?>
+                              <button type="button" class="btn btn-success btn-xs reply">回复</button><?php endif; ?>
+                              <span type="hidden" class="cid" value="<?php echo ($comment["cid"]); ?>"></span></span>
+                        </p>
+                    </dt>
+                    <dd id="<?php echo ($comment["cid"]); ?>"><p class="text-info"><?php echo ($comment["content"]); ?></p></dd>
+                  </dl>
+                      <hr><?php endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
+
             </div>
           </div>  
         </div>
@@ -178,7 +184,7 @@
             <a href="/thinkweb/index.php/Home/article/category" class="list-group-item">全部<span class="badge"><?php echo ($count); ?></span></a>
             <br>
           <label class="list-group-item active"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> &nbsp;时间线 <span class="badge">文章</span></label>
-          <?php $__FOR_START_9125__=2016;$__FOR_END_9125__=2008;for($i=$__FOR_START_9125__;$i > $__FOR_END_9125__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
+          <?php $__FOR_START_19829__=2016;$__FOR_END_19829__=2008;for($i=$__FOR_START_19829__;$i > $__FOR_END_19829__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
           </div>
         </div><!--/.sidebar-offcanvas-->
     
@@ -230,9 +236,25 @@
         if($(this).parents('dt').nextAll().hasClass('reform')){
           $('.reform').remove();
         }else{
-          var pid = $(this).next('span').attr('value');
-          $(this).parents('dt').next().after('<div class="reform"><form action="addComment" method="post"><div><textarea name="comment" id="comment" placeholder="回复留言" maxlength="200" rows="2" cols="112" style="resize: none;"></textarea><input type="hidden" name="aid" value="<?php echo ($details["aid"]); ?>" required=""><input type="hidden" name="pid" value="'+pid+'" required=""><span class="input-group-btn"><button class="btn btn-info" type="submit" id="re-submit" style="float:right">回复</button></span></div></form></div>');
+          var pid = $(this).siblings('span').attr('value');
+          $(this).parents('dt').next().after('<div class="reform"><form action="addComment" method="post"><div><textarea name="comment" id="comment" placeholder="回复留言" maxlength="200" rows="2" style="resize: none;" class="form-control"></textarea><input type="hidden" name="aid" value="<?php echo ($details["aid"]); ?>" required=""><input type="hidden" name="pid" value="'+pid+'" required=""><span class="input-group-btn"><button class="btn btn-info" type="submit" id="re-submit" style="float:right">回复</button></span></div></form></div>');
         }
+      });
+      var comments = <?php echo ($comments_json); ?>;
+      var username = $('#logined').text();
+      $('span.cuser').each(function () {
+          if ($(this).text() == username) {
+            $(this).text('我');
+          }
+      })
+      $('span.pid').each(function () {
+          var pid = $(this).attr('value');
+          var replyname = $('span.cid'+pid).text();
+          if (username == replyname) {
+            $(this).text('我');
+          }else{
+            $(this).text('@'+replyname);
+          }
       })
     });
   </script>

@@ -22,7 +22,7 @@
               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 修改日志 <span class="caret"></span>
               </button>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu" style="max-height: 250px;overflow:auto;">
                 <volist name='logs' id='log'>
                       <li><a href="__CONTROLLER__/editlog?time={$log.time}">{$log.time|date='Y-m-d',###}</a></li>
                 </volist>

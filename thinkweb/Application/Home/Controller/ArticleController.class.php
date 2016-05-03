@@ -60,7 +60,7 @@ class ArticleController extends BaseController
 
     //文章详情
     public function details(){
-            //文章内容模块
+            //文章内容
             $articleModel = M('article');
             $id = intval(I('get.artid'));
             if ($id <= 0 || $id > $articleModel->count()) {
@@ -75,9 +75,10 @@ class ArticleController extends BaseController
             $this->assign('details',$data[0]);
             $this->assign('next',$nextid['id']);
             $this->assign('prev',$previd['id']);
-            //留言区
-            $comments = M('comment as c')->field('username,time,imgpath,content,c.id as cid,u.id as uid')->join('think_user as u on c.uid=u.id')->where('c.aid='.$id)->order('time desc')->select();
+            //留言内容
+            $comments = M('comment as c')->field('username,time,imgpath,content,pid,c.id as cid,u.id as uid')->join('think_user as u on c.uid=u.id')->where('c.aid='.$id)->order('time desc')->select();
             $this->assign('comments',$comments);
+            $this->assign('comments_json',json_encode($comments));
             // var_dump($comments);
             $this->show();
     }
@@ -123,7 +124,7 @@ class ArticleController extends BaseController
                 'aid' => intval(I('post.aid')),
             ); 
             if (M('comment')->add($data)) {
-               $this->success('留言添加成功',$_SERVER['HTTP_REFERER']);
+               $this->success('留言添加成功');
             }
         }
     }

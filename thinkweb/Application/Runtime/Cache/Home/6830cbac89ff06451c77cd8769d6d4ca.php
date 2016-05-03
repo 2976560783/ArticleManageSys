@@ -9,8 +9,8 @@
     <meta name="author" content="">
     <title>欢迎页</title>
     <!-- Bootstrap core CSS -->
-    <link href="/thinkphp/Public/home/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/thinkphp/Public/home/css/index.css" rel="stylesheet">
+    <link href="/thinkweb/Public/home/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/thinkweb/Public/home/css/index.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     
   <style type="text/css" media="screen">
@@ -72,24 +72,27 @@
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="exampleModalLabel">注册</h4>
-                  <form  action="/thinkphp/index.php/Home/user/register" method="post" accept-charset="utf-8">
+                  <form  action="/thinkweb/index.php/Home/user/register" method="post" accept-charset="utf-8">
                   <div class="modal-body">
-                  </div>
-                      <div class="form-group has-feedback" id="reg-name-div">
-                        <label class="control-label" for="inputSuccess2"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 用户名</label><span id="name-tip" style="float: right; background-color: #FCF8E3; color: #DFA95A;" class="badge"></span>
-                        <input type="text" class="form-control" id="reg_userName" aria-describedby="inputSuccess2Status" placeholder="UserName" required="" name="userName">
-                          <span class="glyphicon glyphicon-pencil form-control-feedback" aria-hidden="true" id="namespan"></span>
-                      </div>
+
+                        <div class="form-group has-feedback" id="reg-name-div">
+                          <label class="control-label" for="inputSuccess2"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 用户名</label><span id="name-tip" style="float: right; background-color: #FCF8E3; color: #DFA95A;" class="badge"></span>
+                          <input type="text" class="form-control" id="reg_userName" aria-describedby="inputSuccess2Status" placeholder="UserName" required="" name="userName">
+                            <span class="glyphicon glyphicon-pencil form-control-feedback" aria-hidden="true" id="namespan"></span>
+                        </div>
+
                         <div class="form-group has-feedback" id="reg-email-div">
                           <label class="control-label" for="inputSuccess2"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 电子邮箱</label><span id="email-tip" style="float: right; background-color: #FCF8E3; color: #DFA95A;" class="badge"></span>
                           <input type="email" class="form-control" id="reg_email" aria-describedby="inputSuccess2Status" placeholder="UserName" required="" name="email">
                             <span class="glyphicon glyphicon-pencil form-control-feedback" aria-hidden="true" id="emailspan"></span>
                         </div>
+
                         <div class="form-group has-feedback" id="reg-pwd-div">
                           <label for="reg_password"> <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> 密码</label><span id="pwd-tip" style="float: right; background-color: #FCF8E3; color: #DFA95A;" class="badge"></span>
                           <input type="password" class="form-control" id="reg_password" placeholder="Password" required="" minlength="6" maxlength="20" name="password">
                           <span class="glyphicon glyphicon-pencil form-control-feedback" aria-hidden="true" id="regpwdspan"></span>
                         </div>
+
                         <div class="form-group has-feedback" id="reg-conpwd-div">
                           <label for="confirmPwd"> <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> 密码确认</label><span id="conpwd-tip" style="float: right; background-color: #FCF8E3; color: #DFA95A;" class="badge"></span>
                           <input type="password" class="form-control" id="confirmPwd" placeholder="Confirm password" required="" name="confirmPwd">
@@ -109,14 +112,9 @@
                           <label for="birthday"> <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 出生日期</label><span id="conpwd-tip" style="float: right; background-color: #FCF8E3; color: #DFA95A;" class="badge"></span>
                             <input type="date" class="form-control" name="birthday" required="" value="" placeholder="">
                         </div>
+                  </div>
 
-<!--                         <div class="form-group has-feedback">
-                          <label for="avatar"> <span class="glyphicon glyphicon-camera" aria-hidden="true"></span> 上传头像</label>
-                          <input type="file" id="avatar" name="avatar"  accept="image/png,image/gif,image/jpg" >
-                          <p class="help-block">图片文件不能过大,展示效果:50*50.</p>
-                        </div> -->
 
-                    </div>
                   <div class="modal-footer">
                   <button type="reset" style="float: left;">重置</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -126,6 +124,7 @@
                 </div>
               </div>
             </div>
+          </div>
 
             <!-- 用户登录 -->
             <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
@@ -135,7 +134,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="exampleModalLabel">登陆</h4>
                   </div>
-                  <form action="/thinkphp/index.php/Home/user/login" method="post" accept-charset="utf-8">
+                  <form action="/thinkweb/index.php/Home/user/login" method="post" accept-charset="utf-8">
                       <div class="modal-body">
                         <div class="form-group has-feedback" id="log-email-div">
                           <label class="control-label" for="inputSuccess2"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 电子邮箱</label>
@@ -153,7 +152,7 @@
                         <input type="text" class="form-control"aria-describedby="inputSuccess2Status" placeholder="UserName" required="" name="vcode" id="vcode" maxlength="4">
                           <span class="glyphicon glyphicon-pencil form-control-feedback" aria-hidden="true" id="vcodespan"></span>
                       </div>
-                      <img src="/thinkphp/index.php/Home/user/captche" alt="验证码" style="width: 150px;height: 70px;" onclick="javascript:this.src = '/thinkphp/index.php/Home/user/captche/'+Math.random();">
+                      <img src="/thinkweb/index.php/Home/user/captche" alt="验证码" style="width: 150px;height: 70px;" onclick="javascript:this.src = '/thinkweb/index.php/Home/user/captche/'+Math.random();">
                       <br>
                       <br>
                         <div class="checkbox">
@@ -188,16 +187,16 @@
               </div>
             </div>
 
-<script src="/thinkphp/Public/home/js/jquery.min.js"></script>
-<script src="/thinkphp/Public/home/js/bootstrap.min.js"></script>
-<script src="/thinkphp/Public/home/js/offcanvas.js"></script>
+<script src="/thinkweb/Public/home/js/jquery.min.js"></script>
+<script src="/thinkweb/Public/home/js/bootstrap.min.js"></script>
+<script src="/thinkweb/Public/home/js/offcanvas.js"></script>
 
-<?php if(isset($ok)): ?><script>
+<?php if(isset($login)): ?><script>
   $(document).ready(function() {
       $('#login').modal('show');
   });
   </script><?php endif; ?>
-<script src="/thinkphp/Public/home/js/logreg.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="/thinkweb/Public/home/js/logreg.js" type="text/javascript" charset="utf-8" async defer></script>
 
 
 </body>
