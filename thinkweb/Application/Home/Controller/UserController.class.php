@@ -141,4 +141,8 @@ class UserController extends Controller
         
     }
 
+    public function userInfo(){
+      $this->show();
+    }
+
 }
