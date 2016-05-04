@@ -61,9 +61,47 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">侧栏</button>
           </p>
-          <div class="jumbotron" style=" background-image: url('/thinkweb/Public/home/imgs/jian.png');background-repeat: no-repeat; background-size:100% 100%;">
-            <h1>Hello, world!</h1>
-            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+          <div class="jumbotron" style="padding: 0">
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-generic" data-slide-to="0" ></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <img src="/thinkweb/Public/home/imgs/lunbo1.png" alt="...">
+                    <div class="carousel-caption">
+                      <h2>人生的气度</h2>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <img src="/thinkweb/Public/home/imgs/lunbo2.png" alt="...">
+                    <div class="carousel-caption">
+                      <h2>人生的气度</h2>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <img src="/thinkweb/Public/home/imgs/lunbo3.png" alt="...">
+                    <div class="carousel-caption">
+                      <h2>人生的气度</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
           </div>
           <div class="row">
             <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$lis): $mod = ($i % 2 );++$i;?><div class="col-xs-6 col-lg-4">
@@ -82,7 +120,7 @@
             <a href="/thinkweb/index.php/Home/article/category" class="list-group-item">全部<span class="badge"><?php echo ($count); ?></span></a>
             <br>
           <label class="list-group-item active"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> &nbsp;时间线 <span class="badge">文章</span></label>
-          <?php $__FOR_START_7340__=2016;$__FOR_END_7340__=2008;for($i=$__FOR_START_7340__;$i > $__FOR_END_7340__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
+          <?php $__FOR_START_22816__=2016;$__FOR_END_22816__=2008;for($i=$__FOR_START_22816__;$i > $__FOR_END_22816__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
           </div>
         </div><!--/.sidebar-offcanvas-->
     

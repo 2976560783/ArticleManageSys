@@ -15,54 +15,6 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">侧栏</button>
           </p>
-<!--         <ul class="jumbotron" style="list-style: none;width:100%;height:100%;padding: 5px;min-height: 760px;">
-            <volist name = 'lists' id ='list'>
-            <hr>
-            <li class="article-list" style="width:100%;height:125px;">
-                <div class="col-md-10 col-sm-5" style="height: 100%" >
-                    <p class="list-top" style="font-size: 10px;line-height: 20px;">
-                            <a href="#" >{$list.username}</a>
-                            <em>·</em>
-                            <span class="time" publish="{$list.publish}"></span>
-                    </p>
-                    <h4 class="title">
-                        <a href="__CONTROLLER__/details?artid={$list.id}">{$list.title}</a>
-                    </h4>
-                    <div class="list-footer">
-                             <a href="__CONTROLLER__/details?artid={$list.id}"> 阅读 {$list.hits}</a>
-                             <span><em>·</em>{$list.tagname}</span>
-                             <span><em>·</em> <span class="glyphicon glyphicon-heart like" aria-hidden="true" value='{$list.id}' id="like{$list.id}">{$list.likes}</span></span>
-                    </div>
-                </div>
-               <div class="col-md-2 col-sm-5" >
-                 <a href="__CONTROLLER__/details?artid={$list.id}" title=""><img src="__PUBLIC__/home/imgs/jianth.png" alt="..." class="img-rounded media-object" style="width: 100%;height: 100%;margin-top: 13%;"></a>
-               </div>
-            </li>
-
-
-          <ul class="media-list">
-            <li class="media">
-              <div class="media-left">
-                <a href="#">
-                  <img class="media-object" src="..." alt="...">
-                </a>
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">Media heading</h4>
-                ...
-              </div>
-            </li>
-          </ul>
-
-
-
-           </volist>
-
-           <if condition = '$lists eq null'>
-              <p style="text-align: center;"><label>暂时没有此分类的文章,敬请期待!</label></p>
-           </if>
-            <hr>
-        </ul> -->
         <div class="panel panel-info">
           <div class="panel-heading">{$category|default='全部'}</div>
           <div class="panel-body">

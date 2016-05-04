@@ -68,47 +68,6 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">侧栏</button>
           </p>
-<!--         <ul class="jumbotron" style="list-style: none;width:100%;height:100%;padding: 5px;min-height: 760px;">
-            <?php if(is_array($lists)): $i = 0; $__LIST__ = $lists;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$list): $mod = ($i % 2 );++$i;?><hr>
-            <li class="article-list" style="width:100%;height:125px;">
-                <div class="col-md-10 col-sm-5" style="height: 100%" >
-                    <p class="list-top" style="font-size: 10px;line-height: 20px;">
-                            <a href="#" ><?php echo ($list["username"]); ?></a>
-                            <em>·</em>
-                            <span class="time" publish="<?php echo ($list["publish"]); ?>"></span>
-                    </p>
-                    <h4 class="title">
-                        <a href="/thinkweb/index.php/Home/Article/details?artid=<?php echo ($list["id"]); ?>"><?php echo ($list["title"]); ?></a>
-                    </h4>
-                    <div class="list-footer">
-                             <a href="/thinkweb/index.php/Home/Article/details?artid=<?php echo ($list["id"]); ?>"> 阅读 <?php echo ($list["hits"]); ?></a>
-                             <span><em>·</em><?php echo ($list["tagname"]); ?></span>
-                             <span><em>·</em> <span class="glyphicon glyphicon-heart like" aria-hidden="true" value='<?php echo ($list["id"]); ?>' id="like<?php echo ($list["id"]); ?>"><?php echo ($list["likes"]); ?></span></span>
-                    </div>
-                </div>
-               <div class="col-md-2 col-sm-5" >
-                 <a href="/thinkweb/index.php/Home/Article/details?artid=<?php echo ($list["id"]); ?>" title=""><img src="/thinkweb/Public/home/imgs/jianth.png" alt="..." class="img-rounded media-object" style="width: 100%;height: 100%;margin-top: 13%;"></a>
-               </div>
-            </li>
-
-
-          <ul class="media-list">
-            <li class="media">
-              <div class="media-left">
-                <a href="#">
-                  <img class="media-object" src="..." alt="...">
-                </a>
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">Media heading</h4>
-                ...
-              </div>
-            </li>
-          </ul><?php endforeach; endif; else: echo "" ;endif; ?>
-
-           <?php if($lists == null): ?><p style="text-align: center;"><label>暂时没有此分类的文章,敬请期待!</label></p><?php endif; ?>
-            <hr>
-        </ul> -->
         <div class="panel panel-info">
           <div class="panel-heading"><?php echo ((isset($category) && ($category !== ""))?($category):'全部'); ?></div>
           <div class="panel-body">
@@ -149,7 +108,7 @@
             <a href="/thinkweb/index.php/Home/article/category" class="list-group-item">全部<span class="badge"><?php echo ($count); ?></span></a>
             <br>
           <label class="list-group-item active"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> &nbsp;时间线 <span class="badge">文章</span></label>
-          <?php $__FOR_START_14983__=2016;$__FOR_END_14983__=2008;for($i=$__FOR_START_14983__;$i > $__FOR_END_14983__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
+          <?php $__FOR_START_20920__=2016;$__FOR_END_20920__=2008;for($i=$__FOR_START_20920__;$i > $__FOR_END_20920__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
           </div>
         </div><!--/.sidebar-offcanvas-->
     
