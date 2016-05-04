@@ -63,7 +63,7 @@ class ArticleController extends BaseController
             //文章内容
             $articleModel = M('article');
             $id = intval(I('get.artid'));
-            if ($id <= 0 || $id > $articleModel->count()) {
+            if ($id <= 0 || !in_array($id, $articleModel->getField('id',true))) {
                 $this->error('传输参数错误!');
             }
             $articleModel->where('id='.$id)->setInc('hits');
@@ -76,7 +76,7 @@ class ArticleController extends BaseController
             $this->assign('next',$nextid['id']);
             $this->assign('prev',$previd['id']);
             //留言内容
-            $comments = M('comment as c')->field('username,time,imgpath,content,pid,c.id as cid,u.id as uid')->join('think_user as u on c.uid=u.id')->where('c.aid='.$id)->order('time desc')->select();
+            $comments = M('comment as c')->field('username,c.time,imgpath,content,pid,c.id as cid,u.id as uid')->join('think_user as u on c.uid=u.id')->where('c.aid='.$id)->order('c.time desc')->select();
             $this->assign('comments',$comments);
             $this->assign('comments_json',json_encode($comments));
             // var_dump($comments);

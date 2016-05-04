@@ -7,7 +7,9 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>主页</title>
+    
+  <title>主页</title>
+
     <!-- Bootstrap core CSS -->
     <link href="/thinkweb/Public/home/css/bootstrap.min.css" rel="stylesheet">
     <link href="/thinkweb/Public/home/css/index.css" rel="stylesheet">
@@ -40,7 +42,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id='logined'><?php echo (session('logined')); ?><span class="caret"></span></a>
           <ul class="dropdown-menu">
-              <li><a href="#" title="">个人中心</a></li>
+              <li><a href="/thinkweb/index.php/Home/user/userInfo" title="">个人中心</a></li>
               <li><a href="#" title="">发布文章</a></li>
               <li><a href="#" title="">我的文章</a></li>
               <li><a href="#" title="">帮助</a></li>
@@ -120,7 +122,7 @@
             <a href="/thinkweb/index.php/Home/article/category" class="list-group-item">全部<span class="badge"><?php echo ($count); ?></span></a>
             <br>
           <label class="list-group-item active"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> &nbsp;时间线 <span class="badge">文章</span></label>
-          <?php $__FOR_START_12411__=2016;$__FOR_END_12411__=2008;for($i=$__FOR_START_12411__;$i > $__FOR_END_12411__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
+          <?php $__FOR_START_29195__=2016;$__FOR_END_29195__=2008;for($i=$__FOR_START_29195__;$i > $__FOR_END_29195__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
           </div>
         </div><!--/.sidebar-offcanvas-->
     

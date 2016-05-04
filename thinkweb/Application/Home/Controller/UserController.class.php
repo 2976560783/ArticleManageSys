@@ -27,7 +27,7 @@ class UserController extends Controller
                 $data['confirmpwd'] =trim(I('post.confirmPwd'));
                 $data['gender'] = trim(I('post.gender'));
                 $data['birthday'] =trim( I('post.birthday'));
-                $data['ip'] = get_client_ip();
+                // $data['ip'] = get_client_ip();
                 if ($userModel->create($data)) {
                     if ($userModel->add()) {
                         $this->success('注册成功,请登录!','login');
@@ -49,31 +49,24 @@ class UserController extends Controller
                 $data['email'] = trim(I('post.email'));
                 $data['password'] = md5(trim(I('post.password')));
                 $code = trim(I('post.vcode'));
-                $userModel = M('user');
+                $ip = ip2long(get_client_ip());
+                $userModel = D('user');
                 if (Captche::checkCaptche($code)) {
                     if ($userModel->where($data)->select()) {
-                        $sessionid = time();
-                        $logInfo = $userModel->field('username,id,status')->where($data)->select()[0];
-                        //当前账号状态
-                        if ($logInfo['status'] == '0') {
-                            if (!M('session')->add(array('uid'=>$logInfo['id'],'sessionid'=>$sessionid))) {
-                                $this->error('登陆失败,请重试!');
-                            }
-                            $userModel->where(array('id'=>$logInfo['id']))->save(array('status'=>1));
-                        }else{
-                            if (!M('session')->where(array('uid'=>$logInfo['id']))->save(array('sessionid'=>$sessionid))) {
-                                 $this->error('登陆失败,请重试!');
-                            }
-                        }
-                        session('sessionid',$sessionid);
-                        session('logined',$logInfo['username']);
-                        session('uid', $logInfo['id']);
-                        if (null != I('post.keep')) {
-                            cookie('username',$logInfo['username'],3600*24);
-                            cookie('sessionid',$sessionid,3600*24);
-                            cookie('uid',$logInfo['id'],3600*24);
-                        }
+                      $loginInfo = $userModel->login($data,$ip);
+                        if (loginInfo) {
+                          session('sessionid',$loginInfo['sessionid']);
+                          session('logined',$loginInfo['username']);
+                          session('uid', $loginInfo['id']);
+                          if (null != I('post.keep')) {
+                              cookie('username',$loginInfo['username'],3600*24);
+                              cookie('sessionid',$loginInfo['sessionid'],3600*24);
+                              cookie('uid',$loginInfo['id'],3600*24);
+                          }
                         $this->success('登录成功',U('index/index'));
+                        }else{
+                          $this->error('登陆失败,请稍后重试!');
+                        }
                     }else{
                         $this->error('用户名或密码错误!');
                     }
@@ -142,7 +135,11 @@ class UserController extends Controller
     }
 
     public function userInfo(){
-      $this->show();
+      if (session('logined')) {
+         $this->show();
+      }else{
+         $this->redirect('login',0);
+      }
     }
 
 }
