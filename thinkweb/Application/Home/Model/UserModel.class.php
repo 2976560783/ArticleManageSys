@@ -34,38 +34,47 @@ class UserModel extends Model
 
     public function login($data,$ip){
         $time = time();
+        $this->startTrans();
         $loginInfo = $this->field('username,id,status,ip,time,last_login_ip')->where($data)->select()[0];
         if ($loginInfo['status'] == '0') {
             if (!M('session')->add(array('uid'=>$loginInfo['id'],'sessionid'=>$time))) {
+                $this->rollback();
                 return false;
             }
             $this->where(array('id'=>$loginInfo['id']))->save(array('status'=>1));
         }else{
             if (!M('session')->where(array('uid'=>$loginInfo['id']))->save(array('sessionid'=>$time))) {
+                  $this->rollback();
                   return false;
             }
         }
         if ($loginInfo['last_login_ip'] != $loginInfo['ip']) {
             if (!$this->where('id='.$loginInfo['id'])->save(array('last_login_time'=>$loginInfo['time'],'last_login_ip'=>$loginInfo['ip']))) {
+                $this->rollback();
                 return false;
             }
         }else{
             if (!$this->where('id='.$loginInfo['id'])->save(array('last_login_time'=>$loginInfo['time']))) {
+                $this->rollback();
                 return false;
             }
         }
         if (!$this->where('id='.$loginInfo['id'])->save(array('time'=>$time))) {
+            $this->rollback();
             return false;
         }
         if ($loginInfo['ip'] != $ip) {
             if (!$this->where('id='.$loginInfo['id'])->save(array('ip'=>$ip))) {
+                $this->rollback();
                 return false;
             }
         }
         if (!$this->where('id='.$loginInfo['id'])->setInc('login_count')) {
+            $this->rollback();
             return false;
         }
         $loginInfo['sessionid'] = $time;
+        $this->commit();
         return $loginInfo;
     }
 }

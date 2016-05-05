@@ -63,53 +63,18 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">侧栏</button>
           </p>
-          <div class="jumbotron" style="padding: 0">
-              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                  <li data-target="#carousel-example-generic" data-slide-to="0" ></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                </ol>
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                  <div class="item active">
-                    <img src="/thinkweb/Public/home/imgs/lunbo1.png" alt="...">
-                    <div class="carousel-caption">
-                      <h2>人生的气度</h2>
-                    </div>
-                  </div>
+        <div class="jumbotron" style="background-image: url('/thinkweb/Public/home/imgs/lunbo2.png');">
+          <h1 class="text-primary">Master Password</h1>
+          <p class="text-info"><small>一款跨平台且非常安全的密码管理工具</small></p>
+          <p><a class="btn btn-primary " href="#" role="button">点击了解</a></p>
+        </div>
 
-                  <div class="item">
-                    <img src="/thinkweb/Public/home/imgs/lunbo2.png" alt="...">
-                    <div class="carousel-caption">
-                      <h2>人生的气度</h2>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <img src="/thinkweb/Public/home/imgs/lunbo3.png" alt="...">
-                    <div class="carousel-caption">
-                      <h2>人生的气度</h2>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-          </div>
           <div class="row">
             <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$lis): $mod = ($i % 2 );++$i;?><div class="col-xs-6 col-lg-4">
-              <a href="/thinkweb/index.php/Home/article/details?artid=<?php echo ($lis["id"]); ?>" class="htitle" ><h2 ><?php echo ($lis["title"]); ?></h2></a>
-              <p ><?php echo ($lis["summary"]); ?></p>
-              <p><a style="margin-right: 15%;" class="btn btn-info" href="/thinkweb/index.php/Home/article/details?artid=<?php echo ($lis["id"]); ?>" role="button">Details &raquo;</a><span  class="badge">H:<?php echo ($lis["hits"]); ?></span> <span  class="badge"><?php echo ($lis["tagname"]); ?></span></p>
+              <a href="/thinkweb/index.php/Home/article/details?artid=<?php echo ($lis["id"]); ?>" class="htitle " ><h2 ><?php echo ($lis["title"]); ?></h2></a>
+              <p style="height: 75px;text-indent: 15px" class="text-info index-summary"><?php echo ($lis["summary"]); ?></p>
+             <a style="margin-right: 15%;" class="btn btn-info" href="/thinkweb/index.php/Home/article/details?artid=<?php echo ($lis["id"]); ?>" role="button">Details &raquo;</a><span  class="badge">H:<?php echo ($lis["hits"]); ?></span> <span  class="badge"><?php echo ($lis["tagname"]); ?></span>
             </div><!--/.col-xs-6.col-lg-4--><?php endforeach; endif; else: echo "" ;endif; ?>
           </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->
@@ -122,7 +87,7 @@
             <a href="/thinkweb/index.php/Home/article/category" class="list-group-item">全部<span class="badge"><?php echo ($count); ?></span></a>
             <br>
           <label class="list-group-item active"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> &nbsp;时间线 <span class="badge">文章</span></label>
-          <?php $__FOR_START_29195__=2016;$__FOR_END_29195__=2008;for($i=$__FOR_START_29195__;$i > $__FOR_END_29195__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
+          <?php $__FOR_START_209__=2016;$__FOR_END_209__=2008;for($i=$__FOR_START_209__;$i > $__FOR_END_209__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
           </div>
         </div><!--/.sidebar-offcanvas-->
     
@@ -146,6 +111,18 @@
 
     <script src="/thinkweb/Public/home/js/ie10-viewport-bug-workaround.js"></script>
     <script src="/thinkweb/Public/home/js/ie-emulation-modes-warning.js"></script>
+    <script type="text/javascript"> 
+      $(document).ready(function() {
+        var summary;
+         $('.index-summary').each(function () {
+            summary = $(this).text();
+            if (summary.length > 70) {
+              $(this).text(summary.substring(0,70)+'...');
+            }
+         })
+        
+      });
+    </script>
 
 
 </body>

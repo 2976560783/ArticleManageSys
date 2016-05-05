@@ -77,39 +77,43 @@
             <tbody>
                 <tr>
                     <td>用户名:</td>
-                    <td>付立</td>
+                    <td><?php echo ($baseInfo["username"]); ?></td>
                 </tr>
                 <tr>
                     <td>电子邮件</td>
-                    <td>674310383@qq.com</td>
+                    <td><?php echo ($baseInfo["email"]); ?></td>
                 </tr>
                 <tr>
                     <td>生日</td>
-                    <td>1994/09/21</td>
+                    <td><?php echo (substr($baseInfo["birthday"],0,10)); ?></td>
                 </tr>
                 <tr>
                     <td>性别</td>
-                    <td>男生</td>
+                    <td>
+                        <?php switch($baseInfo["gender"]): case "0": ?>保密<?php break;?>
+                            <?php case "1": ?>女<?php break;?>
+                            <?php case "2": ?>男<?php break; endswitch;?>
+                    </td>
                 </tr>
                 <tr>
                     <td>文章数量</td>
-                    <td>20</td>
+                    <td><?php echo ($baseInfo["acount"]); ?></td>
                 </tr>
                 <tr>
                     <td>登陆次数</td>
-                    <td>20</td>
+                    <td><?php echo ($baseInfo["login_count"]); ?></td>
                 </tr>
                 <tr>
                     <td>上次登录时间</td>
-                    <td>2016-05-03 16:05:33</td>
+                    <td><?php echo (date('Y-m-d',$baseInfo["last_login_time"])); ?></td>
                 </tr>
                 <tr>
                     <td>上次登录IP</td>
-                    <td>127.0.0.1</td>
+                    <td><?php echo (long2ip($baseInfo["last_login_ip"])); ?></td>
                 </tr>
                 <tr>
                     <td>加入时间</td>
-                    <td>2016-05-03 16:05:33</td>
+                    <td><?php echo (date('Y-m-d',$baseInfo["createtime"])); ?></td>
                 </tr>
             </tbody>
         </table>
@@ -130,17 +134,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>留言详情</td>
-                    <td>留言详情</td>
-                    <td>留言详情</td>
-
-                </tr>
-                <tr>
-                    <td>奋斗奋斗</td>
-                    <td>奋斗奋斗</td>
-                    <td>奋斗奋斗</td>
-                </tr>
+                <?php if(is_array($commentInfo)): $i = 0; $__LIST__ = $commentInfo;if( count($__LIST__)==0 ) : echo "暂时没有记录" ;else: foreach($__LIST__ as $key=>$com): $mod = ($i % 2 );++$i;?><tr>
+                        <td class="head"><?php echo ($com["title"]); ?>睡得太晚睡得</td>
+                        <td class="content"><?php echo ($com["content"]); ?>由我来写下第一条留言由我来写下第一条留言由我来写下第一条留言由我来写下第一条留言由我来写下第一条留由我来写下第一条留言</td>
+                        <td><?php echo (date('Y-m-d',$com["time"])); ?></td>
+                    </tr><?php endforeach; endif; else: echo "暂时没有记录" ;endif; ?>
             </tbody>
         </table>
     </div>
@@ -158,17 +156,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>留言详情</td>
-                    <td>留言详情</td>
-                    <td>留言详情</td>
-
-                </tr>
-                <tr>
-                    <td>奋斗奋斗</td>
-                    <td>奋斗奋斗</td>
-                    <td>奋斗奋斗</td>
-                </tr>
+                <?php if(is_array($replyToMe)): $i = 0; $__LIST__ = $replyToMe;if( count($__LIST__)==0 ) : echo "暂时没有记录" ;else: foreach($__LIST__ as $key=>$rept): $mod = ($i % 2 );++$i;?><tr>
+                        <td class="head"><?php echo ($rept["username"]); ?></td>
+                        <td class="content"><?php echo ($rept["content"]); ?></td>
+                        <td><?php echo (date('Y-m-d',$rept["time"])); ?></td>
+                    </tr><?php endforeach; endif; else: echo "暂时没有记录" ;endif; ?>
             </tbody>
         </table>         
       </div>
@@ -187,17 +179,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>留言详情</td>
-                    <td>留言详情</td>
-                    <td>留言详情</td>
-
-                </tr>
-                <tr>
-                    <td>奋斗奋斗</td>
-                    <td>奋斗奋斗</td>
-                    <td>奋斗奋斗</td>
-                </tr>
+                <?php if(is_array($replyFromMe)): $i = 0; $__LIST__ = $replyFromMe;if( count($__LIST__)==0 ) : echo "暂时没有记录" ;else: foreach($__LIST__ as $key=>$repf): $mod = ($i % 2 );++$i;?><tr>
+                        <td class="head"><?php echo ($repf["username"]); ?></td>
+                        <td class="content"><?php echo ($repf["content"]); ?></td>
+                        <td><?php echo (date('Y-m-d',$repf["time"])); ?></td>
+                    </tr><?php endforeach; endif; else: echo "暂时没有记录" ;endif; ?>
             </tbody>
         </table>
     </div>
@@ -246,6 +232,22 @@
 <script src="/thinkweb/Public/home/js/bootstrap.min.js"></script>
 <script src="/thinkweb/Public/home/js/offcanvas.js"></script>
 
+<script>
+    $(document).ready(function() {
+       $('.content').each(function () {
+            var context = $(this).text();
+            if (context.length > 60) {
+                $(this).text(context.substring(0,60)+'...');
+            } 
+       });
+       $('.head').each(function () {
+            var context = $(this).text();
+            if (context.length > 10) {
+                $(this).text(context.substring(0,10)+'...');
+            } 
+       })
+    });
+</script>
 
 
 </body>

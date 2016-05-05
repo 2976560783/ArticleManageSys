@@ -54,7 +54,7 @@ class UserController extends Controller
                 if (Captche::checkCaptche($code)) {
                     if ($userModel->where($data)->select()) {
                       $loginInfo = $userModel->login($data,$ip);
-                        if (loginInfo) {
+                        if ($loginInfo) {
                           session('sessionid',$loginInfo['sessionid']);
                           session('logined',$loginInfo['username']);
                           session('uid', $loginInfo['id']);
@@ -136,7 +136,19 @@ class UserController extends Controller
 
     public function userInfo(){
       if (session('logined')) {
-         $this->show();
+        $baseInfo = M('user as u')->where(array('u.id'=>session('uid')))->field('username,email,birthday,gender,login_count,last_login_ip,last_login_time,count(a.id) as acount,createtime')->join('think_article as a on u.id = a.uid')->select()[0];
+        $commentInfo = M('comment as c')->where(array('c.uid'=>session('uid'),'pid'=>'0'))->field('title,time,c.content')->join('think_article as a on c.aid = a.id')->select();
+        $replyToMe = M('comment as c')->where(array('c.uid'=>session('uid')))->field('username,c.content,c.time')->join('think_comment as cr on cr.pid = c.id')->join('think_user as u on cr.uid = u.id')->select();
+        $replyFromMe = M('comment as c')->where('c.uid='.session('uid').' and not c.pid=0')->field('username,c.content,c.time')->join('think_comment as cf on cf.id = c.pid')->join('think_user as u 
+            on cf.uid = u.id')->select();
+        // var_dump($commentInfo);
+        // var_dump($replyToMe);
+        // var_dump($replyFromMe);
+        $this->assign('baseInfo',$baseInfo);
+        $this->assign('commentInfo',$commentInfo);
+        $this->assign('replyToMe',$replyToMe);
+        $this->assign('replyFromMe',$replyFromMe);
+        $this->show();
       }else{
          $this->redirect('login',0);
       }
