@@ -36,7 +36,7 @@
             <li id="contact"><a href="#contact">联系</a></li>
           </ul>
         <ul class="nav navbar-nav navbar-right">
-        <li><img src="/thinkweb/Public/home/imgs/tx.jpg" alt="头像" class="img-circle" style="width: 50px;height: 50px;"></li>
+        <li><img src="/thinkweb/Public/home/imgs/defaultx.jpg" alt="头像" class="img-circle" style="width: 50px;height: 50px;"></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id='logined'><?php echo (session('logined')); ?><span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -67,7 +67,7 @@
                 <p>
                   <dl class="dl-horizontal">
                     <?php if(is_array($logs)): $i = 0; $__LIST__ = $logs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$log): $mod = ($i % 2 );++$i;?><dt><?php echo (date('Y-m-d',$log["time"])); ?></dt>
-                    <dd><?php echo ($log["loginfo"]); ?></dd><?php endforeach; endif; else: echo "" ;endif; ?>
+                    <dd class="text-info"><?php echo ($log["loginfo"]); ?></dd><?php endforeach; endif; else: echo "" ;endif; ?>
                   </dl>
                 </p>
                 <hr>

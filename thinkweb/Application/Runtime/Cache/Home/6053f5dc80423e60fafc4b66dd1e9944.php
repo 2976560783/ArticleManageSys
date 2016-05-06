@@ -15,6 +15,12 @@
     <link href="/thinkweb/Public/home/css/index.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     
+   <style type="text/css" media="screen">
+       .gender:hover{
+            cursor: pointer;
+       }
+   </style>
+
 </head>
 <body>
 
@@ -38,7 +44,7 @@
             <li id="contact"><a href="#contact">联系</a></li>
           </ul>
         <ul class="nav navbar-nav navbar-right">
-        <li><img src="/thinkweb/Public/home/imgs/tx.jpg" alt="头像" class="img-circle" style="width: 50px;height: 50px;"></li>
+        <li><img src="/thinkweb/Public/home/imgs/defaultx.jpg" alt="头像" class="img-circle" style="width: 50px;height: 50px;"></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id='logined'><?php echo (session('logined')); ?><span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -69,7 +75,6 @@
             <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">设置</a></li>
           </ul>
           <!-- Tab panes -->
-
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane fade in active" id="baseInfo">
     <div class="panel panel-default">
@@ -135,9 +140,9 @@
             </thead>
             <tbody>
                 <?php if(is_array($commentInfo)): $i = 0; $__LIST__ = $commentInfo;if( count($__LIST__)==0 ) : echo "暂时没有记录" ;else: foreach($__LIST__ as $key=>$com): $mod = ($i % 2 );++$i;?><tr>
-                        <td class="head"><?php echo ($com["title"]); ?>睡得太晚睡得</td>
-                        <td class="content"><?php echo ($com["content"]); ?>由我来写下第一条留言由我来写下第一条留言由我来写下第一条留言由我来写下第一条留言由我来写下第一条留由我来写下第一条留言</td>
-                        <td><?php echo (date('Y-m-d',$com["time"])); ?></td>
+                        <td class="head"><?php echo ($com["title"]); ?></td>
+                        <td class="content"><?php echo ($com["content"]); ?></td>
+                        <td><?php echo (date('Y-m-d h:m:s',$com["time"])); ?></td>
                     </tr><?php endforeach; endif; else: echo "暂时没有记录" ;endif; ?>
             </tbody>
         </table>
@@ -156,10 +161,10 @@
                 </tr>
             </thead>
             <tbody>
-                <?php if(is_array($replyToMe)): $i = 0; $__LIST__ = $replyToMe;if( count($__LIST__)==0 ) : echo "暂时没有记录" ;else: foreach($__LIST__ as $key=>$rept): $mod = ($i % 2 );++$i;?><tr>
-                        <td class="head"><?php echo ($rept["username"]); ?></td>
-                        <td class="content"><?php echo ($rept["content"]); ?></td>
-                        <td><?php echo (date('Y-m-d',$rept["time"])); ?></td>
+                <?php if(is_array($replyFromMe)): $i = 0; $__LIST__ = $replyFromMe;if( count($__LIST__)==0 ) : echo "暂时没有记录" ;else: foreach($__LIST__ as $key=>$repf): $mod = ($i % 2 );++$i;?><tr>
+                        <td class="head"><?php echo ($repf["username"]); ?></td>
+                        <td class="content"><?php echo ($repf["content"]); ?></td>
+                        <td><?php echo (date('Y-m-d h:m:s',$repf["time"])); ?></td>
                     </tr><?php endforeach; endif; else: echo "暂时没有记录" ;endif; ?>
             </tbody>
         </table>         
@@ -179,10 +184,10 @@
                 </tr>
             </thead>
             <tbody>
-                <?php if(is_array($replyFromMe)): $i = 0; $__LIST__ = $replyFromMe;if( count($__LIST__)==0 ) : echo "暂时没有记录" ;else: foreach($__LIST__ as $key=>$repf): $mod = ($i % 2 );++$i;?><tr>
-                        <td class="head"><?php echo ($repf["username"]); ?></td>
-                        <td class="content"><?php echo ($repf["content"]); ?></td>
-                        <td><?php echo (date('Y-m-d',$repf["time"])); ?></td>
+                <?php if(is_array($replyToMe)): $i = 0; $__LIST__ = $replyToMe;if( count($__LIST__)==0 ) : echo "暂时没有记录" ;else: foreach($__LIST__ as $key=>$rept): $mod = ($i % 2 );++$i;?><tr>
+                        <td class="head"><?php echo ($rept["username"]); ?></td>
+                        <td class="content"><?php echo ($rept["content"]); ?></td>
+                        <td><?php echo (date('Y-m-d h:m:s',$rept["time"])); ?></td>
                     </tr><?php endforeach; endif; else: echo "暂时没有记录" ;endif; ?>
             </tbody>
         </table>
@@ -192,23 +197,60 @@
   <div role="tabpanel" class="tab-pane fade" id="sysInfo">
     <div class="panel panel-default">
       <!-- Table -->
-      <table class="table">
-        <tr>
-            <td colspan="" rowspan="" headers="">用户名</td>
-            <td colspan="" rowspan="" headers="">付立</td>
-        </tr>
-      </table>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>发布者</th>
+                    <th>通知详情</th>
+                    <th>通知时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if(is_array($replyToMe)): $i = 0; $__LIST__ = $replyToMe;if( count($__LIST__)==0 ) : echo "暂时没有记录" ;else: foreach($__LIST__ as $key=>$rept): $mod = ($i % 2 );++$i;?><tr>
+                        <td class="head">admin</td>
+                        <td class="content"><?php echo ($rept["content"]); ?></td>
+                        <td><?php echo (date('Y-m-d h:m:s',$rept["time"])); ?></td>
+                    </tr><?php endforeach; endif; else: echo "暂时没有记录" ;endif; ?>
+            </tbody>
+        </table>
     </div>
   </div>
 
   <div role="tabpanel" class="tab-pane fade" id="settings">
     <div class="panel panel-default">
       <!-- Table -->
-      <table class="table">
+      <table class="table table-bordered">
+      <form id="setInfo" method="post" action="setUserInfo">
         <tr>
-            <td colspan="" rowspan="" headers="">用户名</td>
-            <td colspan="" rowspan="" headers="">付立</td>
+            <th colspan="" rowspan="" headers=""><br><br>当前头像</th>
+            <td colspan="" rowspan="" headers="">
+                <label><span class="default-tx"></span></label>&nbsp;<img src="<?php echo ($setInfo["imgpath"]); ?>" alt="..." class="img-circle imgtx" style="width: 80px;height: 80px">
+                <label for="img" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上传预览 &nbsp;<img src="" alt="新头像" class="img-circle" id="show_pic" style="width: 80px;height: 80px"></label>
+                <input type="file" name="uploadtx" id="uploadtx" value="" accept=".jpg,.png,.jpeg" placeholder="">
+            </td>
         </tr>
+        <tr>
+            <th colspan="" rowspan="" headers="">修改用户名:</th>
+            <td colspan="" rowspan="" headers=""><input type="text" name="username" class="form-control" value="<?php echo ($setInfo["username"]); ?>" placeholder=""></td>
+        </tr>
+        <tr>
+            <th colspan="" rowspan="" headers="">修改电子邮箱</th>
+            <td colspan="" rowspan="" headers=""><input type="email" class="form-control" name="email" value="<?php echo ($setInfo["email"]); ?>" placeholder=""></td>
+        </tr>
+        <tr>
+            <th colspan="" rowspan="" headers="">修改生日:</th>
+            <td colspan="" rowspan="" headers=""><input type="date" class="form-control" name="birthday" value="<?php echo (substr($setInfo["birthday"],0,10)); ?>" placeholder=""></td>
+        </tr>
+        <tr>
+            <th colspan="" rowspan="" headers="">性别:</th>
+            <td colspan="" rowspan="" headers=""><span class="label label-default gender" value="1">男</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-default gender" value="2">女</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-default gender" value="0">保密</span></td>
+        </tr>
+        <input type="hidden" name="gender" id="gender" value="<?php echo ($setInfo["gender"]); ?>">
+        <tr>
+            <td colspan="" rowspan="" headers=""></td>
+            <td colspan="" rowspan="" headers=""><button type="submit"class="btn btn-primary">保存更改</button></td>
+        </tr>
+        </form>
       </table>
     </div>
   </div>
@@ -239,6 +281,7 @@
             if (context.length > 60) {
                 $(this).text(context.substring(0,60)+'...');
             } 
+            $(this).css('width','850px');
        });
        $('.head').each(function () {
             var context = $(this).text();
@@ -246,6 +289,40 @@
                 $(this).text(context.substring(0,10)+'...');
             } 
        })
+      var imgpath = $('.imgtx').attr('src');
+      if (imgpath == "/thinkweb/Public/home/imgs/jianth.png") {
+        $('.default-tx').text('默认头像');
+      };
+      $('#uploadtx').on('change', function handleFileSelect(evt) {
+        var files = evt.target.files, f = files[0];
+            if (!/image\/\w+/.test(f.type)){
+                 alert("请确保文件为图像类型");
+                 return false;
+            }
+            var reader = new FileReader();
+            reader.onload = (function(theFile) {
+            return function(e) {
+                $('#show_pic').attr('src',e.target.result);
+            };
+            })(f);
+            reader.readAsDataURL(f);
+    });
+      $('.gender').each(function () {
+           if ($(this).attr('value') == $('#gender').val()) {
+            $(this).removeClass('label-default');
+            $(this).addClass('label-warning');
+           }
+      })
+      $('.gender').each(function () {
+        $(this).click(function () {
+             $(this).siblings().each(function () {
+                  $(this).addClass('label-default');
+                  $(this).removeClass('label-warning');
+             });
+             $(this).addClass('label-warning');
+             $('#gender').val($(this).attr('value'));
+        })
+      })
     });
 </script>
 
