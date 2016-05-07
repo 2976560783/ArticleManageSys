@@ -27,6 +27,7 @@ class UserController extends Controller
                 $data['confirmpwd'] =trim(I('post.confirmPwd'));
                 $data['gender'] = trim(I('post.gender'));
                 $data['birthday'] =trim( I('post.birthday'));
+                $data['imgpath'] = "./Public/home/imgs/defaultx.png";
                 // $data['ip'] = get_client_ip();
                 if ($userModel->create($data)) {
                     if ($userModel->add()) {
@@ -58,6 +59,7 @@ class UserController extends Controller
                           session('sessionid',$loginInfo['sessionid']);
                           session('logined',$loginInfo['username']);
                           session('uid', $loginInfo['id']);
+                          session('imgpath',$loginInfo['imgpath']);
                           if (null != I('post.keep')) {
                               cookie('username',$loginInfo['username'],3600*24);
                               cookie('sessionid',$loginInfo['sessionid'],3600*24);
@@ -130,10 +132,6 @@ class UserController extends Controller
         return Captche::createCaptche();
     }
 
-    protected function upload(){
-        
-    }
-
     public function userInfo(){
       if (session('logined')) {
         //用户基本信息
@@ -181,18 +179,107 @@ class UserController extends Controller
 
     public function setUserInfo(){
         $userModel = M('user');
-        $userInfo = $userModel->getField('username,email',true);
+        $userInfo = $userModel->where('id !='.session('uid'))->field('username,email,birthday')->select()[0];
         $data = array();
         if (I('post.username') != session('logined')) {
-            $ruls['id']=array('neq',session("uid"));
-            $ruls['username'] = array('eq',session('logined'));
-            if (!$userModel->where($ruls)->count()) {
+            $username = I("post.username");
+            if (!in_array($username,$userInfo)) {
                $data['username'] = I('post.username');
-               var_dump($data['username']);
+            }else{
+                $this->error('用户名已被占用,请更换后重试...');
             }
         }
-        // var_dump($userInfo);
-        // var_dump(I('post.'));
+        $otherInfo = $userModel->where('id='.session('uid'))->field('gender,birthday,email')->select()[0];
+        if (I('post.email') != $otherInfo['email']) {
+            $email = I('post.email');
+            if (!in_array($email, $userInfo)) {
+               $data['email'] = I('post.email');
+            }else{
+                $this->error('邮箱已被注册,请更换后重试...');
+            }
+        }
+        if (I('post.gender') != $otherInfo['gender']) {
+            $data['gender'] = I('post.gender');
+        }
+        
+        if (I('post.birthday').' 00:00:00' != $otherInfo['birthday']) {
+           $data['birthday'] = I('post.birthday');
+        }
+
+        $uploadFlag = false;    //判断是否上传文件
+        if ($_FILES['myfile']['name'] != '') {
+            $uploadFlag = true;
+            //首次上传文件
+            if ((!file_exists('./Public/home/uploads/'.session('uid').'_img.png')) &&
+                (!file_exists('./Public/home/uploads/'.session('uid').'_img.jpg')) &&
+                (!file_exists('./Public/home/uploads/'.session('uid').'_img.jpeg')))
+                {
+                $uploadInfo = $this->uploadTx();
+                if (!$uploadInfo) {
+                    $this->error('上传头像失败!0');
+                }
+                $data['imgpath'] = '/thinkweb/Public/home/uploads/'.$uploadInfo;
+                }else{
+                    //相同用户头像不能重复存在
+                    if (file_exists('./Public/home/uploads/'.session('uid').'_img.png')) {
+                        if (unlink('./Public/home/uploads/'.session('uid').'_img.png')) {
+                            $uploadInfo = $this->uploadTx();
+                             if (!$uploadInfo) {
+                                 $this->error('上传头像失败!1');
+                             }
+                        }
+                    }elseif (file_exists('./Public/home/uploads/'.session('uid').'_img.jpg')) {
+                        if (unlink('./Public/home/uploads/'.session('uid').'_img.jpg')) {
+                            $uploadInfo = $this->uploadTx();
+                             if (!$uploadInfo) {
+                                 $this->error('上传头像失败!2');
+                             }
+                        }
+                    }elseif (file_exists('./Public/home/uploads/'.session('uid').'_img.jpeg')) {
+                        if (unlink('./Public/home/uploads/'.session('uid').'_img.jpeg')) {
+                            $uploadInfo = $this->uploadTx();
+                             if (!$uploadInfo) {
+                                 $this->error('上传头像失败!3');
+                             }
+                        }
+                    }
+                }
+        }else{
+            $upload = false;
+        }
+        //判断更新信息是否为空
+        if (!empty($data)) {
+            if($userModel->where('id='.session('uid'))->save($data)) {
+                isset($data['username'])?session('logined',$data['username']):null;
+                // isset($data['email'])?session('email',$data['email']):null;
+                // isset($data['imgpath'])?session('imgpath',$data['imgpath']):null;
+                $this->success('修改信息成功');
+            }else{
+                $this->error($userModel->getError());
+            }
+        }elseif (!$uploadFlag) {
+            $this->error('你的信息未修改');
+        }else{
+            $this->success('修改信息成功');
+            }
+        }
+
+    //上传文件方法
+    public function uploadTx(){
+            $upload = new \Think\Upload();// 实例化上传类
+            $upload->maxSize   =     3145728 ;// 设置附件上传大小
+            $upload->autoSub = false;
+            $upload->saveName   =   session('uid').'_img';
+            $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型 
+            $upload->rootPath =      './Public/home/uploads/';  
+            $info   =   $upload->uploadOne($_FILES['myfile']); // 上传单个文件 
+            if(!$info) {// 上传错误提示错误信息  
+                 // $this->error($upload->getError());
+                 return false;
+            }else{// 上传成功 获取上传文件信息  
+                 // echo $info['savepath'].$info['savename'];
+                 return $info['savename'];
+            }
     }
 
 }

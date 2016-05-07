@@ -44,7 +44,7 @@
             <li id="contact"><a href="#contact">联系</a></li>
           </ul>
         <ul class="nav navbar-nav navbar-right">
-        <li><img src="/thinkweb/Public/home/imgs/defaultx.jpg" alt="头像" class="img-circle" style="width: 50px;height: 50px;"></li>
+        <li><img src="<?php echo (session('imgpath')); ?>" alt="头像" class="img-circle" style="width: 50px;height: 50px;"></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id='logined'><?php echo (session('logined')); ?><span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -169,8 +169,8 @@
             </tbody>
         </table>         
       </div>
-
     </div>
+
     <div class="panel panel-default">
       <!-- Default panel contents -->
       <div class="panel-heading">回复我的</div>
@@ -220,13 +220,13 @@
     <div class="panel panel-default">
       <!-- Table -->
       <table class="table table-bordered">
-      <form id="setInfo" method="post" action="setUserInfo">
+      <form id="setInfo" action="setUserInfo" method="post" enctype="multipart/form-data">
         <tr>
             <th colspan="" rowspan="" headers=""><br><br>当前头像</th>
             <td colspan="" rowspan="" headers="">
                 <label><span class="default-tx"></span></label>&nbsp;<img src="<?php echo ($setInfo["imgpath"]); ?>" alt="..." class="img-circle imgtx" style="width: 80px;height: 80px">
-                <label for="img" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上传预览 &nbsp;<img src="" alt="新头像" class="img-circle" id="show_pic" style="width: 80px;height: 80px"></label>
-                <input type="file" name="uploadtx" id="uploadtx" value="" accept=".jpg,.png,.jpeg" placeholder="">
+                <label for="img" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上传预览 &nbsp;<img src="" alt="" class="img-circle" id="show_pic" style="width: 80px;height: 80px"></label>
+                <input type="file" name="myfile" id="uploadtx" value="" accept=".jpg,.png,.jpeg" placeholder="">
             </td>
         </tr>
         <tr>
@@ -248,7 +248,9 @@
         <input type="hidden" name="gender" id="gender" value="<?php echo ($setInfo["gender"]); ?>">
         <tr>
             <td colspan="" rowspan="" headers=""></td>
-            <td colspan="" rowspan="" headers=""><button type="submit"class="btn btn-primary">保存更改</button></td>
+            <td colspan="" rowspan="" headers="">
+                <button type="submit" class="btn btn-primary">保存更改</button>
+            </td>
         </tr>
         </form>
       </table>
@@ -290,7 +292,7 @@
             } 
        })
       var imgpath = $('.imgtx').attr('src');
-      if (imgpath == "/thinkweb/Public/home/imgs/jianth.png") {
+      if (imgpath == "/thinkweb/Public/home/imgs/defaultx.png") {
         $('.default-tx').text('默认头像');
       };
       $('#uploadtx').on('change', function handleFileSelect(evt) {

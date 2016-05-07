@@ -35,7 +35,7 @@ class UserModel extends Model
     public function login($data,$ip){
         $time = time();
         $this->startTrans();
-        $loginInfo = $this->field('username,id,status,ip,time,last_login_ip')->where($data)->select()[0];
+        $loginInfo = $this->field('username,id,status,ip,time,last_login_ip,email,imgpath')->where($data)->select()[0];
         if ($loginInfo['status'] == '0') {
             if (!M('session')->add(array('uid'=>$loginInfo['id'],'sessionid'=>$time))) {
                 $this->rollback();
