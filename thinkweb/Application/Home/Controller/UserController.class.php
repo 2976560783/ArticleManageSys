@@ -1,6 +1,8 @@
 <?php
+// +----------------------------------------------------------------------
+// | Author: 付立 <674310383@qq.com> 
+// +----------------------------------------------------------------------
 namespace Home\Controller;
-
 use Think\Controller;
 use Home\Model\Captche;
 /**
@@ -189,7 +191,7 @@ class UserController extends Controller
                 $this->error('用户名已被占用,请更换后重试...');
             }
         }
-        $otherInfo = $userModel->where('id='.session('uid'))->field('gender,birthday,email')->select()[0];
+        $otherInfo = $userModel->where('id='.session('uid'))->field('gender,birthday,email,imgpath')->select()[0];
         if (I('post.email') != $otherInfo['email']) {
             $email = I('post.email');
             if (!in_array($email, $userInfo)) {
@@ -198,12 +200,13 @@ class UserController extends Controller
                 $this->error('邮箱已被注册,请更换后重试...');
             }
         }
+
         if (I('post.gender') != $otherInfo['gender']) {
             $data['gender'] = I('post.gender');
         }
         
         if (I('post.birthday').' 00:00:00' != $otherInfo['birthday']) {
-           $data['birthday'] = I('post.birthday');
+            strtotime(I('post.birthday')) > time() || strtotime(I('post.birthday')) < strtotime('1970-00-00')?$this->error('生日超出可能日期!') : $data['birthday'] = I('post.birthday');
         }
 
         $uploadFlag = false;    //判断是否上传文件
@@ -227,6 +230,9 @@ class UserController extends Controller
                              if (!$uploadInfo) {
                                  $this->error('上传头像失败!1');
                              }
+                             if ('/thinkweb/Public/home/uploads/'.$uploadInfo != $otherInfo['imgpath']) {
+                                 $data['imgpath'] = '/thinkweb/Public/home/uploads/'.$uploadInfo;
+                             }
                         }
                     }elseif (file_exists('./Public/home/uploads/'.session('uid').'_img.jpg')) {
                         if (unlink('./Public/home/uploads/'.session('uid').'_img.jpg')) {
@@ -234,12 +240,18 @@ class UserController extends Controller
                              if (!$uploadInfo) {
                                  $this->error('上传头像失败!2');
                              }
+                             if ('/thinkweb/Public/home/uploads/'.$uploadInfo != $otherInfo['imgpath']) {
+                                 $data['imgpath'] = '/thinkweb/Public/home/uploads/'.$uploadInfo;
+                             }
                         }
                     }elseif (file_exists('./Public/home/uploads/'.session('uid').'_img.jpeg')) {
                         if (unlink('./Public/home/uploads/'.session('uid').'_img.jpeg')) {
                             $uploadInfo = $this->uploadTx();
                              if (!$uploadInfo) {
                                  $this->error('上传头像失败!3');
+                             }
+                             if ('/thinkweb/Public/home/uploads/'.$uploadInfo != $otherInfo['imgpath']) {
+                                 $data['imgpath'] = '/thinkweb/Public/home/uploads/'.$uploadInfo;
                              }
                         }
                     }
@@ -252,7 +264,7 @@ class UserController extends Controller
             if($userModel->where('id='.session('uid'))->save($data)) {
                 isset($data['username'])?session('logined',$data['username']):null;
                 // isset($data['email'])?session('email',$data['email']):null;
-                // isset($data['imgpath'])?session('imgpath',$data['imgpath']):null;
+                isset($data['imgpath'])?session('imgpath',$data['imgpath']):null;
                 $this->success('修改信息成功');
             }else{
                 $this->error($userModel->getError());
@@ -281,5 +293,4 @@ class UserController extends Controller
                  return $info['savename'];
             }
     }
-
 }
