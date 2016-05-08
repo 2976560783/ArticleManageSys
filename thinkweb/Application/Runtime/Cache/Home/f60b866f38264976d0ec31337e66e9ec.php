@@ -88,8 +88,7 @@
                   <label for=""><span class="glyphicon glyphicon-eye-open" aria-hidden="true">:<?php echo ($details["hits"]); ?> </span></label>
                   <label style="float: right;"><span id="like" class="glyphicon glyphicon-thumbs-up" aria-hidden="true">点赞</span></label>
                   <hr>
-            <h2 style="text-indent:1em;"><small ><?php echo ($details["summary"]); ?></small></h2>
-            <p style="text-indent: 2em;"><?php echo ($details["content"]); ?></p>
+            <p style="text-indent: 2em;"><?php echo (htmlspecialchars_decode($details["content"])); ?></p>
               </div>
           </div>
           <?php if(isset($prev)): ?><a href="/thinkweb/index.php/Home/Article/details?artid=<?php echo ($prev); ?>" title="">
@@ -184,7 +183,7 @@
             <a href="/thinkweb/index.php/Home/article/category" class="list-group-item">全部<span class="badge"><?php echo ($count); ?></span></a>
             <br>
           <label class="list-group-item active"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> &nbsp;时间线 <span class="badge">文章</span></label>
-          <?php $__FOR_START_17434__=2016;$__FOR_END_17434__=2008;for($i=$__FOR_START_17434__;$i > $__FOR_END_17434__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
+          <?php $__FOR_START_31704__=2016;$__FOR_END_31704__=2008;for($i=$__FOR_START_31704__;$i > $__FOR_END_31704__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
           </div>
         </div><!--/.sidebar-offcanvas-->
     
@@ -256,6 +255,9 @@
             $(this).text('@'+replyname);
           }
       })
+         $('img').each(function () {
+            $(this).addClass('img-responsive') ;
+         })
     });
   </script>
 

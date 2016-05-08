@@ -25,10 +25,26 @@ class ArticleController extends BaseController
     }
 
     public function addArticle(){
-        if (IS_POST) {
-            var_dump(I('post.content'));
+        if (IS_POST && isset($_POST['artsubmit'])) {
+            $data['title'] = (trim(I('post.title')) == ''?$this->error('标题不能为空'):I('post.title'));
+            $data['summary'] = (trim(I('post.summary')) == ''?$this->error('内容概要不能为空'):I('post.summary'));
+            if (mb_strlen($data['summary']) > 69) {
+                $this->error('文章概要应该再短点');
+            }
+            I('post.cover') == null?$data['image']="/thinkweb/Public/home/imgs/jian.png":$data['image']=I('post.cover');
+            I('post.tag') == '0'?$data['tagid'] = 7:$data['tagid'] = intval(I('post.tag'));
+            $data['time'] = time();
+            $data['uid'] = session('uid');
+            trim(I('post.content')) == ''?$this->error('文章内容不能为空哦!'):$data['content'] = I('post.content');
+            if(M('article')->add($data)){
+                $this->success('添加文章成功!',U('index/index'));
+            }else{
+                $this->error('抱歉，添加失败，请重试!');
+            }
         }else{
-             $this->show();
+            $tags = M('tags')->getField('tagname',true);
+            $this->assign('tags',$tags);
+            $this->show();
         }
        
     }
@@ -72,7 +88,7 @@ class ArticleController extends BaseController
                 $this->error('传输参数错误!');
             }
             $articleModel->where('id='.$id)->setInc('hits');
-            $data = $articleModel->where(array('think_article.id'=>$id))->field('u.id as uid,title,hits,publish,username,tagname,summary,content')->join('think_user as u on think_article.uid = u.id')->join('think_tags as t on think_article.tagid = t.id')->select();
+            $data = $articleModel->where(array('think_article.id'=>$id))->field('u.id as uid,title,hits,publish,username,tagname,content')->join('think_user as u on think_article.uid = u.id')->join('think_tags as t on think_article.tagid = t.id')->select();
             $nextid = $articleModel->where('id >'.$id)->field('id')->limit(1)->select()[0];
             $previd = $articleModel->where('id <'.$id)->field('id')->order('id desc')->limit(1)->select()[0];
             $data[0]['publish'] = substr($data[0]['publish'],0,10);

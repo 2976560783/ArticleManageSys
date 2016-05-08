@@ -96,7 +96,7 @@
   <script type="text/javascript" src="__PUBLIC__/home/js/to-markdown.js"></script>
   <script type="text/javascript" src="__PUBLIC__/home/js/simditor-markdown.js"></script>
   <script type="text/javascript">
-    $(document).ready(function() {
+
      $(function() {
       var editor = new Simditor({
         textarea: $('#editor'),
@@ -104,7 +104,28 @@
         toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent', 'alignment', '|', 'markdown']
       });
     });   
-});
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#submit').click(function () {
+         if ($('#title').val() == '') {
+              alert('请填写标题');
+              return false;
+         }
+         if ($('#summary').val() == '') {
+              alert('请填写内容概要');
+              return false;
+         }
+         if ($('#summary').val().length >70) {
+            $('#summary').val($('#summary').val.substring(0,70));
+         }
+         if ($('.content').val() == '') {
+              alert('请填写文章内容');
+              return false;
+         }
+         return true;
+      })
+    });
   </script>
 </block>
 

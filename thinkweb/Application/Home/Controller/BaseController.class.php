@@ -16,10 +16,12 @@ class BaseController extends Controller
                     session('sessionid',cookie('sessionid'));
                     session('logined',cookie('username'));
                     session('uid',cookie('uid'));
+                    session('imgpath',cookie('imgpath'));
                 }else{
                     cookie('username',null);
                     cookie('sessionid',null);
                     cookie('uid',null);
+                    cookie('imgpath',null);
                     $this->redirect('user/login',0);
             }
         }else{

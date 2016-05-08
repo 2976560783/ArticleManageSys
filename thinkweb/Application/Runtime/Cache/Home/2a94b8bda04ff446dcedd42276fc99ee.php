@@ -72,7 +72,11 @@
 
           <div class="row">
             <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$lis): $mod = ($i % 2 );++$i;?><div class="col-xs-6 col-lg-4">
-              <a href="/thinkweb/index.php/Home/article/details?artid=<?php echo ($lis["id"]); ?>" class="htitle " ><h2 ><?php echo ($lis["title"]); ?></h2></a>
+              <a href="/thinkweb/index.php/Home/article/details?artid=<?php echo ($lis["id"]); ?>" class="htitle"><h2 class="htitle" style="min-height: 60px">
+              <?php if(mb_strlen($lis['title']) > 15): echo (mb_substr($lis["title"],0,15)); ?>...
+              <?php else: ?>
+                  <?php echo ($lis["title"]); endif; ?>
+              </h2></a>
               <p style="height: 75px;text-indent: 15px" class="text-info index-summary"><?php echo ($lis["summary"]); ?></p>
              <a style="margin-right: 15%;" class="btn btn-info" href="/thinkweb/index.php/Home/article/details?artid=<?php echo ($lis["id"]); ?>" role="button">Details &raquo;</a><span  class="badge">H:<?php echo ($lis["hits"]); ?></span> <span  class="badge"><?php echo ($lis["tagname"]); ?></span>
             </div><!--/.col-xs-6.col-lg-4--><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -87,16 +91,16 @@
             <a href="/thinkweb/index.php/Home/article/category" class="list-group-item">全部<span class="badge"><?php echo ($count); ?></span></a>
             <br>
           <label class="list-group-item active"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> &nbsp;时间线 <span class="badge">文章</span></label>
-          <?php $__FOR_START_25285__=2016;$__FOR_END_25285__=2008;for($i=$__FOR_START_25285__;$i > $__FOR_END_25285__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
+          <?php $__FOR_START_22893__=2016;$__FOR_END_22893__=2008;for($i=$__FOR_START_22893__;$i > $__FOR_END_22893__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
           </div>
         </div><!--/.sidebar-offcanvas-->
     
 </div>
 
+<hr>
   <nav class="col-md-6 col-md-offset-3">
   <?php echo ($page); ?>
-</nav>
-
+  </nav>
 
 </div>
 
@@ -115,12 +119,11 @@
       $(document).ready(function() {
         var summary;
          $('.index-summary').each(function () {
-            summary = $(this).text();
+            var summary = $(this).text();
             if (summary.length > 70) {
               $(this).text(summary.substring(0,70)+'...');
             }
          })
-        
       });
     </script>
 

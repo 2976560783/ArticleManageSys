@@ -66,6 +66,7 @@ class UserController extends Controller
                               cookie('username',$loginInfo['username'],3600*24);
                               cookie('sessionid',$loginInfo['sessionid'],3600*24);
                               cookie('uid',$loginInfo['id'],3600*24);
+                              cookie('imgpath',$loginInfo['imgpath'],3600*24);
                           }
                         $this->success('登录成功',U('index/index'));
                         }else{
@@ -97,6 +98,7 @@ class UserController extends Controller
                         cookie('username',null);
                         cookie('sessionid',null);
                         cookie('uid',null);
+                        cookie('imgpath',null);
                         $this->success('注销成功','login');
                     }else{
                         $this->error('注销失败,请重试!');
@@ -109,6 +111,7 @@ class UserController extends Controller
                 cookie('username',null);
                 cookie('sessionid',null);
                 cookie('uid',null);
+                cookie('imgpath',null);
                 $this->success('注销成功','login');
             }
         }else{
@@ -140,7 +143,7 @@ class UserController extends Controller
         $baseInfo = M('user as u')
                                 ->where(array('u.id'=>session('uid')))
                                 ->field('username,email,birthday,gender,login_count,last_login_ip,last_login_time,count(a.id) as acount,createtime')
-                                ->join('think_article as a on u.id = a.uid')
+                                ->join('left join think_article as a on u.id = a.uid')
                                 ->select()[0];
         //留言信息
         $commentInfo = M('comment as c')

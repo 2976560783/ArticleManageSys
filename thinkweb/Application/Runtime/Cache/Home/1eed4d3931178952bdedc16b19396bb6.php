@@ -90,7 +90,9 @@
                   </div>
                   <div class="media-right">
                     <a href="/thinkweb/index.php/Home/Article/details?artid=<?php echo ($list["id"]); ?>">
-                      <img class="media-object" src="<?php echo ($list["image"]); ?>" alt="..." style="width: 100px;height: 100px">
+                      <?php if($list['image']): ?><img class="media-object" src="<?php echo ($list["image"]); ?>" alt="未能正确加载" style="width: 100px;height: 100px">
+                          <?php else: ?>
+                          <img class="media-object" src="/thinkweb/Public/home/imgs/jian.png" alt="未能正确加载" style="width: 100px;height: 100px"><?php endif; ?>
                     </a>
                   </div>
                 </li>
@@ -108,7 +110,7 @@
             <a href="/thinkweb/index.php/Home/article/category" class="list-group-item">全部<span class="badge"><?php echo ($count); ?></span></a>
             <br>
           <label class="list-group-item active"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> &nbsp;时间线 <span class="badge">文章</span></label>
-          <?php $__FOR_START_10536__=2016;$__FOR_END_10536__=2008;for($i=$__FOR_START_10536__;$i > $__FOR_END_10536__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
+          <?php $__FOR_START_19131__=2016;$__FOR_END_19131__=2008;for($i=$__FOR_START_19131__;$i > $__FOR_END_19131__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
           </div>
         </div><!--/.sidebar-offcanvas-->
     
