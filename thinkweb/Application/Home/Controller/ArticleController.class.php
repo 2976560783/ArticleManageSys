@@ -25,7 +25,12 @@ class ArticleController extends BaseController
     }
 
     public function addArticle(){
-
+        if (IS_POST) {
+            var_dump(I('post.content'));
+        }else{
+             $this->show();
+        }
+       
     }
 
     public function editArticle(){

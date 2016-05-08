@@ -42,8 +42,8 @@
                     <td>
                         <switch name="baseInfo.gender">
                             <case value='0'>保密</case>
-                            <case value='1'>女</case>
-                            <case value='2'>男</case>
+                            <case value='1'>男</case>
+                            <case value='2'>女</case>
                         </switch>
                     </td>
                 </tr>
@@ -185,15 +185,15 @@
             </td>
         </tr>
         <tr>
-            <th colspan="" rowspan="" headers="">修改用户名:</th>
+            <th colspan="" rowspan="" headers="">当前用户名:</th>
             <td colspan="" rowspan="" headers=""><input type="text" name="username" class="form-control" value="{$setInfo.username}" placeholder=""></td>
         </tr>
         <tr>
-            <th colspan="" rowspan="" headers="">修改电子邮箱</th>
+            <th colspan="" rowspan="" headers="">当前电子邮箱</th>
             <td colspan="" rowspan="" headers=""><input type="email" class="form-control" name="email" value="{$setInfo.email}" placeholder=""></td>
         </tr>
         <tr>
-            <th colspan="" rowspan="" headers="">修改生日:</th>
+            <th colspan="" rowspan="" headers="">设定生日:</th>
             <td colspan="" rowspan="" headers=""><input type="date" class="form-control" name="birthday" value="{$setInfo.birthday|substr=0,10}" placeholder=""></td>
         </tr>
         <tr>

@@ -1,0 +1,29 @@
+<extend name="Public:base" />
+<block name='css'>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/simditor.css" />
+<link rel="stylesheet" href="__PUBLIC__/home/css/simditor-markdown.css" media="screen" charset="utf-8" />
+</block>
+<block name='title'>
+    <title>发布文章</title>
+</block>
+
+<block name="main">
+    <div class="col-xs-12 col-sm-12">
+        <form action="#" method="post" accept-charset="utf-8">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">文章标题</span>
+              <input type="text" class="form-control" placeholder="Title" aria-describedby="basic-addon1">
+            </div> 
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">文章概要</span>
+              <textarea class="form-control" style="resize: none;" maxlength="255"  placeholder="Summary"></textarea>
+            </div>
+            <textarea id="editor" placeholder="Content" autofocus name="content"></textarea>
+            <hr>
+            <button type="button" class="btn btn-primary" onclick="javascript:history.back();">返回</button>
+            <button type="submit" class="btn btn-primary" style="float: right;">提交发布</button>
+        </form>
+    </div>
+</block>
+
+<block name="sidebar"></block>

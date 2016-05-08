@@ -41,7 +41,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id='logined'><?php echo (session('logined')); ?><span class="caret"></span></a>
           <ul class="dropdown-menu">
               <li><a href="/thinkweb/index.php/Home/user/userInfo" title="">个人中心</a></li>
-              <li><a href="#" title="">发布文章</a></li>
+              <li><a href="/thinkweb/index.php/Home/article/addArticle" title="">发布文章</a></li>
               <li><a href="#" title="">我的文章</a></li>
               <li><a href="#" title="">帮助</a></li>
               <li role="separator" class="divider"></li>
@@ -71,7 +71,7 @@
                   </dl>
                 </p>
                 <hr>
-              <?php if($_SESSION['logined']== 'admin'): ?><div class="btn-group">
+            <?php if($_SESSION['logined']== 'Admin'): ?><div class="btn-group">
               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 修改日志 <span class="caret"></span>
               </button>

@@ -7,12 +7,17 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>关于</title>
+    
+    <title>发布文章</title>
+
     <!-- Bootstrap core CSS -->
     <link href="/thinkweb/Public/home/css/bootstrap.min.css" rel="stylesheet">
     <link href="/thinkweb/Public/home/css/index.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     
+<link rel="stylesheet" type="text/css" href="/thinkweb/Public/home/css/simditor.css" />
+<link rel="stylesheet" href="/thinkweb/Public/home/css/simditor-markdown.css" media="screen" charset="utf-8" />
+
 </head>
 <body>
 
@@ -57,32 +62,24 @@
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
     
-        <div class="col-xs-12 col-sm-12">
-          <div class="panel panel-primary">
-             <div class="panel-heading"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;关于/日志:修改</div>
-              <div class="panel-body">
-                <blockquote>
-                  <p>日志日期：<?php echo (date('Y-m-d',$loginfos["time"])); ?></p>
-                </blockquote>
-                <form method="post" action="editlog">
-                    <div class="modal-body">
-                    <input type="hidden" name="time" value="<?php echo ($loginfos["time"]); ?>">
-                        <div class="form-group">
-                          <label for="message-text" class="control-label">日志详情:</label>
-                          <textarea class="form-control" id="message-text" style="resize: none;" rows="7" name="loginfo" placeholder="添加日志信息" required=""><?php echo ($loginfos["loginfo"]); ?></textarea>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="javascript:history.back()" style="float: left;">返回</button>
-                      <button type="submit" class="btn btn-primary">确认修改</button>
-                    </div>
-              </form>
-              </div>
-          </div>
-        </div><!--/.col-xs-12.col-sm-9-->
+    <div class="col-xs-12 col-sm-12">
+        <form action="#" method="post" accept-charset="utf-8">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">文章标题</span>
+              <input type="text" class="form-control" placeholder="Title" aria-describedby="basic-addon1">
+            </div> 
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">文章概要</span>
+              <textarea class="form-control" style="resize: none;" maxlength="255"  placeholder="Summary"></textarea>
+            </div>
+            <textarea id="editor" placeholder="Content" autofocus name="content"></textarea>
+            <hr>
+            <button type="button" class="btn btn-primary" onclick="javascript:history.back();">返回</button>
+            <button type="submit" class="btn btn-primary" style="float: right;">提交发布</button>
+        </form>
+    </div>
 
     
-
 </div>
 
 </div>
@@ -96,13 +93,25 @@
 <script src="/thinkweb/Public/home/js/bootstrap.min.js"></script>
 <script src="/thinkweb/Public/home/js/offcanvas.js"></script>
 
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $('#index').removeClass('active');
-        $('#about').addClass('active');
+  <script type="text/javascript" src="/thinkweb/Public/home/js/module.js"></script>
+  <script type="text/javascript" src="/thinkweb/Public/home/js/hotkeys.js"></script>
+  <script type="text/javascript" src="/thinkweb/Public/home/js/uploader.js"></script>
+  <script type="text/javascript" src="/thinkweb/Public/home/js/marked.js"></script>
+  <script type="text/javascript" src="/thinkweb/Public/home/js/simditor.js"></script>
+  <script type="text/javascript" src="/thinkweb/Public/home/js/to-markdown.js"></script>
+  <script type="text/javascript" src="/thinkweb/Public/home/js/simditor-markdown.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+     $(function() {
+      var editor = new Simditor({
+        textarea: $('#editor'),
+        markdown: true,
+        toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent', 'alignment', '|', 'markdown']
       });
-    </script>
-  
+    });   
+});
+  </script>
+
 
 </body>
 </html>

@@ -49,7 +49,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id='logined'><?php echo (session('logined')); ?><span class="caret"></span></a>
           <ul class="dropdown-menu">
               <li><a href="/thinkweb/index.php/Home/user/userInfo" title="">个人中心</a></li>
-              <li><a href="#" title="">发布文章</a></li>
+              <li><a href="/thinkweb/index.php/Home/article/addArticle" title="">发布文章</a></li>
               <li><a href="#" title="">我的文章</a></li>
               <li><a href="#" title="">帮助</a></li>
               <li role="separator" class="divider"></li>
@@ -96,8 +96,8 @@
                     <td>性别</td>
                     <td>
                         <?php switch($baseInfo["gender"]): case "0": ?>保密<?php break;?>
-                            <?php case "1": ?>女<?php break;?>
-                            <?php case "2": ?>男<?php break; endswitch;?>
+                            <?php case "1": ?>男<?php break;?>
+                            <?php case "2": ?>女<?php break; endswitch;?>
                     </td>
                 </tr>
                 <tr>
@@ -230,15 +230,15 @@
             </td>
         </tr>
         <tr>
-            <th colspan="" rowspan="" headers="">修改用户名:</th>
+            <th colspan="" rowspan="" headers="">当前用户名:</th>
             <td colspan="" rowspan="" headers=""><input type="text" name="username" class="form-control" value="<?php echo ($setInfo["username"]); ?>" placeholder=""></td>
         </tr>
         <tr>
-            <th colspan="" rowspan="" headers="">修改电子邮箱</th>
+            <th colspan="" rowspan="" headers="">当前电子邮箱</th>
             <td colspan="" rowspan="" headers=""><input type="email" class="form-control" name="email" value="<?php echo ($setInfo["email"]); ?>" placeholder=""></td>
         </tr>
         <tr>
-            <th colspan="" rowspan="" headers="">修改生日:</th>
+            <th colspan="" rowspan="" headers="">设定生日:</th>
             <td colspan="" rowspan="" headers=""><input type="date" class="form-control" name="birthday" value="<?php echo (substr($setInfo["birthday"],0,10)); ?>" placeholder=""></td>
         </tr>
         <tr>

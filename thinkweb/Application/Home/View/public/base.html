@@ -43,7 +43,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id='logined'>{$Think.session.logined}<span class="caret"></span></a>
           <ul class="dropdown-menu">
               <li><a href="__MODULE__/user/userInfo" title="">个人中心</a></li>
-              <li><a href="#" title="">发布文章</a></li>
+              <li><a href="__MODULE__/article/addArticle" title="">发布文章</a></li>
               <li><a href="#" title="">我的文章</a></li>
               <li><a href="#" title="">帮助</a></li>
               <li role="separator" class="divider"></li>
@@ -88,6 +88,24 @@
 <script src="__PUBLIC__/home/js/bootstrap.min.js"></script>
 <script src="__PUBLIC__/home/js/offcanvas.js"></script>
 <block name='js'>
+  <script type="text/javascript" src="__PUBLIC__/home/js/module.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/home/js/hotkeys.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/home/js/uploader.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/home/js/marked.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/home/js/simditor.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/home/js/to-markdown.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/home/js/simditor-markdown.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+     $(function() {
+      var editor = new Simditor({
+        textarea: $('#editor'),
+        markdown: true,
+        toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent', 'alignment', '|', 'markdown']
+      });
+    });   
+});
+  </script>
 </block>
 
 </body>
