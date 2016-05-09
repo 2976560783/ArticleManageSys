@@ -44,7 +44,7 @@
           <ul class="dropdown-menu">
               <li><a href="/thinkweb/index.php/Home/user/userInfo" title="">个人中心</a></li>
               <li><a href="/thinkweb/index.php/Home/article/addArticle" title="">发布文章</a></li>
-              <li><a href="#" title="">我的文章</a></li>
+              <li><a href="/thinkweb/index.php/Home/article/myArticles" title="">我的文章</a></li>
               <li><a href="#" title="">帮助</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="/thinkweb/index.php/Home/user/logout" title="">注销</a></li>
@@ -91,7 +91,7 @@
             <a href="/thinkweb/index.php/Home/article/category" class="list-group-item">全部<span class="badge"><?php echo ($count); ?></span></a>
             <br>
           <label class="list-group-item active"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> &nbsp;时间线 <span class="badge">文章</span></label>
-          <?php $__FOR_START_22893__=2016;$__FOR_END_22893__=2008;for($i=$__FOR_START_22893__;$i > $__FOR_END_22893__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
+          <?php $__FOR_START_25801__=2016;$__FOR_END_25801__=2008;for($i=$__FOR_START_25801__;$i > $__FOR_END_25801__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
           </div>
         </div><!--/.sidebar-offcanvas-->
     

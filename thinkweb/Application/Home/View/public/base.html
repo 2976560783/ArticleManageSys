@@ -44,7 +44,7 @@
           <ul class="dropdown-menu">
               <li><a href="__MODULE__/user/userInfo" title="">个人中心</a></li>
               <li><a href="__MODULE__/article/addArticle" title="">发布文章</a></li>
-              <li><a href="#" title="">我的文章</a></li>
+              <li><a href="__MODULE__/article/myArticles" title="">我的文章</a></li>
               <li><a href="#" title="">帮助</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="__MODULE__/user/logout" title="">注销</a></li>
@@ -100,7 +100,7 @@
      $(function() {
       var editor = new Simditor({
         textarea: $('#editor'),
-        markdown: true,
+        markdown: false,
         toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent', 'alignment', '|', 'markdown']
       });
     });   
@@ -124,7 +124,17 @@
               return false;
          }
          return true;
-      })
+      });
+         $('img').each(function () {
+            $(this).addClass('img-responsive') ;
+         })
+      if ({$ainfo.tagid}) {
+        $("[type='radio']").each(function(){
+          if ($(this).val() == {$ainfo.tagid}) {
+            $(this).parent().addClass('active');
+          }
+        })
+      }
     });
   </script>
 </block>

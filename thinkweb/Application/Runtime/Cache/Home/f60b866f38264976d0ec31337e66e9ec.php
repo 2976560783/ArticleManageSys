@@ -48,7 +48,7 @@
           <ul class="dropdown-menu">
               <li><a href="/thinkweb/index.php/Home/user/userInfo" title="">个人中心</a></li>
               <li><a href="/thinkweb/index.php/Home/article/addArticle" title="">发布文章</a></li>
-              <li><a href="#" title="">我的文章</a></li>
+              <li><a href="/thinkweb/index.php/Home/article/myArticles" title="">我的文章</a></li>
               <li><a href="#" title="">帮助</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="/thinkweb/index.php/Home/user/logout" title="">注销</a></li>
@@ -82,10 +82,10 @@
               <div class="panel-body">
                 <h1 style="font-family: 微软雅黑"><?php echo ($details["title"]); ?></h1>
                 <br>
-                  <label for=""><span class="glyphicon glyphicon-user" aria-hidden="true">:<?php echo ($details["username"]); ?></span></label>&nbsp;&nbsp;
-                  <label for=""><span class="glyphicon glyphicon-time" aria-hidden="true">:<?php echo ($details["publish"]); ?></span></label>&nbsp;&nbsp;
-                  <label for=""><span class="glyphicon glyphicon-tag" aria-hidden="true">:<?php echo ($details["tagname"]); ?> </span></label>&nbsp;&nbsp;
-                  <label for=""><span class="glyphicon glyphicon-eye-open" aria-hidden="true">:<?php echo ($details["hits"]); ?> </span></label>
+                  <label for=""><span class="glyphicon glyphicon-user" aria-hidden="true"><?php echo ($details["username"]); ?></span></label>&nbsp;&nbsp;
+                  <label for=""><span class="glyphicon glyphicon-time" aria-hidden="true"><?php echo (date("Y-m-d h:m:s",$details["publish"])); ?></span></label>&nbsp;&nbsp;
+                  <label for=""><span class="glyphicon glyphicon-tag" aria-hidden="true"><?php echo ($details["tagname"]); ?> </span></label>&nbsp;&nbsp;
+                  <label for=""><span class="glyphicon glyphicon-eye-open" aria-hidden="true"><?php echo ($details["hits"]); ?> </span></label>
                   <label style="float: right;"><span id="like" class="glyphicon glyphicon-thumbs-up" aria-hidden="true">点赞</span></label>
                   <hr>
             <p style="text-indent: 2em;"><?php echo (htmlspecialchars_decode($details["content"])); ?></p>
@@ -183,7 +183,7 @@
             <a href="/thinkweb/index.php/Home/article/category" class="list-group-item">全部<span class="badge"><?php echo ($count); ?></span></a>
             <br>
           <label class="list-group-item active"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> &nbsp;时间线 <span class="badge">文章</span></label>
-          <?php $__FOR_START_31704__=2016;$__FOR_END_31704__=2008;for($i=$__FOR_START_31704__;$i > $__FOR_END_31704__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
+          <?php $__FOR_START_1171__=2016;$__FOR_END_1171__=2008;for($i=$__FOR_START_1171__;$i > $__FOR_END_1171__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
           </div>
         </div><!--/.sidebar-offcanvas-->
     

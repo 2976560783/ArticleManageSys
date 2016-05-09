@@ -50,7 +50,7 @@
           <ul class="dropdown-menu">
               <li><a href="/thinkweb/index.php/Home/user/userInfo" title="">个人中心</a></li>
               <li><a href="/thinkweb/index.php/Home/article/addArticle" title="">发布文章</a></li>
-              <li><a href="#" title="">我的文章</a></li>
+              <li><a href="/thinkweb/index.php/Home/article/myArticles" title="">我的文章</a></li>
               <li><a href="#" title="">帮助</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="/thinkweb/index.php/Home/user/logout" title="">注销</a></li>

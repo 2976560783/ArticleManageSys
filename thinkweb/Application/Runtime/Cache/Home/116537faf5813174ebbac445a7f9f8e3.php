@@ -17,7 +17,6 @@
     
 <link rel="stylesheet" href="/thinkweb/Public/home/css/simditor-markdown.css" media="screen" charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="/thinkweb/Public/home/css/simditor.css" />
-<link rel="stylesheet" type="text/css" href="/thinkweb/Public/home/css/simditor-fullscreen.css" />
 <style type="text/css" media="screen">
     .tags{
         margin-right: 20px;
@@ -69,30 +68,27 @@
 <div class="row row-offcanvas row-offcanvas-right">
     
     <div class="col-xs-12 col-sm-12">
-        <form action="#" method="post" accept-charset="utf-8">
+        <form action="/thinkweb/index.php/Home/Article/editArticle" method="post" accept-charset="utf-8">
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon1"  required="" maxlength="15">文章标题</span>
-              <input type="text" class="form-control" id="title" placeholder="Title" aria-describedby="basic-addon1" name="title">
+              <input type="text" class="form-control" id="title" placeholder="Title" aria-describedby="basic-addon1" name="title" value="<?php echo ($ainfo["title"]); ?>">
+              <input type="hidden" name="aid" value="<?php echo ($ainfo["aid"]); ?>">
             </div> 
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon1"  required="" maxlength="100">文章概要</span>
-              <input type="text" class="form-control" style="resize: none;" maxlength="255"  placeholder="Summary" name="summary" id="summary">
+              <input type="text" class="form-control" style="resize: none;" maxlength="255"  placeholder="Summary" name="summary" id="summary" value="<?php echo ($ainfo["summary"]); ?>">
             </div>
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon1" >封面图片</span>
-              <input type="text" class="form-control" placeholder="Cover Image" aria-describedby="basic-addon1" name="cover" maxlength="200">
+              <input type="text" class="form-control" placeholder="Cover Image" aria-describedby="basic-addon1" name="cover" maxlength="200" value="<?php echo ($ainfo["image"]); ?>">
             </div>
-            <textarea id="editor" class="content" class="form-control" placeholder="Content" autofocus name="content" required=""></textarea>
+            <textarea id="editor" class="content" class="form-control" placeholder="Content" autofocus name="content" required=""><?php echo ($ainfo["content"]); ?></textarea>
             <p class="text-warning">图片附件提示：暂不支持动态上传图片附件。但您可以将图片上传至网络，复制其网络地址，以链接地址的形式添加到封面或正文图片。</p>
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon1" >Tag</span>&nbsp;&nbsp;
-
             <div class="btn-group" data-toggle="buttons">
-              <label class="btn btn-default btn-sm active tags">
-                <input type="radio" name="tag" value="0" autocomplete="on" checked> 未分类
-              </label>
-                <?php if(is_array($tags)): $k = 0; $__LIST__ = $tags;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$tag): $mod = ($k % 2 );++$k;?><label class="btn btn-default btn-sm  tags">
-                    <input type="radio" name="tag" value="<?php echo ($k); ?>" autocomplete="off"> <?php echo ($tag); ?>
+                <?php if(is_array($tags)): $i = 0; $__LIST__ = $tags;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$tag): $mod = ($i % 2 );++$i;?><label class="btn btn-default btn-sm  tags">
+                    <input type="radio" name="tagid" value="<?php echo ($tag["tid"]); ?>" autocomplete="off"> <?php echo ($tag["tagname"]); ?>
                   </label><?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
 
