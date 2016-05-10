@@ -7,7 +7,7 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>关于</title>
+    <title>我的文章</title>
     <!-- Bootstrap core CSS -->
     <link href="/thinkweb/Public/home/css/bootstrap.min.css" rel="stylesheet">
     <link href="/thinkweb/Public/home/css/index.css" rel="stylesheet">
@@ -57,60 +57,45 @@
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
     
-        <div class="col-xs-12 col-sm-12"  style="min-height: 540px;">
-          <div class="panel panel-primary">
-             <div class="panel-heading"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;关于/日志</div>
-              <div class="panel-body">
-                <blockquote>
-                  <p>本页面作为日常开发日志记录</p>
-                </blockquote>
-                <p>
-                  <dl class="dl-horizontal">
-                    <?php if(is_array($logs)): $i = 0; $__LIST__ = $logs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$log): $mod = ($i % 2 );++$i;?><dt><?php echo (date('Y-m-d',$log["time"])); ?></dt>
-                    <dd class="text-info"><?php echo ($log["loginfo"]); ?></dd><?php endforeach; endif; else: echo "" ;endif; ?>
-                  </dl>
-                </p>
-                <hr>
-            <?php if($_SESSION['logined']== 'Admin'): ?><div class="btn-group">
-              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                修改日志 <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" style="max-height: 250px;overflow:auto;">
-                <?php if(is_array($logs)): $i = 0; $__LIST__ = $logs;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$log): $mod = ($i % 2 );++$i;?><li><a href="/thinkweb/index.php/Home/Index/editlog?time=<?php echo ($log["time"]); ?>"><?php echo (date('Y-m-d',$log["time"])); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
-              </ul>
-            </div>
-            <button type="button" style="float: right;"  data-toggle="modal" data-target="#log" class="btn btn-primary">添加日志</button><?php endif; ?>
-              </div>
-          </div>
-        </div><!--/.col-xs-12.col-sm-9-->
-
-<div class="modal fade" id="log" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="exampleModalLabel">添加日志</h4>
+    <div class="panel panel-info">
+      <div class="panel-heading">我的文章</div>
+      <div class="panel-body">
+        <table  class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Ordinal</th>
+                <th>Title</th>
+                <th>Tag</th>
+                <th>Time</th>
+                <th>Hits</th>
+                <th>Likes</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+            <tbody>
+                <?php if(is_array($myarts)): $key = 0; $__LIST__ = $myarts;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$myart): $mod = ($key % 2 );++$key;?><tr>
+                    <td><?php echo ($key + $order); ?></td>
+                    <td><?php echo ($myart["title"]); ?></td>
+                    <td><?php echo ($myart["tagname"]); ?></td>
+                    <td><?php echo (date("Y-m-d H:s:s",$myart["time"])); ?></td>
+                    <td><?php echo ($myart["hits"]); ?></td>
+                    <td><?php echo ($myart["likes"]); ?></td>
+                    <td><a type="button" class="btn btn-warning  btn-xs" href="/thinkweb/index.php/Home/Article/editArticle?aid=<?php echo ($myart["aid"]); ?>">编辑</a>&nbsp;&nbsp;
+                        <a type="button" class="btn btn-danger  btn-xs" href="/thinkweb/index.php/Home/Article/deleteArticle?aid=<?php echo ($myart["aid"]); ?>" onclick="javescript:return confirm('确认删除这篇文章?')">删除</a>
+                    </td>
+                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+            </tbody>
+        </table>
       </div>
-      <form method="post" action="about">
-      <div class="modal-body">
-          <div class="form-group">
-            <label for="message-text" class="control-label">描述:</label>
-            <textarea class="form-control" id="message-text" style="resize: none;" rows="10" name="info" placeholder="添加日志信息" required=""></textarea>
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="submit" class="btn btn-primary">提交</button>
-      </div>
-      </form>
     </div>
-  </div>
-</div>
-
 
     
 
 </div>
+
+  <nav class="col-md-6 col-md-offset-5">
+  <?php echo ($page); ?>
+</nav>
 
 </div>
 
@@ -123,13 +108,7 @@
 <script src="/thinkweb/Public/home/js/bootstrap.min.js"></script>
 <script src="/thinkweb/Public/home/js/offcanvas.js"></script>
 
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $('#index').removeClass('active');
-        $('#about').addClass('active');
-      });
-    </script>
-  
+
 
 </body>
 </html>

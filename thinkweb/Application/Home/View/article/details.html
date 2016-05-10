@@ -27,14 +27,13 @@
               <div class="panel-body">
                 <h1 style="font-family: 微软雅黑">{$details.title}</h1>
                 <br>
-                  <label for=""><span class="glyphicon glyphicon-user" aria-hidden="true">:{$details.username}</span></label>&nbsp;&nbsp;
-                  <label for=""><span class="glyphicon glyphicon-time" aria-hidden="true">:{$details.publish}</span></label>&nbsp;&nbsp;
-                  <label for=""><span class="glyphicon glyphicon-tag" aria-hidden="true">:{$details.tagname} </span></label>&nbsp;&nbsp;
-                  <label for=""><span class="glyphicon glyphicon-eye-open" aria-hidden="true">:{$details.hits} </span></label>
+                  <label for=""><span class="glyphicon glyphicon-user" aria-hidden="true">{$details.username}</span></label>&nbsp;&nbsp;
+                  <label for=""><span class="glyphicon glyphicon-time" aria-hidden="true">{$details.publish|date="Y-m-d h:m:s",###}</span></label>&nbsp;&nbsp;
+                  <label for=""><span class="glyphicon glyphicon-tag" aria-hidden="true">{$details.tagname} </span></label>&nbsp;&nbsp;
+                  <label for=""><span class="glyphicon glyphicon-eye-open" aria-hidden="true">{$details.hits} </span></label>
                   <label style="float: right;"><span id="like" class="glyphicon glyphicon-thumbs-up" aria-hidden="true">点赞</span></label>
                   <hr>
-            <h2 style="text-indent:1em;"><small >{$details.summary}</small></h2>
-            <p style="text-indent: 2em;">{$details.content}</p>
+            <p style="text-indent: 2em;">{$details.content|htmlspecialchars_decode}</p>
               </div>
           </div>
           <if condition='isset($prev)'>
@@ -189,6 +188,9 @@
             $(this).text('@'+replyname);
           }
       })
+         $('img').each(function () {
+            $(this).addClass('img-responsive') ;
+         })
     });
   </script>
 </block>

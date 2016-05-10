@@ -1,15 +1,70 @@
-<extend name="Public:base" />
-<block name='css'>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<!-- saved from url=(0042)# -->
+    <html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>个人中心</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/thinkweb/Public/home/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/thinkweb/Public/home/css/index.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    
    <style type="text/css" media="screen">
        .gender:hover{
             cursor: pointer;
        }
    </style>
-</block>
-<block name='title'>
-    <title>个人中心</title>
-</block>
-<block name="main">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">侧栏</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/thinkweb">简书</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <?php if(isset($index)): ?><li class="active" id="index"><a href="/thinkweb">主页</a></li>
+              <?php else: ?>
+              <li id="index"><a href="/thinkweb">主页</a></li><?php endif; ?>
+            <li id="about"><a href="/thinkweb/index.php/Home/index/about">关于</a></li>
+            <li id="contact"><a href="#contact">联系</a></li>
+          </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <li><img src="<?php echo (session('imgpath')); ?>" alt="头像" class="img-circle" style="width: 50px;height: 50px;"></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id='logined'><?php echo (session('logined')); ?><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="/thinkweb/index.php/Home/user/userInfo" title="">个人中心</a></li>
+              <li><a href="/thinkweb/index.php/Home/article/addArticle" title="">发布文章</a></li>
+              <li><a href="/thinkweb/index.php/Home/article/myArticles" title="">我的文章</a></li>
+              <li><a href="#" title="">帮助</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/thinkweb/index.php/Home/user/logout" title="">注销</a></li>
+          </ul>
+        </li>
+      </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+
+
+<div class="container">
+<div class="row row-offcanvas row-offcanvas-right">
+    
     <div class="col-xs-12 col-sm-12" >
         <div>
           <!-- Nav tabs -->
@@ -27,45 +82,43 @@
             <tbody>
                 <tr>
                     <td>用户名:</td>
-                    <td>{$baseInfo.username}</td>
+                    <td><?php echo ($baseInfo["username"]); ?></td>
                 </tr>
                 <tr>
                     <td>电子邮件</td>
-                    <td>{$baseInfo.email}</td>
+                    <td><?php echo ($baseInfo["email"]); ?></td>
                 </tr>
                 <tr>
                     <td>生日</td>
-                    <td>{$baseInfo.birthday|substr=0,10}</td>
+                    <td><?php echo (substr($baseInfo["birthday"],0,10)); ?></td>
                 </tr>
                 <tr>
                     <td>性别</td>
                     <td>
-                        <switch name="baseInfo.gender">
-                            <case value='0'>保密</case>
-                            <case value='1'>男</case>
-                            <case value='2'>女</case>
-                        </switch>
+                        <?php switch($baseInfo["gender"]): case "0": ?>保密<?php break;?>
+                            <?php case "1": ?>男<?php break;?>
+                            <?php case "2": ?>女<?php break; endswitch;?>
                     </td>
                 </tr>
                 <tr>
                     <td>文章数量</td>
-                    <td>{$baseInfo.acount}</td>
+                    <td><?php echo ($baseInfo["acount"]); ?></td>
                 </tr>
                 <tr>
                     <td>登陆次数</td>
-                    <td>{$baseInfo.login_count}</td>
+                    <td><?php echo ($baseInfo["login_count"]); ?></td>
                 </tr>
                 <tr>
                     <td>上次登录时间</td>
-                    <td>{$baseInfo.last_login_time|date='Y-m-d',###}</td>
+                    <td><?php echo (date('Y-m-d',$baseInfo["last_login_time"])); ?></td>
                 </tr>
                 <tr>
                     <td>上次登录IP</td>
-                    <td>{$baseInfo.last_login_ip|long2ip}</td>
+                    <td><?php echo (long2ip($baseInfo["last_login_ip"])); ?></td>
                 </tr>
                 <tr>
                     <td>加入时间</td>
-                    <td>{$baseInfo.createtime|date='Y-m-d',###}</td>
+                    <td><?php echo (date('Y-m-d',$baseInfo["createtime"])); ?></td>
                 </tr>
             </tbody>
         </table>
@@ -86,13 +139,11 @@
                 </tr>
             </thead>
             <tbody>
-                <volist name="commentInfo" id="com" empty="暂时没有记录">
-                    <tr>
-                        <td class="head">{$com.title}</td>
-                        <td class="content">{$com.content}</td>
-                        <td>{$com.time|date='Y-m-d h:m:s',###}</td>
-                    </tr>
-                </volist>
+                <?php if(is_array($commentInfo)): $i = 0; $__LIST__ = $commentInfo;if( count($__LIST__)==0 ) : echo "暂时没有记录" ;else: foreach($__LIST__ as $key=>$com): $mod = ($i % 2 );++$i;?><tr>
+                        <td class="head"><?php echo ($com["title"]); ?></td>
+                        <td class="content"><?php echo ($com["content"]); ?></td>
+                        <td><?php echo (date('Y-m-d h:m:s',$com["time"])); ?></td>
+                    </tr><?php endforeach; endif; else: echo "暂时没有记录" ;endif; ?>
             </tbody>
         </table>
     </div>
@@ -110,13 +161,11 @@
                 </tr>
             </thead>
             <tbody>
-                <volist name="replyFromMe" id="repf" empty="暂时没有记录">
-                    <tr>
-                        <td class="head">{$repf.username}</td>
-                        <td class="content">{$repf.content}</td>
-                        <td>{$repf.time|date='Y-m-d h:m:s',###}</td>
-                    </tr>
-                </volist>
+                <?php if(is_array($replyFromMe)): $i = 0; $__LIST__ = $replyFromMe;if( count($__LIST__)==0 ) : echo "暂时没有记录" ;else: foreach($__LIST__ as $key=>$repf): $mod = ($i % 2 );++$i;?><tr>
+                        <td class="head"><?php echo ($repf["username"]); ?></td>
+                        <td class="content"><?php echo ($repf["content"]); ?></td>
+                        <td><?php echo (date('Y-m-d h:m:s',$repf["time"])); ?></td>
+                    </tr><?php endforeach; endif; else: echo "暂时没有记录" ;endif; ?>
             </tbody>
         </table>         
       </div>
@@ -135,13 +184,11 @@
                 </tr>
             </thead>
             <tbody>
-                <volist name="replyToMe" id="rept" empty="暂时没有记录">
-                    <tr>
-                        <td class="head">{$rept.username}</td>
-                        <td class="content">{$rept.content}</td>
-                        <td>{$rept.time|date='Y-m-d h:m:s',###}</td>
-                    </tr>
-                </volist>
+                <?php if(is_array($replyToMe)): $i = 0; $__LIST__ = $replyToMe;if( count($__LIST__)==0 ) : echo "暂时没有记录" ;else: foreach($__LIST__ as $key=>$rept): $mod = ($i % 2 );++$i;?><tr>
+                        <td class="head"><?php echo ($rept["username"]); ?></td>
+                        <td class="content"><?php echo ($rept["content"]); ?></td>
+                        <td><?php echo (date('Y-m-d h:m:s',$rept["time"])); ?></td>
+                    </tr><?php endforeach; endif; else: echo "暂时没有记录" ;endif; ?>
             </tbody>
         </table>
     </div>
@@ -159,13 +206,11 @@
                 </tr>
             </thead>
             <tbody>
-                <volist name="replyToMe" id="rept" empty="暂时没有记录">
-                    <tr>
+                <?php if(is_array($replyToMe)): $i = 0; $__LIST__ = $replyToMe;if( count($__LIST__)==0 ) : echo "暂时没有记录" ;else: foreach($__LIST__ as $key=>$rept): $mod = ($i % 2 );++$i;?><tr>
                         <td class="head">admin</td>
-                        <td class="content">{$rept.content}</td>
-                        <td>{$rept.time|date='Y-m-d h:m:s',###}</td>
-                    </tr>
-                </volist>
+                        <td class="content"><?php echo ($rept["content"]); ?></td>
+                        <td><?php echo (date('Y-m-d h:m:s',$rept["time"])); ?></td>
+                    </tr><?php endforeach; endif; else: echo "暂时没有记录" ;endif; ?>
             </tbody>
         </table>
     </div>
@@ -179,28 +224,28 @@
         <tr>
             <th colspan="" rowspan="" headers=""><br><br>当前头像</th>
             <td colspan="" rowspan="" headers="">
-                <label><span class="default-tx"></span></label>&nbsp;<img src="{$setInfo.imgpath}" alt="..." class="img-circle imgtx" style="width: 80px;height: 80px">
+                <label><span class="default-tx"></span></label>&nbsp;<img src="<?php echo ($setInfo["imgpath"]); ?>" alt="..." class="img-circle imgtx" style="width: 80px;height: 80px">
                 <label for="img" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上传预览 &nbsp;<img src="" alt="" class="img-circle" id="show_pic" style="width: 80px;height: 80px"></label>
                 <input type="file" name="myfile" id="uploadtx" value="" accept=".jpg,.png,.jpeg" placeholder="">
             </td>
         </tr>
         <tr>
             <th colspan="" rowspan="" headers="">当前用户名:</th>
-            <td colspan="" rowspan="" headers=""><input type="text" name="username" class="form-control" value="{$setInfo.username}" placeholder=""></td>
+            <td colspan="" rowspan="" headers=""><input type="text" name="username" class="form-control" value="<?php echo ($setInfo["username"]); ?>" placeholder=""></td>
         </tr>
         <tr>
             <th colspan="" rowspan="" headers="">当前电子邮箱</th>
-            <td colspan="" rowspan="" headers=""><input type="email" class="form-control" name="email" value="{$setInfo.email}" placeholder=""></td>
+            <td colspan="" rowspan="" headers=""><input type="email" class="form-control" name="email" value="<?php echo ($setInfo["email"]); ?>" placeholder=""></td>
         </tr>
         <tr>
             <th colspan="" rowspan="" headers="">设定生日:</th>
-            <td colspan="" rowspan="" headers=""><input type="date" class="form-control" name="birthday" value="{$setInfo.birthday|substr=0,10}" placeholder=""></td>
+            <td colspan="" rowspan="" headers=""><input type="date" class="form-control" name="birthday" value="<?php echo (substr($setInfo["birthday"],0,10)); ?>" placeholder=""></td>
         </tr>
         <tr>
             <th colspan="" rowspan="" headers="">性别:</th>
             <td colspan="" rowspan="" headers=""><span class="label label-default gender" value="1">男</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-default gender" value="2">女</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-default gender" value="0">保密</span></td>
         </tr>
-        <input type="hidden" name="gender" id="gender" value="{$setInfo.gender}">
+        <input type="hidden" name="gender" id="gender" value="<?php echo ($setInfo["gender"]); ?>">
         <tr>
             <td colspan="" rowspan="" headers=""></td>
             <td colspan="" rowspan="" headers="">
@@ -215,11 +260,22 @@
 </div>
         </div>
     </div>
-</block>
 
-<block name="sidebar">
-</block>
-<block name="js">
+    
+
+</div>
+
+</div>
+
+      <footer>
+        <hr>
+        <p style="text-align: center;">&copy; Company 2014 <label style="float: right;"><a href="#top" title="">回到顶部 &nbsp; <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a></label></p>
+      </footer>
+
+<script src="/thinkweb/Public/home/js/jquery.min.js"></script>
+<script src="/thinkweb/Public/home/js/bootstrap.min.js"></script>
+<script src="/thinkweb/Public/home/js/offcanvas.js"></script>
+
 <script>
     $(document).ready(function() {
        $('.content').each(function () {
@@ -271,4 +327,7 @@
       })
     });
 </script>
-</block>
+
+
+</body>
+</html>

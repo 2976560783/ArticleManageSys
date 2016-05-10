@@ -1,32 +1,54 @@
 <extend name="Public:base" />
-<block name='title'><title>主页</title></block>
+<block name='title'>
+  <title>主页</title>
+</block>
 <block name="main">
         <div class="col-xs-12 col-sm-9">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">侧栏</button>
           </p>
-          <div class="jumbotron" style=" background-image: url('__PUBLIC__/home/imgs/jian.png');background-repeat: no-repeat; background-size:100% 100%;">
-            <h1>Hello, world!</h1>
-            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
-          </div>
+
+        <div class="jumbotron" style="background-image: url('__PUBLIC__/home/imgs/lunbo2.png');">
+          <h1 class="text-primary">Master Password</h1>
+          <p class="text-info"><small>一款跨平台且非常安全的密码管理工具</small></p>
+          <p><a class="btn btn-primary " href="#" role="button">点击了解</a></p>
+        </div>
+
           <div class="row">
             <volist name='list' id = 'lis'>
              <div class="col-xs-6 col-lg-4">
-              <a href="__MODULE__/article/details?artid={$lis.id}" class="htitle" ><h2 >{$lis.title}</h2></a>
-              <p >{$lis.summary}</p>
-              <p><a style="margin-right: 15%;" class="btn btn-info" href="__MODULE__/article/details?artid={$lis.id}" role="button">Details &raquo;</a><span  class="badge">H:{$lis.hits}</span> <span  class="badge">{$lis.tagname}</span></p>
-            </div><!--/.col-xs-6.col-lg-4-->             
+              <a href="__MODULE__/article/details?artid={$lis.id}" class="htitle"><h2 class="htitle" style="min-height: 60px">
+              <if condition="mb_strlen($lis['title']) gt 15">
+                  {$lis.title|mb_substr=0,15}...
+              <else/>
+                  {$lis.title}
+              </if>
+              </h2></a>
+              <p style="height: 75px;text-indent: 15px" class="text-info index-summary">{$lis.summary}</p>
+             <a style="margin-right: 15%;" class="btn btn-info" href="__MODULE__/article/details?artid={$lis.id}" role="button">Details &raquo;</a><span  class="badge">H:{$lis.hits}</span> <span  class="badge">{$lis.tagname}</span>
+            </div><!--/.col-xs-6.col-lg-4-->
             </volist>
           </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->
 </block>
 <block name="pager">
+<hr>
   <nav class="col-md-6 col-md-offset-3">
   {$page}
-</nav>
-
+  </nav>
 </block>
 <block name='js'>
     <script src="__PUBLIC__/home/js/ie10-viewport-bug-workaround.js"></script>
     <script src="__PUBLIC__/home/js/ie-emulation-modes-warning.js"></script>
+    <script type="text/javascript"> 
+      $(document).ready(function() {
+        var summary;
+         $('.index-summary').each(function () {
+            var summary = $(this).text();
+            if (summary.length > 70) {
+              $(this).text(summary.substring(0,70)+'...');
+            }
+         })
+      });
+    </script>
 </block>

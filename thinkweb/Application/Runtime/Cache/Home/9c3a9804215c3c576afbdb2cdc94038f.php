@@ -36,13 +36,13 @@
             <li id="contact"><a href="#contact">联系</a></li>
           </ul>
         <ul class="nav navbar-nav navbar-right">
-        <li><img src="/thinkweb/Public/home/imgs/tx.jpg" alt="头像" class="img-circle" style="width: 50px;height: 50px;"></li>
+        <li><img src="<?php echo (session('imgpath')); ?>" alt="头像" class="img-circle" style="width: 50px;height: 50px;"></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id='logined'><?php echo (session('logined')); ?><span class="caret"></span></a>
           <ul class="dropdown-menu">
-              <li><a href="#" title="">个人中心</a></li>
-              <li><a href="#" title="">发布文章</a></li>
-              <li><a href="#" title="">我的文章</a></li>
+              <li><a href="/thinkweb/index.php/Home/user/userInfo" title="">个人中心</a></li>
+              <li><a href="/thinkweb/index.php/Home/article/addArticle" title="">发布文章</a></li>
+              <li><a href="/thinkweb/index.php/Home/article/myArticles" title="">我的文章</a></li>
               <li><a href="#" title="">帮助</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="/thinkweb/index.php/Home/user/logout" title="">注销</a></li>

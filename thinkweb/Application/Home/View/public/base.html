@@ -38,13 +38,13 @@
             <li id="contact"><a href="#contact">联系</a></li>
           </ul>
         <ul class="nav navbar-nav navbar-right">
-        <li><img src="__PUBLIC__/home/imgs/tx.jpg" alt="头像" class="img-circle" style="width: 50px;height: 50px;"></li>
+        <li><img src="{$Think.session.imgpath}" alt="头像" class="img-circle" style="width: 50px;height: 50px;"></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id='logined'>{$Think.session.logined}<span class="caret"></span></a>
           <ul class="dropdown-menu">
-              <li><a href="#" title="">个人中心</a></li>
-              <li><a href="#" title="">发布文章</a></li>
-              <li><a href="#" title="">我的文章</a></li>
+              <li><a href="__MODULE__/user/userInfo" title="">个人中心</a></li>
+              <li><a href="__MODULE__/article/addArticle" title="">发布文章</a></li>
+              <li><a href="__MODULE__/article/myArticles" title="">我的文章</a></li>
               <li><a href="#" title="">帮助</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="__MODULE__/user/logout" title="">注销</a></li>
@@ -88,6 +88,55 @@
 <script src="__PUBLIC__/home/js/bootstrap.min.js"></script>
 <script src="__PUBLIC__/home/js/offcanvas.js"></script>
 <block name='js'>
+  <script type="text/javascript" src="__PUBLIC__/home/js/module.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/home/js/hotkeys.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/home/js/uploader.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/home/js/marked.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/home/js/simditor.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/home/js/to-markdown.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/home/js/simditor-markdown.js"></script>
+  <script type="text/javascript">
+
+     $(function() {
+      var editor = new Simditor({
+        textarea: $('#editor'),
+        markdown: false,
+        toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent', 'alignment', '|', 'markdown']
+      });
+    });   
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#submit').click(function () {
+         if ($('#title').val() == '') {
+              alert('请填写标题');
+              return false;
+         }
+         if ($('#summary').val() == '') {
+              alert('请填写内容概要');
+              return false;
+         }
+         if ($('#summary').val().length >70) {
+            $('#summary').val($('#summary').val.substring(0,70));
+         }
+         if ($('.content').val() == '') {
+              alert('请填写文章内容');
+              return false;
+         }
+         return true;
+      });
+         $('img').each(function () {
+            $(this).addClass('img-responsive') ;
+         })
+      if ({$ainfo.tagid}) {
+        $("[type='radio']").each(function(){
+          if ($(this).val() == {$ainfo.tagid}) {
+            $(this).parent().addClass('active');
+          }
+        })
+      }
+    });
+  </script>
 </block>
 
 </body>
