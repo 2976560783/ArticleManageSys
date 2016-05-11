@@ -1,7 +1,11 @@
 Other/
 Projects/
 <<<<<<< HEAD
+<<<<<<< HEAD
 thinkweb/Application/Runtime/
 =======
 *.log
 >>>>>>> 811426ad0b02b93c2afeddb735c003a217bfca71
+=======
+thinkweb/Application/Runtime/
+>>>>>>> a08d34ec0559e58088a22789999ef8c5ba5a9ab1
