@@ -1,0 +1,113 @@
+<extend name="Public:base" />
+<block name='title'>
+  <title>主页</title>
+</block>
+<block name='css'>
+  <style>
+    .lead{
+      text-indent: 40px;
+    }
+    .indexrow{
+      background-color: rgba(218, 223, 225
+,0.4);
+    }
+    a:hover{
+      text-decoration: none;
+    }
+  </style>
+</block>
+<block name="main">
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">侧栏</button>
+          </p>
+
+        <div class="jumbotron" style="background-image: url('__PUBLIC__/home/imgs/lunbo2.png');">
+          <h1 class="text-primary">Master Password</h1>
+          <p class="text-info"><small>一款跨平台且非常安全的密码管理工具</small></p>
+          <p><a class="btn btn-primary " href="#" role="button">点击了解</a></p>
+        </div>
+
+        <volist name="lists" id="list" mod="2">
+        <eq name="mod" value='0'>
+            <div class="row featurette indexrow">
+                    <div class="col-md-7">
+                      <a href="__MODULE__/article/details?artid={$list.id}" title=""><h2 class="featurette-heading">{$list.title}</h2></a>
+                      <p class="lead text-info">{$list.summary}</p>
+                      <a href="__MODULE__/article/details?artid={$list.id}" title=""><button type="button" class="btn btn-primary" style="float: right;">内容详情</button></a>
+                    </div>
+                    <div class="col-md-5">
+                      <img class="featurette-image img-responsive center-block" src="{$list.image}" alt="Generic placeholder image" style="width: 300px;height: 300px">
+
+                    </div>
+                    <div class="col-md-5 media-right"  style="float: left;">
+                      <span class="btn btn-info btn-sm" type="button">
+                         {$list.username}
+                      </span>
+                      <span class="btn btn-info btn-sm" type="button">
+                         {$list.publish|date="Y-m-d",###}
+                      </span>
+                      <span class="btn btn-info btn-sm" type="button">
+                         Hits: <span class="badge">{$list.hits}</span>
+                      </span>
+                      <span class="btn btn-info btn-sm" type="button">
+                         Likes: <span class="badge">{$list.likes}</span>
+                      </span>
+                    </div>
+                        
+            </div>
+            <hr>
+        </eq>
+        <eq name="mod" value='1'>
+            <div class="row featurette indexrow">
+                    <div class="col-md-7 col-md-push-5">
+                      <a href="__MODULE__/article/details?artid={$list.id}" title=""><h2 class="featurette-heading">{$list.title}</h2></a>
+                      <p class="lead text-info">{$list.summary}</p>
+                      <a href="__MODULE__/article/details?artid={$list.id}" title=""><button type="button" class="btn btn-primary" style="float: right;">内容详情</button></a>
+                    </div>
+
+                    <div class="col-md-5 col-md-pull-7">
+                      <img class="featurette-image img-responsive center-block" src="{$list.image}" alt="Generic placeholder image" style="width: 300px;height: 300px">
+                    </div>
+                    <div class="col-md-5" style="float: right;">
+                      <span class="btn btn-info btn-sm" type="button">
+                         {$list.username}
+                      </span>
+                      <span class="btn btn-info btn-sm" type="button">
+                         {$list.publish|date="Y-m-d",###}
+                      </span>
+                      <span class="btn btn-info btn-sm" type="button">
+                         Hits: <span class="badge">{$list.hits}</span>
+                      </span>
+                      <span class="btn btn-info btn-sm" type="button">
+                         Likes: <span class="badge">{$list.likes}</span>
+                      </span>
+                    </div>
+            </div>
+            <hr>
+        </eq>
+        </volist>
+
+        </div><!--/.col-xs-12.col-sm-9-->
+</block>
+<block name="pager">
+<hr>
+  <nav class="col-md-6 col-md-offset-3">
+  {$page}
+  </nav>
+</block>
+<block name='js'>
+    <script src="__PUBLIC__/home/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="__PUBLIC__/home/js/ie-emulation-modes-warning.js"></script>
+    <script type="text/javascript"> 
+      $(document).ready(function() {
+        var summary;
+         $('.index-summary').each(function () {
+            var summary = $(this).text();
+            if (summary.length > 70) {
+              $(this).text(summary.substring(0,70)+'...');
+            }
+         })
+      });
+    </script>
+</block>
