@@ -64,14 +64,14 @@
 <div class="row row-offcanvas row-offcanvas-right">
     
 <ol class="breadcrumb">
-  <li><a href="">主页</a></li>
+  <li><a href="/">主页</a></li>
   <li><a href="/Home/Article/category">全部</a></li>
   <li><a href="/Home/Article/category?cat=<?php echo ($details["tagname"]); ?>"><?php echo ($details["tagname"]); ?></a></li>
   <li class="active">详细</li>
 <!--   <input type="hidden" name="uid" id="uid" value="<?php echo ($details["uid"]); ?>"> -->
   <input type="hidden" name="aid" id="aid" value="<?php echo ($details["aid"]); ?>">
 </ol>
-        <div class="col-xs-12 col-sm-9">
+        <div class="col-xs-12 col-sm-12">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">侧栏</button>
           </p>
@@ -176,17 +176,7 @@
     </div><!--/.col-xs-12.col-sm-9-->
 
     
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar1">
-          <div class="list-group">
-            <label class="list-group-item active"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> &nbsp;标签 <span class="badge">文章</span></label>
-            <?php if(is_array($tags)): $i = 0; $__LIST__ = $tags;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$tag): $mod = ($i % 2 );++$i;?><a href="/Home/article/category?cat=<?php echo ($tag["tagname"]); ?>" class="list-group-item"><?php echo ($tag["tagname"]); ?><span class="badge"><?php echo ($tag["num"]); ?></span></a><?php endforeach; endif; else: echo "" ;endif; ?>
-            <a href="/Home/article/category" class="list-group-item">全部<span class="badge"><?php echo ($count); ?></span></a>
-            <br>
-          <label class="list-group-item active"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> &nbsp;时间线 <span class="badge">文章</span></label>
-          <?php $__FOR_START_1716403663__=2016;$__FOR_END_1716403663__=2008;for($i=$__FOR_START_1716403663__;$i > $__FOR_END_1716403663__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
-          </div>
-        </div><!--/.sidebar-offcanvas-->
-    
+
 </div>
 
 </div>

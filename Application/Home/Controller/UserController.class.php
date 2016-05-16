@@ -13,7 +13,7 @@ class UserController extends Controller
     
     public function index(){
         if (!session('?logined')) {
-            $this->dispaly();
+            $this->show();
         }else{
             $this->success('您已经登陆,请注销后再进行此项操作!',U('index/index'));
         }
@@ -29,7 +29,7 @@ class UserController extends Controller
                 $data['confirmpwd'] =trim(I('post.confirmPwd'));
                 $data['gender'] = trim(I('post.gender'));
                 $data['birthday'] =trim( I('post.birthday'));
-                $data['imgpath'] = "./Public/home/imgs/defaultx.png";
+                $data['imgpath'] = "/Public/home/imgs/defaultx.png";
                 // $data['ip'] = get_client_ip();
                 if ($userModel->create($data)) {
                     if ($userModel->add()) {
@@ -208,10 +208,9 @@ class UserController extends Controller
             $data['gender'] = I('post.gender');
         }
         
-        if (I('post.birthday').' 00:00:00' != $otherInfo['birthday']) {
-            strtotime(I('post.birthday')) > time() || strtotime(I('post.birthday')) < strtotime('1970-00-00')?$this->error('生日超出可能日期!') : $data['birthday'] = I('post.birthday');
+        if (I('post.birthday','',strtotime) != $otherInfo['birthday']) {
+            strtotime(I('post.birthday')) > time() || strtotime(I('post.birthday')) < strtotime('1970-00-00')?$this->error('生日超出可能日期!') : $data['birthday'] = strtotime(I('post.birthday'));
         }
-
         $uploadFlag = false;    //判断是否上传文件
         if ($_FILES['myfile']['name'] != '') {
             $uploadFlag = true;
@@ -224,7 +223,7 @@ class UserController extends Controller
                 if (!$uploadInfo) {
                     $this->error('上传头像失败!0');
                 }
-                $data['imgpath'] = '/thinkweb/Public/home/uploads/'.$uploadInfo;
+                $data['imgpath'] = '/Public/home/uploads/'.$uploadInfo;
                 }else{
                     //相同用户头像不能重复存在
                     if (file_exists('./Public/home/uploads/'.session('uid').'_img.png')) {
@@ -233,8 +232,8 @@ class UserController extends Controller
                              if (!$uploadInfo) {
                                  $this->error('上传头像失败!1');
                              }
-                             if ('/thinkweb/Public/home/uploads/'.$uploadInfo != $otherInfo['imgpath']) {
-                                 $data['imgpath'] = '/thinkweb/Public/home/uploads/'.$uploadInfo;
+                             if ('/Public/home/uploads/'.$uploadInfo != $otherInfo['imgpath']) {
+                                 $data['imgpath'] = '/Public/home/uploads/'.$uploadInfo;
                              }
                         }
                     }elseif (file_exists('./Public/home/uploads/'.session('uid').'_img.jpg')) {
@@ -243,8 +242,8 @@ class UserController extends Controller
                              if (!$uploadInfo) {
                                  $this->error('上传头像失败!2');
                              }
-                             if ('/thinkweb/Public/home/uploads/'.$uploadInfo != $otherInfo['imgpath']) {
-                                 $data['imgpath'] = '/thinkweb/Public/home/uploads/'.$uploadInfo;
+                             if ('/Public/home/uploads/'.$uploadInfo != $otherInfo['imgpath']) {
+                                 $data['imgpath'] = '/Public/home/uploads/'.$uploadInfo;
                              }
                         }
                     }elseif (file_exists('./Public/home/uploads/'.session('uid').'_img.jpeg')) {
@@ -253,8 +252,8 @@ class UserController extends Controller
                              if (!$uploadInfo) {
                                  $this->error('上传头像失败!3');
                              }
-                             if ('/thinkweb/Public/home/uploads/'.$uploadInfo != $otherInfo['imgpath']) {
-                                 $data['imgpath'] = '/thinkweb/Public/home/uploads/'.$uploadInfo;
+                             if ('/Public/home/uploads/'.$uploadInfo != $otherInfo['imgpath']) {
+                                 $data['imgpath'] = '/Public/home/uploads/'.$uploadInfo;
                              }
                         }
                     }
@@ -262,6 +261,7 @@ class UserController extends Controller
         }else{
             $upload = false;
         }
+
         //判断更新信息是否为空
         if (!empty($data)) {
             if($userModel->where('id='.session('uid'))->save($data)) {
@@ -290,6 +290,7 @@ class UserController extends Controller
             $info   =   $upload->uploadOne($_FILES['myfile']); // 上传单个文件 
             if(!$info) {// 上传错误提示错误信息  
                  // $this->error($upload->getError());
+                 // die;
                  return false;
             }else{// 上传成功 获取上传文件信息  
                  // echo $info['savepath'].$info['savename'];

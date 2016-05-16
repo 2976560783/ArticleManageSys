@@ -30,7 +30,7 @@ class ArticleController extends BaseController
             $tids = M('tags')->getField('id as tid',true);
             $data['title'] = (trim(I('post.title')) == ''?$this->error('标题不能为空'):I('post.title'));
             $data['summary'] = (trim(I('post.summary')) == ''?$this->error('内容概要不能为空'):I('post.summary'));
-            I('post.cover') == null?$data['image']="/thinkweb/Public/home/imgs/jian.png":$data['image']=I('post.cover');
+            I('post.cover') == null?$data['image']="/Public/home/imgs/jian.png":$data['image']=I('post.cover');
             if (I('post.tagid') != '') {
                if (in_array(I('post.tagid'), $tags)) {
                     $data['tagid'] = intval(I('post.tag'));
@@ -83,9 +83,6 @@ class ArticleController extends BaseController
             }
             if (I('post.summary') != $ainfo['summary']) {
                $data['summary'] = (trim(I('post.summary')) == ''?$this->error('内容概要不能为空'):I('post.summary'));
-                if (mb_strlen($data['summary']) > 69) {
-                    $this->error('文章概要应该再短点');
-                }
             }
             if (I('post.content') != $ainfo['content']) {
               trim(I('post.content')) == ''?$this->error('文章内容不能为空哦!'):$data['content'] = I('post.content');
@@ -236,9 +233,9 @@ class ArticleController extends BaseController
                 'content' => $content, 
                 'ip' => ip2long(get_client_ip()), 
                 'time' => time(), 
-                'pid' => intval(I('post.pid')), 
+                'pid' => I('post.pid','',intval), 
                 'uid' => session('uid'), 
-                'aid' => intval(I('post.aid')),
+                'aid' => I('post.aid','',intval),
             ); 
             if (M('comment')->add($data)) {
                $this->success('留言添加成功');

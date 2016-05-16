@@ -7,16 +7,18 @@
     }
   </style>
 </block>
+<block name="sidebar">
+</block>
 <block name="main">
 <ol class="breadcrumb">
-  <li><a href="__ROOT__">主页</a></li>
+  <li><a href="/">主页</a></li>
   <li><a href="__CONTROLLER__/category">全部</a></li>
   <li><a href="__CONTROLLER__/category?cat={$details.tagname}">{$details.tagname}</a></li>
   <li class="active">详细</li>
 <!--   <input type="hidden" name="uid" id="uid" value="{$details.uid}"> -->
   <input type="hidden" name="aid" id="aid" value="{$details.aid}">
 </ol>
-        <div class="col-xs-12 col-sm-9">
+        <div class="col-xs-12 col-sm-12">
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">侧栏</button>
           </p>

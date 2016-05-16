@@ -5,7 +5,7 @@
 </block>
 <block name="main">
 <ol class="breadcrumb">
-  <li><a href="__ROOT__">主页</a></li>
+  <li><a href="/">主页</a></li>
   <li><a href="__CONTROLLER__/category">全部</a></li>
   <if condition="$category">
     <li><a href="#">{$category}</a></li>
@@ -25,7 +25,7 @@
                     <p class="list-top" style="font-size: 10px;line-height: 20px;">
                             <a href="#" >{$list.username}</a>
                             <em>·</em>
-                            <span class="time" publish="{$list.publish}"></span>
+                            <span class="time" publish="{$list.publish|date='Y-m-d',###}"></span>
                     </p>
                     <h4 class="title">
                         <a href="__CONTROLLER__/details?artid={$list.id}">{$list.title}</a>
@@ -39,7 +39,7 @@
                   <div class="media-right">
                     <a href="__CONTROLLER__/details?artid={$list.id}">
                       <if condition="$list['image']">
-                          <img class="media-object" src="{$list.image}" alt="未能正确加载" style="width: 100px;height: 100px">
+                          <img class="media-object" src="{$list.image}" alt="未能正确加载" style="width: 120px;height: 120px">
                           <else/>
                           <img class="media-object" src="__PUBLIC__/home/imgs/jian.png" alt="未能正确加载" style="width: 100px;height: 100px;">
                       </if>
@@ -61,12 +61,12 @@
 <block name='js'>
   <script>
     $(document).ready(function() {
-      $('#index').removeClass('active');
       var now = new Date();
       var time = $('.time');
       time.each(function() {
         var pub = new Date($(this).attr('publish'));
         var td = Math.round((now-pub)/(24*3600*1000));
+
         if (td == 0) {
           $(this).text('今天');
         }else{

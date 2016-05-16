@@ -28,4 +28,9 @@ return array(
     'DB_RW_SEPARATE'         => false, // 数据库读写是否分离 主从式有效
     'DB_MASTER_NUM'          => 1, // 读写分离后 主服务器数量
     'DB_SLAVE_NO'            => '', // 指定从服务器序号
+
+    //不区分大小写
+    // 'URL_CASE_INSENSITIVE' =>true
+    'DB_SQL_BUILD_CACHE' => true,
+    'DB_SQL_BUILD_LENGTH' => 20,// SQL缓存的队列长度
 );

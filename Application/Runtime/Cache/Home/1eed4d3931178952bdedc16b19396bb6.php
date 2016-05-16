@@ -60,7 +60,7 @@
 <div class="row row-offcanvas row-offcanvas-right">
     
 <ol class="breadcrumb">
-  <li><a href="">主页</a></li>
+  <li><a href="/">主页</a></li>
   <li><a href="/Home/Article/category">全部</a></li>
   <?php if($category): ?><li><a href="#"><?php echo ($category); ?></a></li><?php endif; ?>
 </ol>
@@ -77,7 +77,7 @@
                     <p class="list-top" style="font-size: 10px;line-height: 20px;">
                             <a href="#" ><?php echo ($list["username"]); ?></a>
                             <em>·</em>
-                            <span class="time" publish="<?php echo ($list["publish"]); ?>"></span>
+                            <span class="time" publish="<?php echo (date('Y-m-d',$list["publish"])); ?>"></span>
                     </p>
                     <h4 class="title">
                         <a href="/Home/Article/details?artid=<?php echo ($list["id"]); ?>"><?php echo ($list["title"]); ?></a>
@@ -90,7 +90,7 @@
                   </div>
                   <div class="media-right">
                     <a href="/Home/Article/details?artid=<?php echo ($list["id"]); ?>">
-                      <?php if($list['image']): ?><img class="media-object" src="<?php echo ($list["image"]); ?>" alt="未能正确加载" style="width: 100px;height: 100px">
+                      <?php if($list['image']): ?><img class="media-object" src="<?php echo ($list["image"]); ?>" alt="未能正确加载" style="width: 120px;height: 120px">
                           <?php else: ?>
                           <img class="media-object" src="/Public/home/imgs/jian.png" alt="未能正确加载" style="width: 100px;height: 100px;"><?php endif; ?>
                     </a>
@@ -103,14 +103,14 @@
         </div><!--/.col-xs-12.col-sm-9-->
 
     
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar1">
+        <div class="col-xs-3 col-sm-3 sidebar-offcanvas" id="sidebar1">
           <div class="list-group">
             <label class="list-group-item active"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> &nbsp;标签 <span class="badge">文章</span></label>
             <?php if(is_array($tags)): $i = 0; $__LIST__ = $tags;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$tag): $mod = ($i % 2 );++$i;?><a href="/Home/article/category?cat=<?php echo ($tag["tagname"]); ?>" class="list-group-item"><?php echo ($tag["tagname"]); ?><span class="badge"><?php echo ($tag["num"]); ?></span></a><?php endforeach; endif; else: echo "" ;endif; ?>
             <a href="/Home/article/category" class="list-group-item">全部<span class="badge"><?php echo ($count); ?></span></a>
             <br>
           <label class="list-group-item active"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> &nbsp;时间线 <span class="badge">文章</span></label>
-          <?php $__FOR_START_1663475324__=2016;$__FOR_END_1663475324__=2008;for($i=$__FOR_START_1663475324__;$i > $__FOR_END_1663475324__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
+          <?php $__FOR_START_549898366__=2016;$__FOR_END_549898366__=2008;for($i=$__FOR_START_549898366__;$i > $__FOR_END_549898366__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
           </div>
         </div><!--/.sidebar-offcanvas-->
     
@@ -133,12 +133,12 @@
 
   <script>
     $(document).ready(function() {
-      $('#index').removeClass('active');
       var now = new Date();
       var time = $('.time');
       time.each(function() {
         var pub = new Date($(this).attr('publish'));
         var td = Math.round((now-pub)/(24*3600*1000));
+
         if (td == 0) {
           $(this).text('今天');
         }else{

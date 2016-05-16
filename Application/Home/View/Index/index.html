@@ -41,16 +41,16 @@
 
                     </div>
                     <div class="col-md-5 media-right"  style="float: left;">
-                      <span class="btn btn-info btn-sm" type="button">
+                      <span class="btn btn-info btn-xs" type="button">
                          {$list.username}
                       </span>
-                      <span class="btn btn-info btn-sm" type="button">
+                      <span class="btn btn-info btn-xs" type="button">
                          {$list.publish|date="Y-m-d",###}
                       </span>
-                      <span class="btn btn-info btn-sm" type="button">
+                      <span class="btn btn-info btn-xs" type="button">
                          Hits: <span class="badge">{$list.hits}</span>
                       </span>
-                      <span class="btn btn-info btn-sm" type="button">
+                      <span class="btn btn-info btn-xs" type="button">
                          Likes: <span class="badge">{$list.likes}</span>
                       </span>
                     </div>
@@ -67,19 +67,19 @@
                     </div>
 
                     <div class="col-md-5 col-md-pull-7">
-                      <img class="featurette-image img-responsive center-block" src="{$list.image}" alt="Generic placeholder image" style="width: 300px;height: 300px">
+                      <img class="featurette-image img-responsive center-block" src="{$list.image}" alt="Generic placeholder image" style="width: 280px;height: 280px">
                     </div>
                     <div class="col-md-5" style="float: right;">
-                      <span class="btn btn-info btn-sm" type="button">
+                      <span class="btn btn-info btn-xs" type="button">
                          {$list.username}
                       </span>
-                      <span class="btn btn-info btn-sm" type="button">
+                      <span class="btn btn-info btn-xs" type="button">
                          {$list.publish|date="Y-m-d",###}
                       </span>
-                      <span class="btn btn-info btn-sm" type="button">
+                      <span class="btn btn-info btn-xs" type="button">
                          Hits: <span class="badge">{$list.hits}</span>
                       </span>
-                      <span class="btn btn-info btn-sm" type="button">
+                      <span class="btn btn-info btn-xs" type="button">
                          Likes: <span class="badge">{$list.likes}</span>
                       </span>
                     </div>
@@ -101,10 +101,9 @@
     <script src="__PUBLIC__/home/js/ie-emulation-modes-warning.js"></script>
     <script type="text/javascript"> 
       $(document).ready(function() {
-        var summary;
-         $('.index-summary').each(function () {
+         $('.lead').each(function () {
             var summary = $(this).text();
-            if (summary.length > 70) {
+            if (summary.length > 130) {
               $(this).text(summary.substring(0,70)+'...');
             }
          })

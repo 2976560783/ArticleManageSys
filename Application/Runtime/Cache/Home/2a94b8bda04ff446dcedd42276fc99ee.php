@@ -94,16 +94,16 @@
 
                     </div>
                     <div class="col-md-5 media-right"  style="float: left;">
-                      <span class="btn btn-info btn-sm" type="button">
+                      <span class="btn btn-info btn-xs" type="button">
                          <?php echo ($list["username"]); ?>
                       </span>
-                      <span class="btn btn-info btn-sm" type="button">
+                      <span class="btn btn-info btn-xs" type="button">
                          <?php echo (date("Y-m-d",$list["publish"])); ?>
                       </span>
-                      <span class="btn btn-info btn-sm" type="button">
+                      <span class="btn btn-info btn-xs" type="button">
                          Hits: <span class="badge"><?php echo ($list["hits"]); ?></span>
                       </span>
-                      <span class="btn btn-info btn-sm" type="button">
+                      <span class="btn btn-info btn-xs" type="button">
                          Likes: <span class="badge"><?php echo ($list["likes"]); ?></span>
                       </span>
                     </div>
@@ -118,19 +118,19 @@
                     </div>
 
                     <div class="col-md-5 col-md-pull-7">
-                      <img class="featurette-image img-responsive center-block" src="<?php echo ($list["image"]); ?>" alt="Generic placeholder image" style="width: 300px;height: 300px">
+                      <img class="featurette-image img-responsive center-block" src="<?php echo ($list["image"]); ?>" alt="Generic placeholder image" style="width: 280px;height: 280px">
                     </div>
                     <div class="col-md-5" style="float: right;">
-                      <span class="btn btn-info btn-sm" type="button">
+                      <span class="btn btn-info btn-xs" type="button">
                          <?php echo ($list["username"]); ?>
                       </span>
-                      <span class="btn btn-info btn-sm" type="button">
+                      <span class="btn btn-info btn-xs" type="button">
                          <?php echo (date("Y-m-d",$list["publish"])); ?>
                       </span>
-                      <span class="btn btn-info btn-sm" type="button">
+                      <span class="btn btn-info btn-xs" type="button">
                          Hits: <span class="badge"><?php echo ($list["hits"]); ?></span>
                       </span>
-                      <span class="btn btn-info btn-sm" type="button">
+                      <span class="btn btn-info btn-xs" type="button">
                          Likes: <span class="badge"><?php echo ($list["likes"]); ?></span>
                       </span>
                     </div>
@@ -140,14 +140,14 @@
         </div><!--/.col-xs-12.col-sm-9-->
 
     
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar1">
+        <div class="col-xs-3 col-sm-3 sidebar-offcanvas" id="sidebar1">
           <div class="list-group">
             <label class="list-group-item active"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> &nbsp;标签 <span class="badge">文章</span></label>
             <?php if(is_array($tags)): $i = 0; $__LIST__ = $tags;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$tag): $mod = ($i % 2 );++$i;?><a href="/Home/article/category?cat=<?php echo ($tag["tagname"]); ?>" class="list-group-item"><?php echo ($tag["tagname"]); ?><span class="badge"><?php echo ($tag["num"]); ?></span></a><?php endforeach; endif; else: echo "" ;endif; ?>
             <a href="/Home/article/category" class="list-group-item">全部<span class="badge"><?php echo ($count); ?></span></a>
             <br>
           <label class="list-group-item active"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> &nbsp;时间线 <span class="badge">文章</span></label>
-          <?php $__FOR_START_1109786058__=2016;$__FOR_END_1109786058__=2008;for($i=$__FOR_START_1109786058__;$i > $__FOR_END_1109786058__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
+          <?php $__FOR_START_1876578010__=2016;$__FOR_END_1876578010__=2008;for($i=$__FOR_START_1876578010__;$i > $__FOR_END_1876578010__;$i+=-1){ ?><a href="#" class="list-group-item"><?php echo ($i); ?>  <span class="badge">4</span></a><?php } ?>
           </div>
         </div><!--/.sidebar-offcanvas-->
     
@@ -173,10 +173,9 @@
     <script src="/Public/home/js/ie-emulation-modes-warning.js"></script>
     <script type="text/javascript"> 
       $(document).ready(function() {
-        var summary;
-         $('.index-summary').each(function () {
+         $('.lead').each(function () {
             var summary = $(this).text();
-            if (summary.length > 70) {
+            if (summary.length > 130) {
               $(this).text(summary.substring(0,70)+'...');
             }
          })
