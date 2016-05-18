@@ -1,0 +1,715 @@
+[ 2016-05-18T09:04:37+08:00 ] 127.0.0.1 /Home/user/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+
+[ 2016-05-18T09:04:37+08:00 ] 127.0.0.1 /Home/user/captche
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000054s ]
+
+[ 2016-05-18T09:07:23+08:00 ] 127.0.0.1 /Home/user/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+
+[ 2016-05-18T09:07:24+08:00 ] 127.0.0.1 /Home/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+
+[ 2016-05-18T09:07:26+08:00 ] 127.0.0.1 /Home/article/details?artid=32
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000077s ]
+
+[ 2016-05-18T09:07:26+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000092s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000069s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0006s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0004s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0202s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 32 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 32  [ RunTime:0.0002s ]
+
+[ 2016-05-18T09:07:33+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000058s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000042s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0004s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 32 LIMIT 1   [ RunTime:0.0002s ]
+SQL: DELETE FROM `think_like` WHERE `uid` = 17 AND `aid` = 32 [ RunTime:0.0435s ]
+SQL: UPDATE `think_article` SET `likes`=likes-1 WHERE `id` = 32 [ RunTime:0.0445s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000120s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000162s ]
+
+[ 2016-05-18T09:07:34+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000105s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000037s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000077s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0007s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0004s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 32 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `think_like` (`uid`,`aid`) VALUES ('17','32') [ RunTime:0.0811s ]
+SQL: UPDATE `think_article` SET `likes`=likes+1 WHERE `id` = 32 [ RunTime:0.1336s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000053s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000073s ]
+
+[ 2016-05-18T09:12:14+08:00 ] 127.0.0.1 /Home/Article/category?cat=Linux
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000080s ]
+
+[ 2016-05-18T09:12:14+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000014s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0004s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 32 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 32  [ RunTime:0.0002s ]
+
+[ 2016-05-18T09:12:15+08:00 ] 127.0.0.1 /Home/Article/details
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+
+[ 2016-05-18T09:12:20+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+
+[ 2016-05-18T09:12:22+08:00 ] 127.0.0.1 /Home/Article/details
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+
+[ 2016-05-18T09:12:28+08:00 ] 127.0.0.1 /Home/article/category?cat=Python
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000054s ]
+
+[ 2016-05-18T09:12:30+08:00 ] 127.0.0.1 /Home/Article/details
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+
+[ 2016-05-18T09:14:28+08:00 ] 127.0.0.1 /Home/article/category?cat=Python
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000063s ]
+
+[ 2016-05-18T09:14:29+08:00 ] 127.0.0.1 /Home/Article/details
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+
+[ 2016-05-18T09:14:33+08:00 ] 127.0.0.1 /Home/article/category?cat=Linux
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+
+[ 2016-05-18T09:14:34+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000014s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000027s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0005s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0004s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 32 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 32  [ RunTime:0.0002s ]
+
+[ 2016-05-18T09:14:35+08:00 ] 127.0.0.1 /Home/article/category?cat=ThinkPhp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000063s ]
+
+[ 2016-05-18T09:14:35+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000014s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000027s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0004s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 35 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 35  [ RunTime:0.0001s ]
+
+[ 2016-05-18T09:14:35+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000057s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0005s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 36 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 36  [ RunTime:0.0002s ]
+
+[ 2016-05-18T09:14:35+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000015s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0006s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0004s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 38 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 38  [ RunTime:0.0002s ]
+
+[ 2016-05-18T09:14:35+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0004s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 37 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 37  [ RunTime:0.0002s ]
+
+[ 2016-05-18T09:14:35+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000047s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0003s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 39 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 39  [ RunTime:0.0001s ]
+
+[ 2016-05-18T09:14:35+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000047s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0004s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0004s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 41 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 41  [ RunTime:0.0002s ]
+
+[ 2016-05-18T09:14:42+08:00 ] 127.0.0.1 /Home/user/userInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000052s ]
+
+[ 2016-05-18T09:15:21+08:00 ] 127.0.0.1 /Home/user/setUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000088s ]
+
+[ 2016-05-18T09:15:22+08:00 ] 127.0.0.1 /Home/user/userInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+
+[ 2016-05-18T09:15:26+08:00 ] 127.0.0.1 /Home/article/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+ERR: 模板不存在:./Application/Home/View/Article/add.html
+
+[ 2016-05-18T09:16:29+08:00 ] 127.0.0.1 /Home/article/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000062s ]
+
+[ 2016-05-18T09:16:32+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000053s ]
+
+[ 2016-05-18T09:16:33+08:00 ] 127.0.0.1 /Home/article
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+
+[ 2016-05-18T09:16:33+08:00 ] 127.0.0.1 /Home/Article/category.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+
+[ 2016-05-18T09:16:34+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000016s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0016s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0004s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 32 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 32  [ RunTime:0.0001s ]
+
+[ 2016-05-18T09:16:34+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000052s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0004s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 34 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 34  [ RunTime:0.0002s ]
+
+[ 2016-05-18T09:16:34+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000043s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0004s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0004s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 36 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 36  [ RunTime:0.0002s ]
+
+[ 2016-05-18T09:16:34+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000031s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000026s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0004s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 37 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 37  [ RunTime:0.0001s ]
+
+[ 2016-05-18T09:16:34+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000058s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0003s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 38 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 38  [ RunTime:0.0001s ]
+
+[ 2016-05-18T09:16:34+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000059s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0005s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0004s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 35 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 35  [ RunTime:0.0002s ]
+
+[ 2016-05-18T09:16:45+08:00 ] 127.0.0.1 /Home/article/category?cat=ThinkPhp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+
+[ 2016-05-18T09:16:45+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000014s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000027s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0003s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 35 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 35  [ RunTime:0.0001s ]
+
+[ 2016-05-18T09:16:45+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000042s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0005s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 36 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 36  [ RunTime:0.0002s ]
+
+[ 2016-05-18T09:16:45+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0005s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0004s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 37 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 37  [ RunTime:0.0002s ]
+
+[ 2016-05-18T09:16:45+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0003s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0002s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 38 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 38  [ RunTime:0.0001s ]
+
+[ 2016-05-18T09:16:45+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000041s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0005s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 39 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 39  [ RunTime:0.0001s ]
+
+[ 2016-05-18T09:16:45+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0004s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 41 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 41  [ RunTime:0.0004s ]
+
+[ 2016-05-18T09:16:46+08:00 ] 127.0.0.1 /Home/article/category?cat=ThinkPhp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+
+[ 2016-05-18T09:16:46+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000014s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000026s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0004s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 35 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 35  [ RunTime:0.0001s ]
+
+[ 2016-05-18T09:16:46+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000050s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0005s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0018s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 36 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 36  [ RunTime:0.0002s ]
+
+[ 2016-05-18T09:16:46+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000032s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000044s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0004s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 41 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 41  [ RunTime:0.0001s ]
+
+[ 2016-05-18T09:16:46+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000015s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0004s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 37 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 37  [ RunTime:0.0001s ]
+
+[ 2016-05-18T09:16:46+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000052s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000045s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0005s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0004s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 38 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 38  [ RunTime:0.0002s ]
+
+[ 2016-05-18T09:16:46+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000049s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0004s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 39 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 39  [ RunTime:0.0001s ]
+
+[ 2016-05-18T09:16:46+08:00 ] 127.0.0.1 /Home/article/category?cat=MySQL
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+
+[ 2016-05-18T09:16:47+08:00 ] 127.0.0.1 /Home/article/category?cat=Windows
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+
+[ 2016-05-18T09:16:48+08:00 ] 127.0.0.1 /Home/article/category?cat=MySQL
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+
+[ 2016-05-18T09:16:49+08:00 ] 127.0.0.1 /Home/article/category?cat=Other
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000069s ]
+
+[ 2016-05-18T09:16:49+08:00 ] 127.0.0.1 /Home/Article/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000015s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `think_session` [ RunTime:0.0004s ]
+SQL: SELECT `sessionid` FROM `think_session` WHERE `uid` = 17  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `think_tags` [ RunTime:0.0003s ]
+SQL: SELECT `tagname`,count(tagid) as num FROM think_tags as t left join think_article as a on a.tagid = t.id  GROUP BY t.id  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `think_article` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_article` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `think_like` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `think_like` WHERE `uid` = 17 AND `aid` = 45 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `likes` FROM `think_article` WHERE `id` = 45  [ RunTime:0.0001s ]
+
+[ 2016-05-18T09:16:51+08:00 ] 127.0.0.1 /Home/article/mine
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000055s ]
+
+[ 2016-05-18T09:16:55+08:00 ] 127.0.0.1 /Home/Article/editArticle?aid=32
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+ERR: 非法操作:editArticle
+
+[ 2016-05-18T09:17:20+08:00 ] 127.0.0.1 /Home/article/mine
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+
+[ 2016-05-18T09:17:22+08:00 ] 127.0.0.1 /Home/Article/edit?aid=32
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000050s ]
+
+[ 2016-05-18T09:17:28+08:00 ] 127.0.0.1 /Home/Article/delete?aid=34
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+
+[ 2016-05-18T09:17:29+08:00 ] 127.0.0.1 /Home/article/mine
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000137s ]
+
+[ 2016-05-18T09:17:32+08:00 ] 127.0.0.1 /Home/Article/mine/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+
+[ 2016-05-18T09:18:20+08:00 ] 127.0.0.1 /Home/index/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000268s ]
+
+[ 2016-05-18T09:18:54+08:00 ] 127.0.0.1 /Home/index/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000060s ]
+
+[ 2016-05-18T09:18:55+08:00 ] 127.0.0.1 /Home/index/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000080s ]
+
